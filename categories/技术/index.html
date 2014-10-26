@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Category: 技术 | daxiawj&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="A personal blog focused in Tech and Sci.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="daxiawj's Blog">
+<meta property="og:url" content="http://daxiawj.github.io/categories/技术/">
+<meta property="og:site_name" content="daxiawj's Blog">
+<meta property="og:description" content="A personal blog focused in Tech and Sci.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="daxiawj's Blog">
+<meta name="twitter:description" content="A personal blog focused in Tech and Sci.">
+
+  
+    <link rel="alternative" href="/atom.xml" title="daxiawj&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">daxiawj&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Wir Müssen Wissen, Wir Werden Wissen.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="daxiawj.github.io">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-SublimeTextTextMate-remote-editing-with-rmate" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/09-16-SublimeTextTextMate-remote-editing-with-rmate.html" class="article-date">
+  <time datetime="2014-09-16T03:20:25.000Z" itemprop="datePublished">2014 09 16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/09-16-SublimeTextTextMate-remote-editing-with-rmate.html">SublimeText/TextMate remote editing with rmate</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Preparation_of_Sublime_Text_准备工作">Preparation of Sublime Text 准备工作</h2>
+<p><code>ln -s &quot;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&quot; /usr/local/bin/subl 就可以了</code></p>
+<p>Run <code>subl --help</code></p>
+<p>subl as default EDITOR</p>
+<p><code>export EDITOR=&#39;subl -w&#39;</code></p>
+<p>Specifying -w will cause the subl command to not exit until the file is closed.</p>
+<h2 id="Install">Install</h2>
+<p>Install <code>rmate</code> on remote server where you would like to </p>
+<p>You can install <code>rmate</code> via <code>gem</code>:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem <span class="operator"><span class="keyword">install</span> rmate</span></div></pre></td></tr></table></figure>
+
+<p>or just:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl -Lo <span class="regexp">/usr/</span>local<span class="regexp">/bin/</span>rmate https:<span class="comment">//raw.github.com/textmate/rmate/master/bin/rmate</span></div><div class="line">chmod a+x <span class="regexp">/usr/</span>local<span class="regexp">/bin/</span>rmate</div></pre></td></tr></table></figure>
+
+<p>or, you cqn install ported version of </p>
+<ul>
+<li><a href="https://github.com/aurora/rmate" target="_blank" rel="external">Bash version</a> by Harald Lapp</li>
+<li><a href="https://github.com/sclukey/rmate-python" target="_blank" rel="external">Python version</a> by Steven Clukey</li>
+</ul>
+<h2 id="用法_Usage:">用法 Usage:</h2>
+<ul>
+<li>First open Sublime Text or TextMate on your machine. </li>
+<li>Then, open a tunnel to your server on your local machine </li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">ssh</span> <span class="tag">-R</span> 52698<span class="pseudo">:localhost</span><span class="pseudo">:52698</span> <span class="tag">user</span><span class="at_rule">@<span class="keyword">yourserver.org</span></span></div><div class="line">这样</div></pre></td></tr></table></figure>
+
+<ul>
+<li>Finally, run <code>rmate yourfile</code> on the openned ssh shell and edit your file on your local machine</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://daxiawj.github.io/2014/09-16-SublimeTextTextMate-remote-editing-with-rmate.html" data-id="dtzc3ln5v96gwgns" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://daxiawj.github.io/2014/09-16-SublimeTextTextMate-remote-editing-with-rmate.html#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Editor/">Editor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TextMate/">TextMate</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rmate/">rmate</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-su-出现-This-account-is-currently-not-available" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/04-23-su-出现-This-account-is-currently-not-available.html" class="article-date">
+  <time datetime="2014-04-23T13:34:55.000Z" itemprop="datePublished">2014 04 23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/04-23-su-出现-This-account-is-currently-not-available.html">su 出现 This account is currently not available</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>su</code> 切换用户的时候出现 “This account is currently not available” 的提示，尤其是在 <code>/etc/init.d/</code> 的文件里面，运行一些服务需要切换到特定的用户，如启动 tomcat 的脚本，需要切换到 www 用户，但是 www 用户在 /etc/passwd 里面的 shell 是 /sbin/nologin，那么在启动的脚本里面:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">su  www -<span class="keyword">c</span> /<span class="keyword">opt</span>/tomcat7/bin/startup.<span class="keyword">sh</span></div></pre></td></tr></table></figure>
+
+<p>这一句就会导致上述的报错。</p>
+<p>解决的办法有几种，第一，运行 <code>vipw</code> 修改 passwd 文件，将其 shell 项改为 /bin/bash。第二种方法则是修改这条命令，改为：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">su -s <span class="regexp">/bin/</span>bash www -c <span class="regexp">/opt/</span>tomcat7<span class="regexp">/bin/</span>startup.sh</div></pre></td></tr></table></figure>
+
+<p>个人更喜欢第二种方案。第一种要修改系统的安全设置，不太建议。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://daxiawj.github.io/2014/04-23-su-出现-This-account-is-currently-not-available.html" data-id="q4dr6orscisuumdm" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://daxiawj.github.io/2014/04-23-su-出现-This-account-is-currently-not-available.html#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Server/">Server</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/su/">su</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-使用-Sweave-给-R-写文档的模板" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03-25-使用-Sweave-给-R-写文档的模板.html" class="article-date">
+  <time datetime="2014-03-25T08:40:53.000Z" itemprop="datePublished">2014 03 25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03-25-使用-Sweave-给-R-写文档的模板.html">使用 Sweave 给 R 写文档的模板</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以前一直傻傻的 用 <code>\begin{verbatim}</code> 或者 <code>listing</code> 的方式在文章中加 R 代码<br> 然后再手工 <code>include</code> 结果的方式，现在知道了 <code>Sweave</code>，终于可以结束这段傻<br> 不楞登的过程直接自动化了。</p>
+<figure class="highlight"><pre><font face="monospace"><font color="#ffff00">\documentclass</font><font color="#ffd7d7">[</font><font color="#ff40ff">a4paper, 12pt</font><font color="#ffd7d7">]{</font><font color="#5fd7ff">article</font><font color="#ffd7d7">}</font>
+<font color="#5fd7ff">\begin{document}</font>
+<font color="#5fd7ff">\title{</font>emacs&#xA0;<font color="#ffd7d7">\&amp;</font>&#xA0;Sweave<font color="#5fd7ff">}</font>
+<font color="#5fd7ff">\author{</font>Wang Jun<font color="#5fd7ff">}</font>
+<font color="#ffff00">\maketitle</font>
+
+<font color="#5fd7ff">\section</font><font color="#ffd7d7">{</font>Now begins R Sweave test<font color="#ffd7d7">}</font>
+
+First Save this file as example.Rnw
+
+Then run Sweave(&quot;example&quot;)&#xA0;in R
+
+Compile the generated tex file example.tex with pdflatex or xelatex&#xA0;(I prefer XeLeTeX)
+
+Here you got the Sweaved R script
+
+<font color="#00ffff">%%%%%%%%%%%%% Here begins the Main Content</font>
+
+This is just a simple example
+
+&lt;&lt;&gt;&gt;=
+library(maps)
+library(mapdata)
+###map(&quot;china&quot;)
+x=rnorm(100)
+y=rnorm(100)
+lm(y~x)
+@
+
+Now that you have tried Sweave, how does it perform?
+
+<font color="#5fd7ff">\end{document}</font>
+</font></pre></figure>
+
+<p>PS: 当然，现在流行的 R 文档写作方式应该是 <code>knitr + LyX</code>的方式，将另文描述了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://daxiawj.github.io/2014/03-25-使用-Sweave-给-R-写文档的模板.html" data-id="vrsaal0tu19vpcvw" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://daxiawj.github.io/2014/03-25-使用-Sweave-给-R-写文档的模板.html#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LaTeX/">LaTeX</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/">R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sweave/">Sweave</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模板/">模板</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-我的VIM-控制文件-vimrc" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03-25-我的VIM-控制文件-vimrc.html" class="article-date">
+  <time datetime="2014-03-25T01:21:49.000Z" itemprop="datePublished">2014 03 25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03-25-我的VIM-控制文件-vimrc.html">我的VIM 控制文件: vimrc</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> 每次新装一个系统总是要到处找 VIMRC 的配置，现保存于此也好有个备份 </p>
+<figure class="highlight"><pre><font face="monospace"><font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">mouse</font>=a&#xA0;<font color="#00ffff">&quot;&#x542F;&#x7528;&#x9F20;&#x6807;</font>
+<font color="#00ffff">&quot;&#x53CC;&#x5F15;&#x53F7;&#x5F00;&#x59CB;&#x7684;&#x884C;&#x4E3A;&#x6CE8;&#x91CA;&#x884C;&#xFF0C;&#x4E0B;&#x540C;</font>
+<font color="#00ffff">&quot;&#x53BB;&#x6389;&#x8BA8;&#x538C;&#x7684;&#x6709;&#x5173;vi&#x4E00;&#x81F4;&#x6027;&#x6A21;&#x5F0F;&#xFF0C;&#x907F;&#x514D;&#x4EE5;&#x524D;&#x7248;&#x672C;&#x7684;&#x4E00;&#x4E9B;bug&#x548C;&#x5C40;&#x9650;</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">nocompatible</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">backspace</font>=indent<font color="#ffff00">,</font>eol<font color="#ffff00">,</font>start
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">showcmd</font>
+<font color="#00ffff">&quot;&#x663E;&#x793A;&#x884C;&#x53F7;</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">number</font>
+<font color="#00ffff">&quot;&#x68C0;&#x6D4B;&#x6587;&#x4EF6;&#x7684;&#x7C7B;&#x578B;</font>
+<font color="#ffff00">filetype</font>&#xA0;<font color="#87ffaf">on</font>
+<font color="#00ffff">&quot;&#x8BB0;&#x5F55;&#x5386;&#x53F2;&#x7684;&#x884C;&#x6570;</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">history</font>=1000
+<font color="#00ffff">&quot;&#x80CC;&#x666F;&#x4F7F;&#x7528;&#x9ED1;&#x8272;</font>
+<font color="#00ffff">&quot;set background=dark</font>
+<font color="#00ffff">&quot;&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;&#x5EA6;&#x663E;&#x793A;</font>
+<font color="#ffff00">syntax</font>&#xA0;<font color="#87ffaf">on</font>
+<font color="#00ffff">&quot;&#x4E0B;&#x9762;&#x4E24;&#x884C;&#x5728;&#x8FDB;&#x884C;&#x7F16;&#x5199;&#x4EE3;&#x7801;&#x65F6;&#xFF0C;&#x5728;&#x683C;&#x5F0F;&#x5BF9;&#x8D77;&#x4E0A;&#x5F88;&#x6709;&#x7528;&#xFF1B;</font>
+<font color="#00ffff">&quot;&#x7B2C;&#x4E00;&#x884C;&#xFF0C;vim&#x4F7F;&#x7528;&#x81EA;&#x52A8;&#x5BF9;&#x9F50;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x628A;&#x5F53;&#x524D;&#x884C;&#x7684;&#x5BF9;&#x8D77;&#x683C;&#x5F0F;&#x5E94;&#x7528;&#x5230;&#x4E0B;&#x4E00;&#x884C;&#xFF1B;</font>
+<font color="#00ffff">&quot;&#x7B2C;&#x4E8C;&#x884C;&#xFF0C;&#x4F9D;&#x636E;&#x4E0A;&#x9762;&#x7684;&#x5BF9;&#x8D77;&#x683C;&#x5F0F;&#xFF0C;&#x667A;&#x80FD;&#x7684;&#x9009;&#x62E9;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;&#xFF0C;&#x5BF9;&#x4E8E;&#x7C7B;&#x4F3C;C&#x8BED;&#x8A00;&#x7F16;</font>
+<font color="#00ffff">&quot;&#x5199;&#x4E0A;&#x5F88;&#x6709;&#x7528;</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">autoindent</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">smartindent</font>
+<font color="#00ffff">&quot;&#x7B2C;&#x4E00;&#x884C;&#x8BBE;&#x7F6E;tab&#x952E;&#x4E3A;4&#x4E2A;&#x7A7A;&#x683C;&#xFF0C;&#x7B2C;&#x4E8C;&#x884C;&#x8BBE;&#x7F6E;&#x5F53;&#x884C;&#x4E4B;&#x95F4;&#x4EA4;&#x9519;&#x65F6;&#x4F7F;&#x7528;2&#x4E2A;&#x7A7A;&#x683C;</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">expandtab</font>&#xA0;<font color="#00ffff">&quot;&quot;# &#x4F7F;&#x7528;space&#x4EE3;&#x66FF;tab.</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">tabstop</font>=4&#xA0;<font color="#00ffff">&quot;&quot;# &#x56DB;&#x4E2A;&#x7A7A;&#x683C;&#x3002;</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">shiftwidth</font>=2&#xA0;<font color="#00ffff">&quot;&quot;# &#x81EA;&#x52A8;&#x7F29;&#x8FDB;&#x7684;&#x5BBD;&#x5EA6;&#x3002;</font>
+<font color="#00ffff">&quot;&#x8BBE;&#x7F6E;&#x5339;&#x914D;&#x6A21;&#x5F0F;&#xFF0C;&#x7C7B;&#x4F3C;&#x5F53;&#x8F93;&#x5165;&#x4E00;&#x4E2A;&#x5DE6;&#x62EC;&#x53F7;&#x65F6;&#x4F1A;&#x5339;&#x914D;&#x76F8;&#x5E94;&#x7684;&#x90A3;&#x4E2A;&#x53F3;&#x62EC;&#x53F7;</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">showmatch</font>
+<font color="#00ffff">&quot;&#x53BB;&#x9664;vim&#x7684;GUI&#x7248;&#x672C;&#x4E2D;&#x7684;toolbar</font>
+<font color="#00ffff">&quot;set guioptions-=T</font>
+<font color="#00ffff">&quot;&#x5F53;vim&#x8FDB;&#x884C;&#x7F16;&#x8F91;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x547D;&#x4EE4;&#x9519;&#x8BEF;&#xFF0C;&#x4F1A;&#x53D1;&#x51FA;&#x4E00;&#x4E2A;&#x54CD;&#x58F0;&#xFF0C;&#x8BE5;&#x8BBE;&#x7F6E;&#x53BB;&#x6389;&#x54CD;&#x58F0;</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">vb</font>&#xA0;<font color="#5fd7ff">t_vb</font>=
+<font color="#00ffff">&quot;&#x5728;&#x7F16;&#x8F91;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5728;&#x53F3;&#x4E0B;&#x89D2;&#x663E;&#x793A;&#x5149;&#x6807;&#x4F4D;&#x7F6E;&#x7684;&#x72B6;&#x6001;&#x884C;</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">ruler</font>
+<font color="#00ffff">&quot;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5BFB;&#x627E;&#x5339;&#x914D;&#x662F;&#x9AD8;&#x4EAE;&#x5EA6;&#x663E;&#x793A;&#x7684;&#xFF0C;&#x8BE5;&#x8BBE;&#x7F6E;&#x5173;&#x95ED;&#x9AD8;&#x4EAE;&#x663E;&#x793A;</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">nohls</font>
+<font color="#00ffff">&quot;&#x67E5;&#x8BE2;&#x65F6;&#x975E;&#x5E38;&#x65B9;&#x4FBF;&#xFF0C;&#x5982;&#x8981;&#x67E5;&#x627E;book&#x5355;&#x8BCD;&#xFF0C;&#x5F53;&#x8F93;&#x5165;&#x5230;/b&#x65F6;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x627E;&#x5230;&#x7B2C;&#x4E00;</font>
+<font color="#00ffff">&quot;&#x4E2A;b&#x5F00;&#x5934;&#x7684;&#x5355;&#x8BCD;&#xFF0C;&#x5F53;&#x8F93;&#x5165;&#x5230;/bo&#x65F6;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x627E;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;bo&#x5F00;&#x5934;&#x7684;&#x5355;&#x8BCD;&#xFF0C;&#x4F9D;</font>
+<font color="#00ffff">&quot;&#x6B21;&#x7C7B;&#x63A8;&#xFF0C;&#x8FDB;&#x884C;&#x67E5;&#x627E;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;&#x6B64;&#x8BBE;&#x7F6E;&#x4F1A;&#x5FEB;&#x901F;&#x627E;&#x5230;&#x7B54;&#x6848;&#xFF0C;&#x5F53;&#x4F60;&#x627E;&#x8981;&#x5339;&#x914D;&#x7684;&#x5355;&#x8BCD;</font>
+<font color="#00ffff">&quot;&#x65F6;&#xFF0C;&#x522B;&#x5FD8;&#x8BB0;&#x56DE;&#x8F66;</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">incsearch</font>
+<font color="#00ffff">&quot;&#x4FEE;&#x6539;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x540E;&#xFF0C;&#x81EA;&#x52A8;&#x8FDB;&#x884C;&#x5907;&#x4EFD;&#xFF0C;&#x5907;&#x4EFD;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x4E3A;&#x539F;&#x6587;&#x4EF6;&#x540D;&#x52A0;&#x201C;~&#x201C;&#x540E;&#x7F00;</font>
+
+<font color="#00ffff">&quot;NCL&#x7684;&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;&#x7B49;</font>
+&#xA0;&#xA0;&#xA0;&#xA0;<font color="#ffff00">au</font>&#xA0;<font color="#87ffaf">BufRead</font>,<font color="#87ffaf">BufNewFile</font>&#xA0;*.ncl&#xA0;<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">filetype</font>=ncl
+&#xA0;&#xA0;&#xA0;&#xA0;<font color="#ffff00">au</font>!&#xA0;<font color="#87ffaf">Syntax</font>&#xA0;newlang&#xA0;<font color="#ffff00">source</font>&#xA0;<font color="#5fd7ff">$VIM</font>/ncl<font color="#ffff00">.</font><font color="#ffff00">vim</font>
+<font color="#00ffff">&quot;Show autocomplete menus.</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">complete</font>-=k&#xA0;<font color="#5fd7ff">complete</font>+=k&#xA0;<font color="#00ffff">&quot; Add dictionary search (as per dictionary option)</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">wildmode</font>=list<font color="#ffff00">:</font>full
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">wildmenu</font>
+<font color="#ffff00">au</font>&#xA0;<font color="#87ffaf">BufRead</font>,<font color="#87ffaf">BufNewFile</font>&#xA0;*.ncl&#xA0;<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">dictionary</font>=~/.vim/dictionary/ncl.dic
+
+<font color="#00ffff">&#xA0;&quot; When editing a file, always jump to the last known cursor position.</font>
+<font color="#00ffff">&#xA0;&quot; Don&apos;t do it when the position is invalid or when inside an event handler</font>
+<font color="#00ffff">&#xA0;&quot; (happens when dropping a file on gvim).</font>
+<font color="#00ffff">&#xA0;&quot; &#x8BB0;&#x4F4F;&#x4E0A;&#x6B21;&#x7684;&#x7F16;&#x8F91;&#x4F4D;&#x7F6E;</font>
+&#xA0;<font color="#ffff00">autocmd</font>&#xA0;<font color="#87ffaf">BufReadPost</font>&#xA0;*
+<font color="#ffd7d7">&#xA0;&#xA0;&#xA0;&#xA0;\</font>&#xA0;<font color="#ffff00">if</font>&#xA0;<font color="#00ffff"><b>line</b></font><font color="#ffd7d7">(</font><font color="#ff40ff">&quot;&apos;\&quot;&quot;</font><font color="#ffd7d7">)</font>&#xA0;<font color="#ffff00">&gt;</font>&#xA0;<font color="#ff40ff">0</font>&#xA0;<font color="#ffff00">&amp;&amp;</font>&#xA0;<font color="#00ffff"><b>line</b></font><font color="#ffd7d7">(</font><font color="#ff40ff">&quot;&apos;\&quot;&quot;</font><font color="#ffd7d7">)</font>&#xA0;<font color="#ffff00">&lt;=</font>&#xA0;<font color="#00ffff"><b>line</b></font><font color="#ffd7d7">(</font><font color="#ff40ff">&quot;$&quot;</font><font color="#ffd7d7">)</font>&#xA0;|
+<font color="#ffd7d7">&#xA0;&#xA0;&#xA0;&#xA0;\</font>&#xA0;&#xA0;&#xA0;<font color="#ffff00">exe</font>&#xA0;<font color="#ff40ff">&quot;normal g`\&quot;&quot;</font>&#xA0;<font color="#ffff00">|</font>
+<font color="#ffd7d7">&#xA0;&#xA0;&#xA0;&#xA0;\</font>&#xA0;<font color="#ffff00">endif</font>
+
+<font color="#00ffff">&#xA0;&quot; &#x6253;&#x5F00;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;&#x6309;&#x7167; viminfo &#x4FDD;&#x5B58;&#x7684;&#x4E0A;&#x6B21;&#x5173;&#x95ED;&#x65F6;&#x7684;&#x5149;&#x6807;&#x4F4D;&#x7F6E;&#x91CD;&#x65B0;&#x8BBE;&#x7F6E;&#x5149;&#x6807;</font>
+&#xA0;<font color="#ffff00">au</font>&#xA0;<font color="#87ffaf">BufReadPost</font>&#xA0;*&#xA0;<font color="#ffff00">if</font>&#xA0;<font color="#00ffff"><b>line</b></font><font color="#ffd7d7">(</font><font color="#ff40ff">&quot;&apos;\&quot;&quot;</font><font color="#ffd7d7">)</font>&#xA0;<font color="#ffff00">&gt;</font>&#xA0;<font color="#ff40ff">0</font>|<font color="#ffff00">if</font>&#xA0;<font color="#00ffff"><b>line</b></font><font color="#ffd7d7">(</font><font color="#ff40ff">&quot;&apos;\&quot;&quot;</font><font color="#ffd7d7">)</font>&#xA0;<font color="#ffff00">&lt;=</font>&#xA0;<font color="#00ffff"><b>line</b></font><font color="#ffd7d7">(</font><font color="#ff40ff">&quot;$&quot;</font><font color="#ffd7d7">)</font>|exe<font color="#ffd7d7">(</font><font color="#ff40ff">&quot;norm &apos;\&quot;&quot;</font><font color="#ffd7d7">)</font>|<font color="#ffff00">else</font>|<font color="#ffff00">exe</font>&#xA0;<font color="#ff40ff">&quot;norm $&quot;</font><font color="#ffff00">|endif</font>|<font color="#ffff00">endif</font>
+
+<font color="#00ffff">&quot;&#x4E2D;&#x6587;&#x7684;&#x731C;&#x6D4B;&#x987A;&#x5E8F;</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">fileencodings</font>=utf-8<font color="#ffff00">,</font>gb2312<font color="#ffff00">,</font>gbk<font color="#ffff00">,</font>gb18030&#xA0;
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">termencoding</font>=utf-8
+<font color="#00ffff">&quot;set encoding=prc</font>
+</font></pre></figure>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://daxiawj.github.io/2014/03-25-我的VIM-控制文件-vimrc.html" data-id="bhb8mm9in8ig3937" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://daxiawj.github.io/2014/03-25-我的VIM-控制文件-vimrc.html#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Configuration/">Configuration</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Editor/">Editor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VIM/">VIM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-一个Fortran-读文件并带参数的模板" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03-24-一个Fortran-读文件并带参数的模板.html" class="article-date">
+  <time datetime="2014-03-24T06:50:57.000Z" itemprop="datePublished">2014 03 24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03-24-一个Fortran-读文件并带参数的模板.html">一个Fortran 读文件并带参数的模板</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Fortran 作为科学计算常用语言，自然免不了各种文件读写的操作，以下是一个简单的模板 </p>
+<p> 参见 gist <code>bdb32fffcd08b9ab21ea</code>:</p>
+<script src="https://gist.github.com/bdb32fffcd08b9ab21ea.js"></script>
+
+<p> 或者，直接参见下面：</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">program gaugeselect</div><div class="line">implicit <span class="constant">none</span></div><div class="line"><span class="keyword">character</span>(<span class="built_in">len</span>=<span class="number">80</span>):: filename</div><div class="line"><span class="keyword">character</span>(<span class="built_in">len</span>=<span class="number">80</span>):: arg1 ,arg2</div><div class="line"><span class="keyword">character</span>(<span class="built_in">len</span>=<span class="number">80</span>):: buff</div><div class="line">logical:: flag=.<span class="constant">false</span>.</div><div class="line"></div><div class="line">!================================================================!</div><div class="line">call getarg(<span class="number">1</span>,arg1)</div><div class="line">call getarg(<span class="number">2</span>,arg2)</div><div class="line"><span class="keyword">if</span> (len_trim(arg1)==<span class="number">0</span> )<span class="keyword">then</span></div><div class="line">  print *,<span class="string">"please specify the argument of running file!!"</span></div><div class="line">  print *,<span class="string">"usage: ./gaugeselect filename"</span></div><div class="line">  stop</div><div class="line"><span class="keyword">else</span></div><div class="line">  filename=trim(arg1)</div><div class="line">  inquire(<span class="built_in">file</span>=trim(filename),exist=flag)</div><div class="line">  <span class="keyword">if</span>(flag)<span class="keyword">then</span></div><div class="line">    <span class="built_in">open</span>(<span class="number">5</span>,<span class="built_in">file</span>=trim(filename))</div><div class="line">    <span class="built_in">do</span> <span class="keyword">while</span>(.<span class="constant">true</span>.)</div><div class="line">      <span class="built_in">read</span>(<span class="number">5</span>,*,<span class="function"><span class="keyword">end</span>=<span class="title">100</span>)<span class="title">buff</span></span></div><div class="line">    enddo</div><div class="line">    <span class="number">100</span> <span class="built_in">close</span>(<span class="number">5</span>)</div><div class="line">    print *,<span class="string">'file:'</span>,trim(filename), <span class="string">"processed"</span> </div><div class="line">  <span class="keyword">else</span> </div><div class="line">    print *,<span class="string">"oops........"</span></div><div class="line">    print *,<span class="string">'can NOT open file:'</span>,trim(filename) </div><div class="line">    print *,<span class="string">" "</span></div><div class="line">  endif</div><div class="line"></div><div class="line">endif</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">end</span> <span class="title">program</span> <span class="title">gaugeselect</span></span></div></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://daxiawj.github.io/2014/03-24-一个Fortran-读文件并带参数的模板.html" data-id="y9t54w8el6kn1x1l" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://daxiawj.github.io/2014/03-24-一个Fortran-读文件并带参数的模板.html#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fortran/">Fortran</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/文件读写/">文件读写</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模板/">模板</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Ubuntu-UFW-Firewall" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03-23-Ubuntu-UFW-Firewall.html" class="article-date">
+  <time datetime="2014-03-23T06:50:57.000Z" itemprop="datePublished">2014 03 23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03-23-Ubuntu-UFW-Firewall.html">Ubuntu UFW Firewall</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>用一下几条命令安装并开启 ufw：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> apt-get install ufw</div><div class="line"><span class="built_in">sudo</span> ufw enable</div><div class="line"><span class="built_in">sudo</span> ufw default reject</div></pre></td></tr></table></figure>
+
+<p>这样就安装开启了 UFW 防火墙，并默认拒绝一切外来连接请求（reject），显示为未连接，为安全起见，最好将 <code>reject</code> 改为<code>deny</code>。</p>
+<p>为开启 SSH 和 WWW 服务，运行：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> ufw allow ssh/tcp</div><div class="line"><span class="built_in">sudo</span> ufw allow www/tcp</div></pre></td></tr></table></figure>
+
+<p>同时使用以下命令查询状态：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> ufw status</div></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://daxiawj.github.io/2014/03-23-Ubuntu-UFW-Firewall.html" data-id="20md3e0qg85lhlri" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://daxiawj.github.io/2014/03-23-Ubuntu-UFW-Firewall.html#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Firewall/">Firewall</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NetWorking/">NetWorking</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UFW/">UFW</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-轻松并发执行作业-GNU-Parallel" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03-19-轻松并发执行作业-GNU-Parallel.html" class="article-date">
+  <time datetime="2014-03-19T06:50:57.000Z" itemprop="datePublished">2014 03 19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03-19-轻松并发执行作业-GNU-Parallel.html">轻松并发执行作业--GNU Parallel</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> 有的时候要执行一些很快但是却很多重复的操作，例如修改所有普通文件的权限，修改一下权限本是很快的操作，但是文件很多的话操作起来就慢了。再比如要下载很多 http 下很小的文件，下载一个文件如果只需要三秒，但是每一个文件从建立连接、进行对话然后开始下载直到下载完成，中间会浪费很多时间，可能浪费的比实际下载所需的时间还多。</p>
+<p> 因此，如果能有一个方法并发进行，那么效率会高得多。以前在 Shell 里面也有一些 tricks 来进行这方面的操作，但是总是因为繁琐而容易出错。</p>
+<p> 现在 FSF 开发的 GNU parallel 一出，问题迎刃而解。例如修改所有子目录下面普通文件的权限：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">find</span> ./ -<span class="built_in">type</span> <span class="keyword">f</span> | parallel -<span class="keyword">m</span> chmod <span class="built_in">mode</span></div></pre></td></tr></table></figure>
+
+<p> 批量修改文件夹权限 </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">find</span> ./ -<span class="built_in">type</span> <span class="keyword">d</span> | parallel -<span class="keyword">m</span> chmod <span class="built_in">mode</span></div></pre></td></tr></table></figure>
+
+<p> 再如有一个顺序任务的脚本 batch.sh</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="title">wget</span> url1</div><div class="line">wget url2</div><div class="line">wget url3</div><div class="line">wget url4</div><div class="line">wget url5</div><div class="line">wget url6</div></pre></td></tr></table></figure>
+
+<p> 那么你就可以并行运行如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">parallel</span> -j+<span class="number">0</span> &lt; batch.txt </div><div class="line">## This runs <span class="keyword">as</span> many instance <span class="keyword">of</span> the commands <span class="keyword">in</span> batch.txt</div><div class="line">## <span class="keyword">in</span> <span class="keyword">parallel</span> <span class="keyword">as</span> you have cores (-j+<span class="number">0</span>) <span class="keyword">and</span> schedules the</div><div class="line">## jobs <span class="keyword">in</span> an efficient manner</div></pre></td></tr></table></figure>
+
+<p> 当然，你也可以直接 使用一个 parallel 脚本（shebang）</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="shebang">#!/usr/bin/parallel </span></div><div class="line">blahblah</div></pre></td></tr></table></figure>
+
+<p> 要安装它很简单，比如:</p>
+<ul>
+<li>Ubuntu: <code>sudo apt-get install parallel</code></li>
+<li>Fedora: <code>yum install parallel</code></li>
+<li>Mac OSX: <code>brew install parallel</code></li>
+<li><p>Others: <code>源码编译（下载, tar xjvf parallel....tar.bz2;  ./configure; make install）</code></p>
+<p>至于详细功能，那就需要： <code>man parallel</code> 了 </p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://daxiawj.github.io/2014/03-19-轻松并发执行作业-GNU-Parallel.html" data-id="9whe6re3cyvaip6b" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://daxiawj.github.io/2014/03-19-轻松并发执行作业-GNU-Parallel.html#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GNU/">GNU</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/parallel/">parallel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/并发/">并发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Linux-date-Command-usage" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/02-24-Linux-date-Command-usage.html" class="article-date">
+  <time datetime="2014-02-24T06:50:57.000Z" itemprop="datePublished">2014 02 24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/02-24-Linux-date-Command-usage.html">Linux &#39;date&#39; Command usage</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> *nix <code>date</code> is quite powerful tool for date manipulation.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> idate <span class="keyword">in</span> `seq <span class="number">0</span> <span class="number">1461</span>`</div><div class="line"><span class="keyword">do</span></div><div class="line">  thedate=`date +%Y%m%d <span class="operator">-d</span> <span class="string">"20100101 + <span class="variable">$idate</span>"</span>`</div><div class="line">  <span class="built_in">echo</span> <span class="variable">$thedate</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+
+<p>etc.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://daxiawj.github.io/2014/02-24-Linux-date-Command-usage.html" data-id="53npz1a5q5nsryg0" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://daxiawj.github.io/2014/02-24-Linux-date-Command-usage.html#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bash/">Bash</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Server/">Server</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-RSYNC-同步数据" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/02-16-RSYNC-同步数据.html" class="article-date">
+  <time datetime="2014-02-16T06:50:57.000Z" itemprop="datePublished">2014 02 16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/02-16-RSYNC-同步数据.html">RSYNC 同步数据</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>rsync 是同步、备份数据时的强大工具。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rsync -avz --password-file=rsync.ps user<span class="variable">@192</span>.<span class="number">168.0</span>.<span class="number">206</span><span class="symbol">:/backup/dir</span> /home/destdir</div></pre></td></tr></table></figure>
+
+<p>其中注意 -a 意味着 archive，即保留各种权限等，-v 表示 verbose， -z 则是压缩传输。 —password-file 要注意权限，以防被别人窥探，当然如果不是在脚本里面批量使用，就不需要这个选项了，直接交互输入密码更为安全。</p>
+<p>一般在传输文本文件的时候加上 <code>-z</code> 选项，速度会快很多，但如果是二进制数据等，一般还是不要加的好。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://daxiawj.github.io/2014/02-16-RSYNC-同步数据.html" data-id="t52wjwc5pu9xdeuc" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://daxiawj.github.io/2014/02-16-RSYNC-同步数据.html#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/同步/">同步</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/备份/">备份</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据/">数据</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-OSX-Mavericks-输入特殊字符" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/12-20-OSX-Mavericks-输入特殊字符.html" class="article-date">
+  <time datetime="2013-12-20T07:58:47.000Z" itemprop="datePublished">2013 12 20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/12-20-OSX-Mavericks-输入特殊字符.html">OSX Mavericks 输入特殊字符</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="调用字符显示程序">调用字符显示程序</h2>
+<p>在 Mavericks 之前的 OSX 中，输入特殊字符可以使用 ⌘+⌥+T，调用字符显示程序，但在最新的 Mavericks 中，快捷键变为了 ^+⌘+Space</p>
+<h2 id="注音字母">注音字母</h2>
+<p>在英文输入状态下，按住键盘上的某些字母键可以实现给该字母添加注音或者是临时输入一些带注音符号语言的功能，如长按 E 会弹出选择”E È É Ê Ë “ 等字符的选项。</p>
+<h2 id="使用软键盘">使用软键盘</h2>
+<p>在输入法图标上选择“选择键盘显示程序”，会出来一个软键盘，按住 Option 键，可以选择输入一些特殊字符。</p>
+<h3 id="使用快捷键">使用快捷键</h3>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attribute"> </span>=<span class="string"> ⌥+⇧+K</span></div><div class="line">· = ⌥+⇧+9</div><div class="line">‰ = ⌥+⇧+r</div><div class="line">€ = ⌥+⇧+2 等</div></pre></td></tr></table></figure>
+
+<h2 id="通过“符号和文本替换”">通过“符号和文本替换”</h2>
+<p>预先在“系统偏好设置”，点击“语言与文本→文本→列表下方的加号按钮”，然后在“替换”框中输入要替换的文本，比如 cmd，在“使用”框中输入替换为的文本或符号，比如⌘，此时当你在文本中输入 cmd 的时候即可自动将 cmd 替换为⌘，而不需要做其他事情。当然，你也可以添加更多的符号替换，比如输入 apple 自动替换为，将 opt 自动替换为⌥等等。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://daxiawj.github.io/2013/12-20-OSX-Mavericks-输入特殊字符.html" data-id="btbo26g102f32oez" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://daxiawj.github.io/2013/12-20-OSX-Mavericks-输入特殊字符.html#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mavericks/">Mavericks</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OSX/">OSX</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Special-sign/">Special sign</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/input/">input</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/categories/技术/page/2/">2</a><a class="extend next" rel="next" href="/categories/技术/page/2/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/休闲/">休闲</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客/">博客</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/科研/">科研</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统/">系统</a><span class="category-list-count">7</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Apache/" style="font-size: 10.00px;">Apache</a><a href="/tags/Bash/" style="font-size: 10.00px;">Bash</a><a href="/tags/Blog/" style="font-size: 12.50px;">Blog</a><a href="/tags/Configuration/" style="font-size: 10.00px;">Configuration</a><a href="/tags/Demo/" style="font-size: 10.00px;">Demo</a><a href="/tags/Editor/" style="font-size: 12.50px;">Editor</a><a href="/tags/Finder/" style="font-size: 10.00px;">Finder</a><a href="/tags/Firewall/" style="font-size: 12.50px;">Firewall</a><a href="/tags/Fortran/" style="font-size: 10.00px;">Fortran</a><a href="/tags/GNU/" style="font-size: 10.00px;">GNU</a><a href="/tags/Git/" style="font-size: 10.00px;">Git</a><a href="/tags/Hexo/" style="font-size: 10.00px;">Hexo</a><a href="/tags/LaTeX/" style="font-size: 12.50px;">LaTeX</a><a href="/tags/Linux/" style="font-size: 15.00px;">Linux</a><a href="/tags/Mac/" style="font-size: 10.00px;">Mac</a><a href="/tags/Mavericks/" style="font-size: 12.50px;">Mavericks</a><a href="/tags/NCL/" style="font-size: 10.00px;">NCL</a><a href="/tags/NetWorking/" style="font-size: 12.50px;">NetWorking</a><a href="/tags/OSX/" style="font-size: 17.50px;">OSX</a><a href="/tags/Octopress/" style="font-size: 15.00px;">Octopress</a><a href="/tags/R/" style="font-size: 10.00px;">R</a><a href="/tags/Server/" style="font-size: 20.00px;">Server</a><a href="/tags/Solarized/" style="font-size: 12.50px;">Solarized</a><a href="/tags/Special-sign/" style="font-size: 10.00px;">Special sign</a><a href="/tags/Sublime-Text/" style="font-size: 10.00px;">Sublime Text</a><a href="/tags/Sweave/" style="font-size: 10.00px;">Sweave</a><a href="/tags/TextMate/" style="font-size: 10.00px;">TextMate</a><a href="/tags/UFW/" style="font-size: 12.50px;">UFW</a><a href="/tags/Ubuntu/" style="font-size: 12.50px;">Ubuntu</a><a href="/tags/VIM/" style="font-size: 10.00px;">VIM</a><a href="/tags/X11/" style="font-size: 10.00px;">X11</a><a href="/tags/Xshell/" style="font-size: 10.00px;">Xshell</a><a href="/tags/bash/" style="font-size: 10.00px;">bash</a><a href="/tags/blog/" style="font-size: 10.00px;">blog</a><a href="/tags/cdto/" style="font-size: 10.00px;">cdto</a><a href="/tags/go2shell/" style="font-size: 10.00px;">go2shell</a><a href="/tags/hexo/" style="font-size: 10.00px;">hexo</a><a href="/tags/iTerm/" style="font-size: 10.00px;">iTerm</a><a href="/tags/input/" style="font-size: 10.00px;">input</a><a href="/tags/parallel/" style="font-size: 10.00px;">parallel</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/09-16-SublimeTextTextMate-remote-editing-with-rmate.html">SublimeText/TextMate remote editing with rmate</a>
+          </li>
+        
+          <li>
+            <a href="/2014/06-18-140618听音日志-Carl-Orff-《布兰诗歌》.html">140618听音日志-Carl Orff 《布兰诗歌》</a>
+          </li>
+        
+          <li>
+            <a href="/2014/06-05-关掉Mac-OS-X-spotlight对移动存储设备的索引.html">关掉Mac OS X spotlight对移动存储设备的索引</a>
+          </li>
+        
+          <li>
+            <a href="/2014/05-14-Hexo-一键群发-Hexo-Batch-Deploy.html">Hexo 一键群发_Hexo Batch Deploy</a>
+          </li>
+        
+          <li>
+            <a href="/2014/05-11-OSX-can-t-open-X11-display.html">OSX: can&#39;t open X11 display</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://themes.xiguabaobao.com" target="_blank">主题作者</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 daxiawj<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<!-- 多说公共js代码 start -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"daxiawj"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共js代码 end -->
+
+
+<!-- 百度分享 start -->
+
+<div id="article-share-box" class="article-share-box">
+  <div id="bdshare" class="bdsharebuttonbox article-share-links">
+    <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a class="article-share-weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="article-share-qq" data-cmd="sqq" title="分享到QQ"></a>
+    <a class="article-share-renren" data-cmd="renren" title="分享到人人网"></a>
+    <a class="article-share-more" data-cmd="more" title="更多"></a>
+  </div>
+</div>
+<script>window._bd_share_config={"common":{},"share":{"bdCustomStyle":"nocss.css"}};with(document)0[(getElementsByTagName("head")[0]||body).appendChild(createElement("script")).src="http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion="+~(-new Date()/36e5)];</script>
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

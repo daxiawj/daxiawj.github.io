@@ -1,0 +1,848 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[daxiawj's Blog]]></title>
+  <subtitle><![CDATA[Wir Müssen Wissen, Wir Werden Wissen.]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://daxiawj.github.io/"/>
+  <updated>2014-10-26T03:21:23.011Z</updated>
+  <id>http://daxiawj.github.io/</id>
+  
+  <author>
+    <name><![CDATA[daxiawj]]></name>
+    
+  </author>
+  
+  <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[SublimeText/TextMate remote editing with rmate]]></title>
+    <link href="http://daxiawj.github.io/2014/09-16-SublimeTextTextMate-remote-editing-with-rmate.html"/>
+    <id>http://daxiawj.github.io/2014/09-16-SublimeTextTextMate-remote-editing-with-rmate.html</id>
+    <published>2014-09-16T03:20:25.000Z</published>
+    <updated>2014-10-26T03:03:07.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="Preparation_of_Sublime_Text_准备工作">Preparation of Sublime Text 准备工作</h2>
+<p><code>ln -s &quot;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&quot; /usr/local/bin/subl 就可以了</code></p>
+<p>Run <code>subl --help</code></p>
+<p>subl as default EDITOR</p>
+<p><code>export EDITOR=&#39;subl -w&#39;</code></p>
+<p>Specifying -w will cause the subl command to not exit until the file is closed.</p>
+<h2 id="Install">Install</h2>
+<p>Install <code>rmate</code> on remote server where you would like to </p>
+<p>You can install <code>rmate</code> via <code>gem</code>:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem <span class="operator"><span class="keyword">install</span> rmate</span></div></pre></td></tr></table></figure>
+
+<p>or just:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl -Lo <span class="regexp">/usr/</span>local<span class="regexp">/bin/</span>rmate https:<span class="comment">//raw.github.com/textmate/rmate/master/bin/rmate</span></div><div class="line">chmod a+x <span class="regexp">/usr/</span>local<span class="regexp">/bin/</span>rmate</div></pre></td></tr></table></figure>
+
+<p>or, you cqn install ported version of </p>
+<ul>
+<li><a href="https://github.com/aurora/rmate" target="_blank" rel="external">Bash version</a> by Harald Lapp</li>
+<li><a href="https://github.com/sclukey/rmate-python" target="_blank" rel="external">Python version</a> by Steven Clukey</li>
+</ul>
+<h2 id="用法_Usage:">用法 Usage:</h2>
+<ul>
+<li>First open Sublime Text or TextMate on your machine. </li>
+<li>Then, open a tunnel to your server on your local machine </li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">ssh</span> <span class="tag">-R</span> 52698<span class="pseudo">:localhost</span><span class="pseudo">:52698</span> <span class="tag">user</span><span class="at_rule">@<span class="keyword">yourserver.org</span></span></div><div class="line">这样</div></pre></td></tr></table></figure>
+
+<ul>
+<li>Finally, run <code>rmate yourfile</code> on the openned ssh shell and edit your file on your local machine</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="Preparation_of_Sublime_Text_准备工作">Preparation of Sublime Text 准备工作</h2>
+<p><code>ln -s &quot;/Applications/Sublime Text.app/Contents]]>
+    </summary>
+    
+      <category term="Sublime Text" scheme="http://daxiawj.github.io/tags/Sublime-Text/"/>
+    
+      <category term="TextMate" scheme="http://daxiawj.github.io/tags/TextMate/"/>
+    
+      <category term="rmate" scheme="http://daxiawj.github.io/tags/rmate/"/>
+    
+      <category term="Editor" scheme="http://daxiawj.github.io/tags/Editor/"/>
+    
+      <category term="技术" scheme="http://daxiawj.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[140618听音日志-Carl Orff 《布兰诗歌》]]></title>
+    <link href="http://daxiawj.github.io/2014/06-18-140618%E5%90%AC%E9%9F%B3%E6%97%A5%E5%BF%97-Carl-Orff-%E3%80%8A%E5%B8%83%E5%85%B0%E8%AF%97%E6%AD%8C%E3%80%8B.html"/>
+    <id>http://daxiawj.github.io/2014/06-18-140618听音日志-Carl-Orff-《布兰诗歌》.html</id>
+    <published>2014-06-18T08:11:50.000Z</published>
+    <updated>2014-10-26T03:02:47.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="Carl_Orff_-_Carmina_Burana">Carl Orff - Carmina Burana</h3>
+<p>EMI, London Symphony Orchestra, Andre Previn, 整体感觉，比较爆棚。 </p>
+<p> 喜欢的 track：</p>
+<ul>
+<li><code>5 Ecce gratum</code> 《圣洁的春》, 比较欢乐;*   <code>11 Estunans interius</code> 《我心中似火燃烧》, 这个独唱以及合唱……;</li>
+<li><code>15 Amor volat undique</code> 《爱情到处飞扬》，童声合唱和女高音独唱，配乐和合唱都很好听;</li>
+<li><code>18 Circa mea pectora</code> 《在我心中》，男中音独唱与合唱，欢快的合唱与韵味十足的独唱;</li>
+<li><p><code>22 Tempus est iocundum</code>《这时辰多可爱》女高音，男中音与童声合唱, 合唱很有气势, 独唱的哥们腔调加上背景的配音, 简直句句“诛心”, 让人忍不住手舞足蹈、又或者跟着唱起来, 这段应该是最喜欢的一段了;*   当然 20 的后半段、第一段和最后一段经典的《命运女神》、第二段和倒数第二段大气磅礴的大合唱也很喜欢。</p>
+<p>这个录音版本有很多，Enigma 和 Era 都有基于这个的在创作，也很好听。说到 Enigma，偶然发现，这个乐队也是德国的，这样一来，除了古典的乐队如维也纳、柏林啥的，连摇滚和 New Age 中喜欢的乐队也几乎是德国的，如德国战车、蝎子乐队等；现场听得前两首歌剧《魔笛》和《蝙蝠》也都是德国（奥）的 :-)</p>
+<p>附歌词： <a href="http://www.classical.net/music/comp.lst/works/orff-cb/carmlyr.php" target="_blank" rel="external">http://www.classical.net/music/comp.lst/works/orff-cb/carmlyr.php</a></p>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="Carl_Orff_-_Carmina_Burana">Carl Orff - Carmina Burana</h3>
+<p>EMI, London Symphony Orchestra, Andre Previn, 整体感觉，比较爆棚。 </p>
+<p> 喜欢的]]>
+    </summary>
+    
+      <category term="音乐" scheme="http://daxiawj.github.io/tags/%E9%9F%B3%E4%B9%90/"/>
+    
+      <category term="古典" scheme="http://daxiawj.github.io/tags/%E5%8F%A4%E5%85%B8/"/>
+    
+      <category term="休闲" scheme="http://daxiawj.github.io/tags/%E4%BC%91%E9%97%B2/"/>
+    
+      <category term="休闲" scheme="http://daxiawj.github.io/categories/%E4%BC%91%E9%97%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[关掉Mac OS X spotlight对移动存储设备的索引]]></title>
+    <link href="http://daxiawj.github.io/2014/06-05-%E5%85%B3%E6%8E%89Mac-OS-X-spotlight%E5%AF%B9%E7%A7%BB%E5%8A%A8%E5%AD%98%E5%82%A8%E8%AE%BE%E5%A4%87%E7%9A%84%E7%B4%A2%E5%BC%95.html"/>
+    <id>http://daxiawj.github.io/2014/06-05-关掉Mac-OS-X-spotlight对移动存储设备的索引.html</id>
+    <published>2014-06-05T06:06:18.000Z</published>
+    <updated>2014-10-26T03:02:29.000Z</updated>
+    <content type="html"><![CDATA[<p>Mac OS X 默认开启对所有移动存储设备的索引，因此，常常多出来一些 类似：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="title">.fseventsd </span></div><div class="line"><span class="title">.Spotlight-V100 </span></div><div class="line"><span class="title">.TemporaryItems </span></div><div class="line"><span class="title">.Trashes</span></div></pre></td></tr></table></figure>
+
+<p> 这样的文件。而且可能个头会很大。</p>
+<p> 禁止 Spotlight 对设备进行索引也比较简单，只要在终端下进入移动设备的主目录，运行：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">touch .metadat<span class="built_in">a_never</span>_index</div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Mac OS X 默认开启对所有移动存储设备的索引，因此，常常多出来一些 类似：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div c]]>
+    </summary>
+    
+      <category term="Mac" scheme="http://daxiawj.github.io/tags/Mac/"/>
+    
+      <category term="系统" scheme="http://daxiawj.github.io/tags/%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="系统" scheme="http://daxiawj.github.io/categories/%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hexo 一键群发_Hexo Batch Deploy]]></title>
+    <link href="http://daxiawj.github.io/2014/05-14-Hexo-%E4%B8%80%E9%94%AE%E7%BE%A4%E5%8F%91-Hexo-Batch-Deploy.html"/>
+    <id>http://daxiawj.github.io/2014/05-14-Hexo-一键群发-Hexo-Batch-Deploy.html</id>
+    <published>2014-05-14T09:31:28.000Z</published>
+    <updated>2014-10-26T03:01:33.000Z</updated>
+    <content type="html"><![CDATA[<p>Hexo 架构的博客可以很方便地发布到 Github 等，而且因为是纯 md 文件，同时转化为全静态的文件，因此可以非常方便地在不同站点间同步。 这不，原本架构在 Github 上的博客，但是 Github 毕竟速度比较慢一些，所以同时还架在 Gitcafe 上了，这样国内访问就快多了，要是有自己的域名加上 DNSpod 的一些设置，可以让国内国外的访客分别访问最快的服务器。 原本是写了个 cron 脚本自动 rsync 到不同的目录的，现在才发现 Hexo 本身就有一键群发的功能，只需要在 <code>_config.yml</code> 文件里面配置好多个网站 git 地址就好了：<br>For Batch deploy with Hexo, just configure <code>_config.yml</code> :</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor"># Deployment</span></div><div class="line"><span class="preprocessor">## Docs: http://zespia.tw/hexo/docs/deployment.html</span></div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo:</div><div class="line">    github: https:<span class="comment">//github.com/daxiawj/daxiawj.github.io.git</span></div><div class="line">    gitcafe: https:<span class="comment">//gitcafe.com/daxiawj/daxiawj.git,gitcafe-pages</span></div><div class="line">    bitbucket: https:<span class="comment">//daxiawj@bitbucket.org/daxiawj/daxiawj.bitbucket.org.git</span></div></pre></td></tr></table></figure>
+
+<p> 其中，<code>gitcafe: https://gitcafe.com/daxiawj/daxiawj.git,gitcafe-pages</code> 基本格式是 <code>标签: repo,[branch]</code>，<code>[branch]</code> 默认是 <code>master</code>。</p>
+<p> 当然，还可以添加 rsync 等同步方式，以同步到自建的 apache 或者 nginx 静态站点上，此处不再赘述。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Hexo 架构的博客可以很方便地发布到 Github 等，而且因为是纯 md 文件，同时转化为全静态的文件，因此可以非常方便地在不同站点间同步。 这不，原本架构在 Github 上的博客，但是 Github 毕竟速度比较慢一些，所以同时还架在 Gitcafe 上了，这样国内]]>
+    </summary>
+    
+      <category term="Blog" scheme="http://daxiawj.github.io/tags/Blog/"/>
+    
+      <category term="Git" scheme="http://daxiawj.github.io/tags/Git/"/>
+    
+      <category term="Hexo" scheme="http://daxiawj.github.io/tags/Hexo/"/>
+    
+      <category term="博客架构" scheme="http://daxiawj.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%9E%B6%E6%9E%84/"/>
+    
+      <category term="博客" scheme="http://daxiawj.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[OSX: can't open X11 display]]></title>
+    <link href="http://daxiawj.github.io/2014/05-11-OSX-can-t-open-X11-display.html"/>
+    <id>http://daxiawj.github.io/2014/05-11-OSX-can-t-open-X11-display.html</id>
+    <published>2014-05-11T02:28:56.000Z</published>
+    <updated>2014-10-26T03:00:12.000Z</updated>
+    <content type="html"><![CDATA[<p> 由于苹果公司果断放弃了自己维护 X11.app，只能用 XQuatz 来替代。但是在使用 XQuartz 的过程中经常遇到一些问题，比如环境变量的设置问题。今天遇到一个问题就是，自己点击安装的 XQuartz.app 是能正常运行的，但是在终端里面使用 xeys、GrADS 等软件的时候报错：“can’’t open display”。</p>
+<p> 大部分情况下，如果正确安装了 XQuartz 但是遇到这个问题的话，很可能是配置文件没能正确地起作用。</p>
+<p>If XQuartz were installed and you can launch it, while can’t launch it in terminal, then you may solve it by:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">launchctl <span class="built_in">unload</span> -w /Library/LaunchAgents/org.macosforge.xquartz.startx.plist</div><div class="line">launchctl <span class="built_in">load</span> -w /Library/LaunchAgents/org.macosforge.xquartz.startx.plist</div><div class="line">reboot</div></pre></td></tr></table></figure>
+
+<p>Then it should work!. </p>
+<p> 问题解决。 </p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p> 由于苹果公司果断放弃了自己维护 X11.app，只能用 XQuatz 来替代。但是在使用 XQuartz 的过程中经常遇到一些问题，比如环境变量的设置问题。今天遇到一个问题就是，自己点击安装的 XQuartz.app 是能正常运行的，但是在终端里面使用 xeys、GrAD]]>
+    </summary>
+    
+      <category term="OSX" scheme="http://daxiawj.github.io/tags/OSX/"/>
+    
+      <category term="X11" scheme="http://daxiawj.github.io/tags/X11/"/>
+    
+      <category term="Server" scheme="http://daxiawj.github.io/tags/Server/"/>
+    
+      <category term="技术" scheme="http://daxiawj.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="博客" scheme="http://daxiawj.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[SFTP: Received message too long]]></title>
+    <link href="http://daxiawj.github.io/2014/05-08-SFTP-Received-message-too-long.html"/>
+    <id>http://daxiawj.github.io/2014/05-08-SFTP-Received-message-too-long.html</id>
+    <published>2014-05-08T03:06:30.000Z</published>
+    <updated>2014-10-26T02:59:04.000Z</updated>
+    <content type="html"><![CDATA[<p>After a slight modification to <code>~/.bashrc</code>, my sftp connection always fails with FileZilla, XFTP, and commandline <code>sftp</code>, but Transmit in OS X works fine. </p>
+<p>With verbose mode of command <code>sftp</code>, it tells ‘Received message too long’. Carefully checked <code>~/.bashrc</code>, found that an <code>echo</code> was added for debugging, after remove the <code>echo</code> sentence, sftp works perfectly again.</p>
+<p>So, if you want your sftp works fine, please be careful with shell config files like .bashrc or .cshrc or so, especially there are <code>echo</code> or other messages outputed. </p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>After a slight modification to <code>~/.bashrc</code>, my sftp connection always fails with FileZilla, XFTP, and commandline <code>sftp</]]>
+    </summary>
+    
+      <category term="sftp" scheme="http://daxiawj.github.io/tags/sftp/"/>
+    
+      <category term="ssh" scheme="http://daxiawj.github.io/tags/ssh/"/>
+    
+      <category term="Server" scheme="http://daxiawj.github.io/tags/Server/"/>
+    
+      <category term="系统" scheme="http://daxiawj.github.io/tags/%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="系统" scheme="http://daxiawj.github.io/categories/%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[su 出现 This account is currently not available]]></title>
+    <link href="http://daxiawj.github.io/2014/04-23-su-%E5%87%BA%E7%8E%B0-This-account-is-currently-not-available.html"/>
+    <id>http://daxiawj.github.io/2014/04-23-su-出现-This-account-is-currently-not-available.html</id>
+    <published>2014-04-23T13:34:55.000Z</published>
+    <updated>2014-10-26T02:58:49.000Z</updated>
+    <content type="html"><![CDATA[<p><code>su</code> 切换用户的时候出现 “This account is currently not available” 的提示，尤其是在 <code>/etc/init.d/</code> 的文件里面，运行一些服务需要切换到特定的用户，如启动 tomcat 的脚本，需要切换到 www 用户，但是 www 用户在 /etc/passwd 里面的 shell 是 /sbin/nologin，那么在启动的脚本里面:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">su  www -<span class="keyword">c</span> /<span class="keyword">opt</span>/tomcat7/bin/startup.<span class="keyword">sh</span></div></pre></td></tr></table></figure>
+
+<p>这一句就会导致上述的报错。</p>
+<p>解决的办法有几种，第一，运行 <code>vipw</code> 修改 passwd 文件，将其 shell 项改为 /bin/bash。第二种方法则是修改这条命令，改为：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">su -s <span class="regexp">/bin/</span>bash www -c <span class="regexp">/opt/</span>tomcat7<span class="regexp">/bin/</span>startup.sh</div></pre></td></tr></table></figure>
+
+<p>个人更喜欢第二种方案。第一种要修改系统的安全设置，不太建议。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><code>su</code> 切换用户的时候出现 “This account is currently not available” 的提示，尤其是在 <code>/etc/init.d/</code> 的文件里面，运行一些服务需要切换到特定的用户，如启动 tomcat ]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://daxiawj.github.io/tags/Linux/"/>
+    
+      <category term="Server" scheme="http://daxiawj.github.io/tags/Server/"/>
+    
+      <category term="su" scheme="http://daxiawj.github.io/tags/su/"/>
+    
+      <category term="技术" scheme="http://daxiawj.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="技术" scheme="http://daxiawj.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Mavericks apache2 issue after Server 3 removed]]></title>
+    <link href="http://daxiawj.github.io/2014/03-28-Mavericks-apache2-issue-after-Server-3-removed.html"/>
+    <id>http://daxiawj.github.io/2014/03-28-Mavericks-apache2-issue-after-Server-3-removed.html</id>
+    <published>2014-03-28T03:26:15.000Z</published>
+    <updated>2014-10-26T02:57:48.000Z</updated>
+    <content type="html"><![CDATA[<p>After remove Server.app, my apache2 on Mac OS X 10.9.2 Mavericks couldn’t start normally while everything looks OK. After carefully studied the log file through Console.app and looked into the content of /usr/sbin/apachectl, I realized that the starting process of apache in OS X is quite different than that in Linux: it uses launchctl! </p>
+<p>So, I searched the apache launchctl config file:<code>/System/Library/LaunchDaemons/org.apache.httpd.plist</code>. Aha! it said: </p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>SERVER_INSTALL_PATH_PREFIX<span class="tag">&lt;/<span class="title">key</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">string</span>&gt;</span>/Applications/Server.app/Contents/ServerRoot<span class="tag">&lt;/<span class="title">string</span>&gt;</span></div><div class="line">    ......</div><div class="line">    and</div><div class="line"><span class="tag">&lt;<span class="title">key</span>&gt;</span>ProgramArguments<span class="tag">&lt;/<span class="title">key</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">array</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">string</span>&gt;</span>/usr/sbin/httpd<span class="tag">&lt;/<span class="title">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">string</span>&gt;</span>-D<span class="tag">&lt;/<span class="title">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">string</span>&gt;</span>FOREGROUND<span class="tag">&lt;/<span class="title">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">string</span>&gt;</span>-f<span class="tag">&lt;/<span class="title">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">string</span>&gt;</span>/Library/Server/Web/Config/apache2/httpd_server_app.conf<span class="tag">&lt;/<span class="title">string</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">array</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<p>The key <code>SERVER_INSTALL_PATH_PREFIX</code> and <code>ProgramArguments</code> were modified by Server.app aparently. Just recover them to <code>/usr</code> and <code>/etc/apache2/http.conf</code>, there, it works again!</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>After remove Server.app, my apache2 on Mac OS X 10.9.2 Mavericks couldn’t start normally while everything looks OK. After carefully studi]]>
+    </summary>
+    
+      <category term="OSX" scheme="http://daxiawj.github.io/tags/OSX/"/>
+    
+      <category term="Apache" scheme="http://daxiawj.github.io/tags/Apache/"/>
+    
+      <category term="Server" scheme="http://daxiawj.github.io/tags/Server/"/>
+    
+      <category term="系统" scheme="http://daxiawj.github.io/tags/%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="系统" scheme="http://daxiawj.github.io/categories/%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[testcode]]></title>
+    <link href="http://daxiawj.github.io/2014/03-27-testcode.html"/>
+    <id>http://daxiawj.github.io/2014/03-27-testcode.html</id>
+    <published>2014-03-27T03:08:54.000Z</published>
+    <updated>2014-10-26T03:21:17.000Z</updated>
+    <content type="html"><![CDATA[<p>C code rendered by system:</p>
+<figure class="highlight C"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* Hello World program */</span></div><div class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;stdio.h&gt;</span></div><div class="line">main()</div><div class="line">{<span class="built_in">printf</span>(<span class="string">"Hello World"</span>);</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>C code rendered by vim:</p>
+<figure class="highlight"><pre><font face="monospace"><font color="#00ffff">/*</font><font color="#00ffff">&#xA0;Hello World program&#xA0;</font><font color="#00ffff">*/</font>
+<font color="#5fd7ff">#include</font><font color="#ff40ff">&lt;stdio.h&gt;</font>
+main()
+{
+&#xA0;&#xA0;&#xA0;&#xA0; printf(<font color="#ff40ff">&quot;Hello World&quot;</font>);
+}
+</font></pre></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>C code rendered by system:</p>
+<figure class="highlight C"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">]]>
+    </summary>
+    
+      <category term="博客" scheme="http://daxiawj.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hexo建站并自定义步骤]]></title>
+    <link href="http://daxiawj.github.io/2014/03-25-Hexo%E5%BB%BA%E7%AB%99%E5%B9%B6%E8%87%AA%E5%AE%9A%E4%B9%89%E6%AD%A5%E9%AA%A4.html"/>
+    <id>http://daxiawj.github.io/2014/03-25-Hexo建站并自定义步骤.html</id>
+    <published>2014-03-25T08:44:41.000Z</published>
+    <updated>2014-10-26T02:54:41.000Z</updated>
+    <content type="html"><![CDATA[<p>前段时间稍微折腾了一下 <a href="http://octopress.org/" target="_blank" rel="external">Octopress</a>，被其自由、强大的功能能所吸引，毅然决然地将博客搬到了 Octopress+Github 上。但随着博客数量的增多，其速度慢的弊端逐渐显现，这时候，基于<a href="nodejs.org">nodejs</a> 的<a href="hexo.io">hexo</a>闪电般地出现了，其速度简直是 blazingly fast。于是，不出所料地，又搬到了 hexo 上。</p>
+<p>搭建 hexo 的博客也很简单，从 Octopress 的内容迁移也只需把当时 post 下面的 <code>.md</code> 文件移到 <code>source/_post</code> 下面即可。但功能上的完善还是需要一定的技巧的。</p>
+<ul>
+<li><h2 id="安装_hexo">安装 hexo</h2>
+<p>首先，要有 node。Mac 可以 <code>brew install node</code>，Linux 则可以方便地 <code>apt-get</code>。安装好 node 以后，<code>npm install hexo -g</code>，搞定！</p>
+</li>
+<li><h2 id="创建并配置_hexo">创建并配置 hexo</h2>
+<p>运行 <code>hexo init myblog</code>，然后修改其下的<code>_config.yml</code> 文件，自定义博客名等内容。</p>
+</li>
+<li><h2 id="启用_MathJax_支持数学公式编写">启用 MathJax 支持数学公式编写</h2>
+<ol>
+<li>首先安装 hexo-math 插件<br><code>npm install hexo-math --save</code></li>
+<li>然后初始化<br><code>hexo math install</code></li>
+<li>编辑_config.yml:</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">plugin<span class="variable">s:</span></div><div class="line">- hexo-math</div></pre></td></tr></table></figure>
+
+<ul>
+<li><h2 id="启用本地图片支持">启用本地图片支持</h2>
+<p><code>npm install hexo-local-image --save</code>，然后添加到_config.yml。</p>
+</li>
+<li><h2 id="使用_Vim_高亮代码">使用 Vim 高亮代码</h2>
+<p><code>npm install vim-tag-vimhighlight</code>，并添加到_config.yml。然后在代码前后加上前缀{\% vimhl lang \%} 和后缀{\% endvimhl \%}. 效果如下：</p>
+<figure class="highlight"><pre><font face="monospace"><font color="#00ffff">;*****************************************************</font>
+<font color="#ffff00">load</font>&#xA0;<font color="#ff40ff">&quot;$NCARG_ROOT/lib/ncarg/nclscripts/csm/gsn_code.ncl&quot;</font>
+<font color="#ffff00">load</font>&#xA0;<font color="#ff40ff">&quot;$NCARG_ROOT/lib/ncarg/nclscripts/csm/gsn_csm.ncl&quot;</font>
+<font color="#00ffff">;*****************************************************</font>
+<font color="#ffff00">begin</font>
+&#xA0;&#xA0;<font color="#ffd7d7">gsn_define_colormap</font>(wks,<font color="#ff40ff">&quot;rainbow&quot;</font>)
+&#xA0;&#xA0;<font color="#ffd7d7">gsn_reverse_colormap</font>(wks)
+&#xA0;&#xA0;type&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;=&#xA0;<font color="#ff40ff">&quot;eps&quot;</font>
+&#xA0;&#xA0;type@<font color="#87ffaf">wkColorModel</font>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; =<font color="#ff40ff">&quot;cmyk&quot;</font>
+&#xA0;&#xA0;wks&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; =&#xA0;<font color="#ffd7d7">gsn_open_wks</font>(type,<font color="#ff40ff">&quot;NPP&quot;</font>)
+
+&#xA0;&#xA0;res@<font color="#87ffaf">cnLevelSelectionMode</font>&#xA0;&#xA0;=&#xA0;<font color="#ff40ff">&quot;ExplicitLevels&quot;</font>
+&#xA0;&#xA0;res@<font color="#87ffaf">cnLevelSelectionMode</font>&#xA0;&#xA0;=&#xA0;<font color="#ff40ff">&quot;ManualLevels&quot;</font>
+&#xA0;&#xA0;res@<font color="#87ffaf">cnMinLevelValF</font>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;=&#xA0;<font color="#ff40ff">0.0001</font>
+&#xA0;&#xA0;
+&#xA0;&#xA0;startd =&#xA0;<font color="#ff40ff">20110101</font>
+&#xA0;&#xA0;ssdate =&#xA0;<font color="#ffd7d7">yyyymmdd_to_yyyyddd</font>(startd)
+&#xA0;&#xA0;<font color="#ffff00">do</font>&#xA0;idate =&#xA0;<font color="#ff40ff">0</font>,<font color="#ff40ff">180</font>
+&#xA0;&#xA0;&#xA0;&#xA0;date =&#xA0;<font color="#ffd7d7">yyyyddd_to_yyyymmdd</font>(ssdate+idate)
+&#xA0;&#xA0;&#xA0;&#xA0;<font color="#00ffff"><b>print</b></font>(<font color="#ff40ff">&quot;Now idate and date:&#xA0;&#xA0;&quot;</font>+ idate +<font color="#ff40ff">&quot; ; &quot;</font>+ date )
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<font color="#ffff00">do</font>&#xA0;hr =&#xA0;<font color="#ff40ff">0</font>,<font color="#ff40ff">23</font>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; shr =&#xA0;<font color="#00ffff"><b>sprinti</b></font>(<font color="#ff40ff">&quot;%0.2i&quot;</font>,hr)
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; filename = date+shr+<font color="#ff40ff">&quot;.nc&quot;</font>
+&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; ... ...
+&#xA0;&#xA0;&#xA0;&#xA0;
+</font></pre></figure>
+</li>
+<li><p>支持 RSS<br><code>npm install hexo-generator-feed --save</code><br>_config.yml plugins</p>
+</li>
+<li><p>支持 SiteMap<br><code>npm install hexo-generator-sitemap --save</code><br>_config.yml plugins</p>
+</li>
+<li><p>去掉 tag，只保留 tagcloud<br>拷贝默认的 landscape 为 myls，编辑 themes/myls/_config.yml 去掉 其中的 tag，保留 tagcloud.</p>
+</li>
+<li><p>修改默认模板，加入 categories<br>为了生成 post 时默认生成 categories 配置项. 在 scaffolds/post.md 中，添加一行 <code>categories:</code>。并可在内容中添加任何想加入到模板中的内容，如{vimhl} 和<code>{!--more--}</code>，同理可应用在 page.md 和 photo.md。</p>
+</li>
+<li><p>修改模板图片 自行修改 <code>themes/myls/source/css/images/banner.jpg</code>，使题图和主题配合更好；同时可对应修改<code>themes/myls/source/css/_variables.styl</code> 中<code>banner-height</code>，以更好地匹配。</p>
+</li>
+<li><p>添加 icon 小图标 在<code>themes/myls/layout/_partial/head.ejs</code>里将 <code>&lt;link href=&quot;&lt;%- config.root %&gt;favicon.png&quot; rel=&quot;icon&quot;&gt;</code>替换为<code>&lt;link href=&quot;&lt;%- config.root %&gt;favicon.ico&quot; rel=&quot;icon&quot; type=&quot;image/x-ico&quot;&gt;</code>。将 favicon.ico 图标文件放在 source 目录下。</p>
+</li>
+<li><p>添加微博秀 到<a href="http://open.weibo.com/widget/weibotopic.php" target="_blank" rel="external">新浪微博开放平台 </a> 生成微博秀代码，将生成的代码保存为 weibo.ejs 到 <code>themes/myls/layout/_widget</code> 目录中，并在 themes/myls 目录下的_config.yml 中的 widget 栏添加 <code>- weibo</code> 即可。</p>
+</li>
+<li><p>添加百度 share<br>添加“百度分享”到百度分享获得代码，在 <code>themes/myls/layout/_partial/article.ejs</code> 中，将 <code>&amp;lt;%-partial(&amp;#39;post/share&amp;#39;)%&amp;gt;</code> 删掉，替换为 <a href="https://gist.github.com/daxiawj/9755303" target="_blank" rel="external"> 百度分享的代码</a>。</p>
+</li>
+<li><p>添加多说和 disqus<br>Disqus 和多说在国内外各有用处，因此最好都加上。修改 <code>themes/myls/layout/_partial/article.ejs</code> ，添加 <a href="https://gist.github.com/daxiawj/9755684" target="_blank" rel="external"> 一部分代码 </a> 即可</p>
+</li>
+<li><p>安装百度统计</p>
+<ol>
+<li>去 <a href="http://tongji.baidu.com/web/welcome/login" target="_blank" rel="external"> 百度统计 </a> 获取统计代码</li>
+<li>配置</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">vim themes/myls/layout/_partial/baidu_analytics.ejs</div><div class="line">  <span class="vbscript">&lt;% <span class="keyword">if</span> (theme.baidu_analytics){%&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> _bdhmProtocol = ((<span class="string">"https:"</span> == <span class="built_in">document</span>.location.protocol) ? <span class="string">" https://"</span> : <span class="string">" http://"</span>);</div><div class="line">    <span class="built_in">document</span>.write(<span class="built_in">unescape</span>(<span class="string">"%3Cscript src='"</span> + _bdhmProtocol + <span class="string">"hm.baidu.com/h.js%3F05f071cca0ab1e718d2fa8a39d743f89' type='text/javascript'%3E%3C/script%3E"</span>));</div><div class="line">  <span class="tag">&lt;/<span class="title">script</span>&gt;</span></div><div class="line">  <span class="vbscript">&lt;% } %&gt;</span></div></pre></td></tr></table></figure>
+
+
+
+<pre><code><span class="bullet">3.  </span>add configuration:
+</code></pre><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">vim</span> themes/myls/_config.yml</div><div class="line">baidu_analytic<span class="variable">s:</span> true</div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>前段时间稍微折腾了一下 <a href="http://octopress.org/" target="_blank" rel="external">Octopress</a>，被其自由、强大的功能能所吸引，毅然决然地将博客搬到了 Octopress+Github 上。但随]]>
+    </summary>
+    
+      <category term="blog" scheme="http://daxiawj.github.io/tags/blog/"/>
+    
+      <category term="hexo" scheme="http://daxiawj.github.io/tags/hexo/"/>
+    
+      <category term="博客架构" scheme="http://daxiawj.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%9E%B6%E6%9E%84/"/>
+    
+      <category term="博客" scheme="http://daxiawj.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[使用 Sweave 给 R 写文档的模板]]></title>
+    <link href="http://daxiawj.github.io/2014/03-25-%E4%BD%BF%E7%94%A8-Sweave-%E7%BB%99-R-%E5%86%99%E6%96%87%E6%A1%A3%E7%9A%84%E6%A8%A1%E6%9D%BF.html"/>
+    <id>http://daxiawj.github.io/2014/03-25-使用-Sweave-给-R-写文档的模板.html</id>
+    <published>2014-03-25T08:40:53.000Z</published>
+    <updated>2014-10-12T12:01:25.000Z</updated>
+    <content type="html"><![CDATA[<p>以前一直傻傻的 用 <code>\begin{verbatim}</code> 或者 <code>listing</code> 的方式在文章中加 R 代码<br> 然后再手工 <code>include</code> 结果的方式，现在知道了 <code>Sweave</code>，终于可以结束这段傻<br> 不楞登的过程直接自动化了。</p>
+<figure class="highlight"><pre><font face="monospace"><font color="#ffff00">\documentclass</font><font color="#ffd7d7">[</font><font color="#ff40ff">a4paper, 12pt</font><font color="#ffd7d7">]{</font><font color="#5fd7ff">article</font><font color="#ffd7d7">}</font>
+<font color="#5fd7ff">\begin{document}</font>
+<font color="#5fd7ff">\title{</font>emacs&#xA0;<font color="#ffd7d7">\&amp;</font>&#xA0;Sweave<font color="#5fd7ff">}</font>
+<font color="#5fd7ff">\author{</font>Wang Jun<font color="#5fd7ff">}</font>
+<font color="#ffff00">\maketitle</font>
+
+<font color="#5fd7ff">\section</font><font color="#ffd7d7">{</font>Now begins R Sweave test<font color="#ffd7d7">}</font>
+
+First Save this file as example.Rnw
+
+Then run Sweave(&quot;example&quot;)&#xA0;in R
+
+Compile the generated tex file example.tex with pdflatex or xelatex&#xA0;(I prefer XeLeTeX)
+
+Here you got the Sweaved R script
+
+<font color="#00ffff">%%%%%%%%%%%%% Here begins the Main Content</font>
+
+This is just a simple example
+
+&lt;&lt;&gt;&gt;=
+library(maps)
+library(mapdata)
+###map(&quot;china&quot;)
+x=rnorm(100)
+y=rnorm(100)
+lm(y~x)
+@
+
+Now that you have tried Sweave, how does it perform?
+
+<font color="#5fd7ff">\end{document}</font>
+</font></pre></figure>
+
+<p>PS: 当然，现在流行的 R 文档写作方式应该是 <code>knitr + LyX</code>的方式，将另文描述了。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>以前一直傻傻的 用 <code>\begin{verbatim}</code> 或者 <code>listing</code> 的方式在文章中加 R 代码<br> 然后再手工 <code>include</code> 结果的方式，现在知道了 <code>Sweave</co]]>
+    </summary>
+    
+      <category term="Sweave" scheme="http://daxiawj.github.io/tags/Sweave/"/>
+    
+      <category term="R" scheme="http://daxiawj.github.io/tags/R/"/>
+    
+      <category term="模板" scheme="http://daxiawj.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="LaTeX" scheme="http://daxiawj.github.io/tags/LaTeX/"/>
+    
+      <category term="技术" scheme="http://daxiawj.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="技术" scheme="http://daxiawj.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[我的VIM 控制文件: vimrc]]></title>
+    <link href="http://daxiawj.github.io/2014/03-25-%E6%88%91%E7%9A%84VIM-%E6%8E%A7%E5%88%B6%E6%96%87%E4%BB%B6-vimrc.html"/>
+    <id>http://daxiawj.github.io/2014/03-25-我的VIM-控制文件-vimrc.html</id>
+    <published>2014-03-25T01:21:49.000Z</published>
+    <updated>2014-10-12T12:00:03.000Z</updated>
+    <content type="html"><![CDATA[<p> 每次新装一个系统总是要到处找 VIMRC 的配置，现保存于此也好有个备份 </p>
+<figure class="highlight"><pre><font face="monospace"><font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">mouse</font>=a&#xA0;<font color="#00ffff">&quot;&#x542F;&#x7528;&#x9F20;&#x6807;</font>
+<font color="#00ffff">&quot;&#x53CC;&#x5F15;&#x53F7;&#x5F00;&#x59CB;&#x7684;&#x884C;&#x4E3A;&#x6CE8;&#x91CA;&#x884C;&#xFF0C;&#x4E0B;&#x540C;</font>
+<font color="#00ffff">&quot;&#x53BB;&#x6389;&#x8BA8;&#x538C;&#x7684;&#x6709;&#x5173;vi&#x4E00;&#x81F4;&#x6027;&#x6A21;&#x5F0F;&#xFF0C;&#x907F;&#x514D;&#x4EE5;&#x524D;&#x7248;&#x672C;&#x7684;&#x4E00;&#x4E9B;bug&#x548C;&#x5C40;&#x9650;</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">nocompatible</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">backspace</font>=indent<font color="#ffff00">,</font>eol<font color="#ffff00">,</font>start
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">showcmd</font>
+<font color="#00ffff">&quot;&#x663E;&#x793A;&#x884C;&#x53F7;</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">number</font>
+<font color="#00ffff">&quot;&#x68C0;&#x6D4B;&#x6587;&#x4EF6;&#x7684;&#x7C7B;&#x578B;</font>
+<font color="#ffff00">filetype</font>&#xA0;<font color="#87ffaf">on</font>
+<font color="#00ffff">&quot;&#x8BB0;&#x5F55;&#x5386;&#x53F2;&#x7684;&#x884C;&#x6570;</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">history</font>=1000
+<font color="#00ffff">&quot;&#x80CC;&#x666F;&#x4F7F;&#x7528;&#x9ED1;&#x8272;</font>
+<font color="#00ffff">&quot;set background=dark</font>
+<font color="#00ffff">&quot;&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;&#x5EA6;&#x663E;&#x793A;</font>
+<font color="#ffff00">syntax</font>&#xA0;<font color="#87ffaf">on</font>
+<font color="#00ffff">&quot;&#x4E0B;&#x9762;&#x4E24;&#x884C;&#x5728;&#x8FDB;&#x884C;&#x7F16;&#x5199;&#x4EE3;&#x7801;&#x65F6;&#xFF0C;&#x5728;&#x683C;&#x5F0F;&#x5BF9;&#x8D77;&#x4E0A;&#x5F88;&#x6709;&#x7528;&#xFF1B;</font>
+<font color="#00ffff">&quot;&#x7B2C;&#x4E00;&#x884C;&#xFF0C;vim&#x4F7F;&#x7528;&#x81EA;&#x52A8;&#x5BF9;&#x9F50;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x628A;&#x5F53;&#x524D;&#x884C;&#x7684;&#x5BF9;&#x8D77;&#x683C;&#x5F0F;&#x5E94;&#x7528;&#x5230;&#x4E0B;&#x4E00;&#x884C;&#xFF1B;</font>
+<font color="#00ffff">&quot;&#x7B2C;&#x4E8C;&#x884C;&#xFF0C;&#x4F9D;&#x636E;&#x4E0A;&#x9762;&#x7684;&#x5BF9;&#x8D77;&#x683C;&#x5F0F;&#xFF0C;&#x667A;&#x80FD;&#x7684;&#x9009;&#x62E9;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;&#xFF0C;&#x5BF9;&#x4E8E;&#x7C7B;&#x4F3C;C&#x8BED;&#x8A00;&#x7F16;</font>
+<font color="#00ffff">&quot;&#x5199;&#x4E0A;&#x5F88;&#x6709;&#x7528;</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">autoindent</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">smartindent</font>
+<font color="#00ffff">&quot;&#x7B2C;&#x4E00;&#x884C;&#x8BBE;&#x7F6E;tab&#x952E;&#x4E3A;4&#x4E2A;&#x7A7A;&#x683C;&#xFF0C;&#x7B2C;&#x4E8C;&#x884C;&#x8BBE;&#x7F6E;&#x5F53;&#x884C;&#x4E4B;&#x95F4;&#x4EA4;&#x9519;&#x65F6;&#x4F7F;&#x7528;2&#x4E2A;&#x7A7A;&#x683C;</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">expandtab</font>&#xA0;<font color="#00ffff">&quot;&quot;# &#x4F7F;&#x7528;space&#x4EE3;&#x66FF;tab.</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">tabstop</font>=4&#xA0;<font color="#00ffff">&quot;&quot;# &#x56DB;&#x4E2A;&#x7A7A;&#x683C;&#x3002;</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">shiftwidth</font>=2&#xA0;<font color="#00ffff">&quot;&quot;# &#x81EA;&#x52A8;&#x7F29;&#x8FDB;&#x7684;&#x5BBD;&#x5EA6;&#x3002;</font>
+<font color="#00ffff">&quot;&#x8BBE;&#x7F6E;&#x5339;&#x914D;&#x6A21;&#x5F0F;&#xFF0C;&#x7C7B;&#x4F3C;&#x5F53;&#x8F93;&#x5165;&#x4E00;&#x4E2A;&#x5DE6;&#x62EC;&#x53F7;&#x65F6;&#x4F1A;&#x5339;&#x914D;&#x76F8;&#x5E94;&#x7684;&#x90A3;&#x4E2A;&#x53F3;&#x62EC;&#x53F7;</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">showmatch</font>
+<font color="#00ffff">&quot;&#x53BB;&#x9664;vim&#x7684;GUI&#x7248;&#x672C;&#x4E2D;&#x7684;toolbar</font>
+<font color="#00ffff">&quot;set guioptions-=T</font>
+<font color="#00ffff">&quot;&#x5F53;vim&#x8FDB;&#x884C;&#x7F16;&#x8F91;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x547D;&#x4EE4;&#x9519;&#x8BEF;&#xFF0C;&#x4F1A;&#x53D1;&#x51FA;&#x4E00;&#x4E2A;&#x54CD;&#x58F0;&#xFF0C;&#x8BE5;&#x8BBE;&#x7F6E;&#x53BB;&#x6389;&#x54CD;&#x58F0;</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">vb</font>&#xA0;<font color="#5fd7ff">t_vb</font>=
+<font color="#00ffff">&quot;&#x5728;&#x7F16;&#x8F91;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5728;&#x53F3;&#x4E0B;&#x89D2;&#x663E;&#x793A;&#x5149;&#x6807;&#x4F4D;&#x7F6E;&#x7684;&#x72B6;&#x6001;&#x884C;</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">ruler</font>
+<font color="#00ffff">&quot;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5BFB;&#x627E;&#x5339;&#x914D;&#x662F;&#x9AD8;&#x4EAE;&#x5EA6;&#x663E;&#x793A;&#x7684;&#xFF0C;&#x8BE5;&#x8BBE;&#x7F6E;&#x5173;&#x95ED;&#x9AD8;&#x4EAE;&#x663E;&#x793A;</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">nohls</font>
+<font color="#00ffff">&quot;&#x67E5;&#x8BE2;&#x65F6;&#x975E;&#x5E38;&#x65B9;&#x4FBF;&#xFF0C;&#x5982;&#x8981;&#x67E5;&#x627E;book&#x5355;&#x8BCD;&#xFF0C;&#x5F53;&#x8F93;&#x5165;&#x5230;/b&#x65F6;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x627E;&#x5230;&#x7B2C;&#x4E00;</font>
+<font color="#00ffff">&quot;&#x4E2A;b&#x5F00;&#x5934;&#x7684;&#x5355;&#x8BCD;&#xFF0C;&#x5F53;&#x8F93;&#x5165;&#x5230;/bo&#x65F6;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x627E;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;bo&#x5F00;&#x5934;&#x7684;&#x5355;&#x8BCD;&#xFF0C;&#x4F9D;</font>
+<font color="#00ffff">&quot;&#x6B21;&#x7C7B;&#x63A8;&#xFF0C;&#x8FDB;&#x884C;&#x67E5;&#x627E;&#x65F6;&#xFF0C;&#x4F7F;&#x7528;&#x6B64;&#x8BBE;&#x7F6E;&#x4F1A;&#x5FEB;&#x901F;&#x627E;&#x5230;&#x7B54;&#x6848;&#xFF0C;&#x5F53;&#x4F60;&#x627E;&#x8981;&#x5339;&#x914D;&#x7684;&#x5355;&#x8BCD;</font>
+<font color="#00ffff">&quot;&#x65F6;&#xFF0C;&#x522B;&#x5FD8;&#x8BB0;&#x56DE;&#x8F66;</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">incsearch</font>
+<font color="#00ffff">&quot;&#x4FEE;&#x6539;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x540E;&#xFF0C;&#x81EA;&#x52A8;&#x8FDB;&#x884C;&#x5907;&#x4EFD;&#xFF0C;&#x5907;&#x4EFD;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x4E3A;&#x539F;&#x6587;&#x4EF6;&#x540D;&#x52A0;&#x201C;~&#x201C;&#x540E;&#x7F00;</font>
+
+<font color="#00ffff">&quot;NCL&#x7684;&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;&#x7B49;</font>
+&#xA0;&#xA0;&#xA0;&#xA0;<font color="#ffff00">au</font>&#xA0;<font color="#87ffaf">BufRead</font>,<font color="#87ffaf">BufNewFile</font>&#xA0;*.ncl&#xA0;<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">filetype</font>=ncl
+&#xA0;&#xA0;&#xA0;&#xA0;<font color="#ffff00">au</font>!&#xA0;<font color="#87ffaf">Syntax</font>&#xA0;newlang&#xA0;<font color="#ffff00">source</font>&#xA0;<font color="#5fd7ff">$VIM</font>/ncl<font color="#ffff00">.</font><font color="#ffff00">vim</font>
+<font color="#00ffff">&quot;Show autocomplete menus.</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">complete</font>-=k&#xA0;<font color="#5fd7ff">complete</font>+=k&#xA0;<font color="#00ffff">&quot; Add dictionary search (as per dictionary option)</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">wildmode</font>=list<font color="#ffff00">:</font>full
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">wildmenu</font>
+<font color="#ffff00">au</font>&#xA0;<font color="#87ffaf">BufRead</font>,<font color="#87ffaf">BufNewFile</font>&#xA0;*.ncl&#xA0;<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">dictionary</font>=~/.vim/dictionary/ncl.dic
+
+<font color="#00ffff">&#xA0;&quot; When editing a file, always jump to the last known cursor position.</font>
+<font color="#00ffff">&#xA0;&quot; Don&apos;t do it when the position is invalid or when inside an event handler</font>
+<font color="#00ffff">&#xA0;&quot; (happens when dropping a file on gvim).</font>
+<font color="#00ffff">&#xA0;&quot; &#x8BB0;&#x4F4F;&#x4E0A;&#x6B21;&#x7684;&#x7F16;&#x8F91;&#x4F4D;&#x7F6E;</font>
+&#xA0;<font color="#ffff00">autocmd</font>&#xA0;<font color="#87ffaf">BufReadPost</font>&#xA0;*
+<font color="#ffd7d7">&#xA0;&#xA0;&#xA0;&#xA0;\</font>&#xA0;<font color="#ffff00">if</font>&#xA0;<font color="#00ffff"><b>line</b></font><font color="#ffd7d7">(</font><font color="#ff40ff">&quot;&apos;\&quot;&quot;</font><font color="#ffd7d7">)</font>&#xA0;<font color="#ffff00">&gt;</font>&#xA0;<font color="#ff40ff">0</font>&#xA0;<font color="#ffff00">&amp;&amp;</font>&#xA0;<font color="#00ffff"><b>line</b></font><font color="#ffd7d7">(</font><font color="#ff40ff">&quot;&apos;\&quot;&quot;</font><font color="#ffd7d7">)</font>&#xA0;<font color="#ffff00">&lt;=</font>&#xA0;<font color="#00ffff"><b>line</b></font><font color="#ffd7d7">(</font><font color="#ff40ff">&quot;$&quot;</font><font color="#ffd7d7">)</font>&#xA0;|
+<font color="#ffd7d7">&#xA0;&#xA0;&#xA0;&#xA0;\</font>&#xA0;&#xA0;&#xA0;<font color="#ffff00">exe</font>&#xA0;<font color="#ff40ff">&quot;normal g`\&quot;&quot;</font>&#xA0;<font color="#ffff00">|</font>
+<font color="#ffd7d7">&#xA0;&#xA0;&#xA0;&#xA0;\</font>&#xA0;<font color="#ffff00">endif</font>
+
+<font color="#00ffff">&#xA0;&quot; &#x6253;&#x5F00;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;&#x6309;&#x7167; viminfo &#x4FDD;&#x5B58;&#x7684;&#x4E0A;&#x6B21;&#x5173;&#x95ED;&#x65F6;&#x7684;&#x5149;&#x6807;&#x4F4D;&#x7F6E;&#x91CD;&#x65B0;&#x8BBE;&#x7F6E;&#x5149;&#x6807;</font>
+&#xA0;<font color="#ffff00">au</font>&#xA0;<font color="#87ffaf">BufReadPost</font>&#xA0;*&#xA0;<font color="#ffff00">if</font>&#xA0;<font color="#00ffff"><b>line</b></font><font color="#ffd7d7">(</font><font color="#ff40ff">&quot;&apos;\&quot;&quot;</font><font color="#ffd7d7">)</font>&#xA0;<font color="#ffff00">&gt;</font>&#xA0;<font color="#ff40ff">0</font>|<font color="#ffff00">if</font>&#xA0;<font color="#00ffff"><b>line</b></font><font color="#ffd7d7">(</font><font color="#ff40ff">&quot;&apos;\&quot;&quot;</font><font color="#ffd7d7">)</font>&#xA0;<font color="#ffff00">&lt;=</font>&#xA0;<font color="#00ffff"><b>line</b></font><font color="#ffd7d7">(</font><font color="#ff40ff">&quot;$&quot;</font><font color="#ffd7d7">)</font>|exe<font color="#ffd7d7">(</font><font color="#ff40ff">&quot;norm &apos;\&quot;&quot;</font><font color="#ffd7d7">)</font>|<font color="#ffff00">else</font>|<font color="#ffff00">exe</font>&#xA0;<font color="#ff40ff">&quot;norm $&quot;</font><font color="#ffff00">|endif</font>|<font color="#ffff00">endif</font>
+
+<font color="#00ffff">&quot;&#x4E2D;&#x6587;&#x7684;&#x731C;&#x6D4B;&#x987A;&#x5E8F;</font>
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">fileencodings</font>=utf-8<font color="#ffff00">,</font>gb2312<font color="#ffff00">,</font>gbk<font color="#ffff00">,</font>gb18030&#xA0;
+<font color="#ffff00">set</font>&#xA0;<font color="#5fd7ff">termencoding</font>=utf-8
+<font color="#00ffff">&quot;set encoding=prc</font>
+</font></pre></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<p> 每次新装一个系统总是要到处找 VIMRC 的配置，现保存于此也好有个备份 </p>
+<figure class="highlight"><pre><font face="monospace"><font color="#ffff00">set</font>&#xA0;<f]]>
+    </summary>
+    
+      <category term="VIM" scheme="http://daxiawj.github.io/tags/VIM/"/>
+    
+      <category term="Editor" scheme="http://daxiawj.github.io/tags/Editor/"/>
+    
+      <category term="Configuration" scheme="http://daxiawj.github.io/tags/Configuration/"/>
+    
+      <category term="技术" scheme="http://daxiawj.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="技术" scheme="http://daxiawj.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[NCL批量处理数据及作图]]></title>
+    <link href="http://daxiawj.github.io/2014/03-25-NCL%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E6%95%B0%E6%8D%AE%E5%8F%8A%E4%BD%9C%E5%9B%BE.html"/>
+    <id>http://daxiawj.github.io/2014/03-25-NCL批量处理数据及作图.html</id>
+    <published>2014-03-25T01:17:34.000Z</published>
+    <updated>2014-10-12T12:06:48.000Z</updated>
+    <content type="html"><![CDATA[<p>科研中不免要与大量的数据打交道，NCL 中倒也内置了比较好用的 <code>do</code> 循环等，可以方便地批量处理数据，但 NCL 内置的循环批量画图就比较麻烦一些，毕竟涉及 workspace 的 open 与 close（当然，如果画图到 pdf 文件也无所谓，pdf 多页支持还是很好的）。</p>
+<p>结合 shell 脚本与 NCL 的命令行参数接收变量赋值的特性，可以方便地批量画图。</p>
+<p>例如，若要批量处理 2000 年到 2010 年十年的逐日资料并把每天的日均气温画出来，那么可以写一个如下的 NCL 脚本 [runwithargs.ncl] 以及相应的 Bash 脚本：</p>
+<p>NCL:</p>
+<figure class="highlight"><pre><font face="monospace"><font color="#ffff00">load</font>&#xA0;<font color="#ff40ff">&quot;$NCARG_ROOT/lib/ncarg/nclscripts/csm/gsn_code.ncl&quot;</font>
+<font color="#ffff00">load</font>&#xA0;<font color="#ff40ff">&quot;$NCARG_ROOT/lib/ncarg/nclscripts/csm/gsn_csm.ncl&quot;</font>
+<font color="#ffff00">load</font>&#xA0;<font color="#ff40ff">&quot;$NCARG_ROOT/lib/ncarg/nclscripts/csm/contributed.ncl&quot;</font>
+
+<font color="#ffff00">begin</font>
+<font color="#00ffff">&#xA0;&#xA0; ;;date is a variable from command line args</font>
+&#xA0;&#xA0;&#xA0;<font color="#00ffff"><b>print</b></font>(<font color="#ff40ff">&quot;The current date is &quot;</font>+sdate)
+<font color="#00ffff">&#xA0;&#xA0; ;; Following is other code</font>
+
+<font color="#ffff00">end</font>
+</font></pre></figure>
+
+<p>其中，sdate 这个变量在 NCL 中并没有赋值，而是要在运行时指定。</p>
+<p>上面的 NCL 脚本应配合以下的 shell 脚本 [runnclargs.sh] 运行：</p>
+<figure class="highlight"><pre><font face="monospace"><font color="#00ffff">#!/bin/bash</font>
+<font color="#00ffff"><b>basedate</b></font>=<font color="#ffff00">&quot;</font><font color="#ff40ff">20000101</font><font color="#ffff00">&quot;</font>
+<font color="#ffff00">for&#xA0;</font>idate&#xA0;<font color="#ffff00">in</font>&#xA0;<font color="#ffd7d7">`seq -w&#xA0;</font><font color="#ff40ff">1</font><font color="#ffd7d7">&#xA0;</font><font color="#ff40ff">3653</font><font color="#ffd7d7">`</font>
+<font color="#ffff00">do</font>
+&#xA0;&#xA0;&#xA0;&#xA0;<font color="#00ffff"><b>thedate</b></font>=<font color="#ffd7d7">`date +%Y%m%d -d&#xA0;</font><font color="#ffff00">&quot;</font><font color="#5fd7ff">$basedate</font><font color="#ff40ff">&#xA0;+&#xA0;</font><font color="#5fd7ff">$idate</font><font color="#ffff00">&quot;</font><font color="#ffd7d7">`</font>
+&#xA0;&#xA0;&#xA0;&#xA0;ncl runwithargs.ncl&#xA0;<font color="#ffff00">&quot;</font><font color="#ff40ff">sdate=</font><font color="#5fd7ff">$thedate</font><font color="#ffff00">&quot;</font>&#xA0;<font color="#ffff00">|</font><font color="#ffff00">grep</font>&#xA0;date
+<font color="#ffff00">done</font>
+</font></pre></figure>
+
+
+<p>如此，只需通过运行 <code>./runnclargs.sh</code>， 10 年的数据就处理完了。:-0</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>科研中不免要与大量的数据打交道，NCL 中倒也内置了比较好用的 <code>do</code> 循环等，可以方便地批量处理数据，但 NCL 内置的循环批量画图就比较麻烦一些，毕竟涉及 workspace 的 open 与 close（当然，如果画图到 pdf 文件也无所谓，]]>
+    </summary>
+    
+      <category term="NCL" scheme="http://daxiawj.github.io/tags/NCL/"/>
+    
+      <category term="数据处理" scheme="http://daxiawj.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+    
+      <category term="批量" scheme="http://daxiawj.github.io/tags/%E6%89%B9%E9%87%8F/"/>
+    
+      <category term="bash" scheme="http://daxiawj.github.io/tags/bash/"/>
+    
+      <category term="科研" scheme="http://daxiawj.github.io/tags/%E7%A7%91%E7%A0%94/"/>
+    
+      <category term="科研" scheme="http://daxiawj.github.io/categories/%E7%A7%91%E7%A0%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[一个Fortran 读文件并带参数的模板]]></title>
+    <link href="http://daxiawj.github.io/2014/03-24-%E4%B8%80%E4%B8%AAFortran-%E8%AF%BB%E6%96%87%E4%BB%B6%E5%B9%B6%E5%B8%A6%E5%8F%82%E6%95%B0%E7%9A%84%E6%A8%A1%E6%9D%BF.html"/>
+    <id>http://daxiawj.github.io/2014/03-24-一个Fortran-读文件并带参数的模板.html</id>
+    <published>2014-03-24T06:50:57.000Z</published>
+    <updated>2014-10-26T02:33:46.000Z</updated>
+    <content type="html"><![CDATA[<p>Fortran 作为科学计算常用语言，自然免不了各种文件读写的操作，以下是一个简单的模板 </p>
+<p> 参见 gist <code>bdb32fffcd08b9ab21ea</code>:</p>
+<script src="https://gist.github.com/bdb32fffcd08b9ab21ea.js"></script>
+
+<p> 或者，直接参见下面：</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">program gaugeselect</div><div class="line">implicit <span class="constant">none</span></div><div class="line"><span class="keyword">character</span>(<span class="built_in">len</span>=<span class="number">80</span>):: filename</div><div class="line"><span class="keyword">character</span>(<span class="built_in">len</span>=<span class="number">80</span>):: arg1 ,arg2</div><div class="line"><span class="keyword">character</span>(<span class="built_in">len</span>=<span class="number">80</span>):: buff</div><div class="line">logical:: flag=.<span class="constant">false</span>.</div><div class="line"></div><div class="line">!================================================================!</div><div class="line">call getarg(<span class="number">1</span>,arg1)</div><div class="line">call getarg(<span class="number">2</span>,arg2)</div><div class="line"><span class="keyword">if</span> (len_trim(arg1)==<span class="number">0</span> )<span class="keyword">then</span></div><div class="line">  print *,<span class="string">"please specify the argument of running file!!"</span></div><div class="line">  print *,<span class="string">"usage: ./gaugeselect filename"</span></div><div class="line">  stop</div><div class="line"><span class="keyword">else</span></div><div class="line">  filename=trim(arg1)</div><div class="line">  inquire(<span class="built_in">file</span>=trim(filename),exist=flag)</div><div class="line">  <span class="keyword">if</span>(flag)<span class="keyword">then</span></div><div class="line">    <span class="built_in">open</span>(<span class="number">5</span>,<span class="built_in">file</span>=trim(filename))</div><div class="line">    <span class="built_in">do</span> <span class="keyword">while</span>(.<span class="constant">true</span>.)</div><div class="line">      <span class="built_in">read</span>(<span class="number">5</span>,*,<span class="function"><span class="keyword">end</span>=<span class="title">100</span>)<span class="title">buff</span></span></div><div class="line">    enddo</div><div class="line">    <span class="number">100</span> <span class="built_in">close</span>(<span class="number">5</span>)</div><div class="line">    print *,<span class="string">'file:'</span>,trim(filename), <span class="string">"processed"</span> </div><div class="line">  <span class="keyword">else</span> </div><div class="line">    print *,<span class="string">"oops........"</span></div><div class="line">    print *,<span class="string">'can NOT open file:'</span>,trim(filename) </div><div class="line">    print *,<span class="string">" "</span></div><div class="line">  endif</div><div class="line"></div><div class="line">endif</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">end</span> <span class="title">program</span> <span class="title">gaugeselect</span></span></div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Fortran 作为科学计算常用语言，自然免不了各种文件读写的操作，以下是一个简单的模板 </p>
+<p> 参见 gist <code>bdb32fffcd08b9ab21ea</code>:</p>
+<script src="https://gist.github.com]]>
+    </summary>
+    
+      <category term="Fortran" scheme="http://daxiawj.github.io/tags/Fortran/"/>
+    
+      <category term="模板" scheme="http://daxiawj.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="文件读写" scheme="http://daxiawj.github.io/tags/%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99/"/>
+    
+      <category term="技术" scheme="http://daxiawj.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="技术" scheme="http://daxiawj.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[一切为了太阳系的荣耀--Xshell的Solarized配色]]></title>
+    <link href="http://daxiawj.github.io/2014/03-23-%E4%B8%80%E5%88%87%E4%B8%BA%E4%BA%86%E5%A4%AA%E9%98%B3%E7%B3%BB%E7%9A%84%E8%8D%A3%E8%80%80-Xshell%E7%9A%84Solarized%E9%85%8D%E8%89%B2.html"/>
+    <id>http://daxiawj.github.io/2014/03-23-一切为了太阳系的荣耀-Xshell的Solarized配色.html</id>
+    <published>2014-03-23T06:50:57.000Z</published>
+    <updated>2014-10-26T02:43:35.000Z</updated>
+    <content type="html"><![CDATA[<p>Xshell 是 Windows 里面为数不多的免费且好用的 SSH 客户端，不过默认的配色实在是太难看了，真的是太难看了，如果不改掉实在是不能用。而且和 Sublime Text、TextMate、Emacs、VIM 等编辑神器以及 iTerm2 等深受好评的软件不一样，网上现成的 XShell 配色也着实少的可怜。冇办法，只好自己动手了。</p>
+<p>上面提到的编辑器，真的有很多经典的配色，如 Monokai、Dawn、Eiffel、Tommorow、Twilight 等，但是我最爱的，还是那经典的 Solarized。关于 Solarized，已经有很多 <a href="http://www.dblotus.com/?p=1524" target="_blank" rel="external"> 介绍 </a>，其官网在<a href="http://ethanschoonover.com/solarized" target="_blank" rel="external"> 这里 </a>，Github 的主页在<a href="https://github.com/altercation/solarized" target="_blank" rel="external"> 这里</a>，上面有为很多软件如 Emacs、Gedit、iTerm2、Putty、VIM、TextWrangler 等写好的配色文件，可自行采撷。</p>
+<p>最爱的 Solarized Dark 配色，写成 Xshell 能用的形式如下</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">[<span class="attribute">Solarized</span> <span class="attribute">Dark</span>]</span></span></div><div class="line"><span class="attribute">text</span>(<span class="attribute">bold</span>)=<span class="value">839496</span></div><div class="line"><span class="attribute">magenta</span>(<span class="attribute">bold</span>)=<span class="value">6c71c4</span></div><div class="line"><span class="attribute">text</span>=<span class="value">839496</span></div><div class="line"><span class="attribute">white</span>(<span class="attribute">bold</span>)=<span class="value">fdf6e3</span></div><div class="line"><span class="attribute">green</span>=<span class="value">859900</span></div><div class="line"><span class="attribute">red</span>(<span class="attribute">bold</span>)=<span class="value">cb4b16</span></div><div class="line"><span class="attribute">green</span>(<span class="attribute">bold</span>)=<span class="value">586e75</span></div><div class="line"><span class="attribute">black</span>(<span class="attribute">bold</span>)=<span class="value">073642</span></div><div class="line"><span class="attribute">red</span>=<span class="value">dc322f</span></div><div class="line"><span class="attribute">blue</span>=<span class="value">268bd2</span></div><div class="line"><span class="attribute">black</span>=<span class="value">002b36</span></div><div class="line"><span class="attribute">blue</span>(<span class="attribute">bold</span>)=<span class="value">839496</span></div><div class="line"><span class="attribute">yellow</span>(<span class="attribute">bold</span>)=<span class="value">657b83</span></div><div class="line"><span class="attribute">cyan</span>(<span class="attribute">bold</span>)=<span class="value">93a1a1</span></div><div class="line"><span class="attribute">yellow</span>=<span class="value">b58900</span></div><div class="line"><span class="attribute">magenta</span>=<span class="value">dd3682</span></div><div class="line"><span class="attribute">background</span>=<span class="value">042028</span></div><div class="line"><span class="attribute">white</span>=<span class="value">eee8d5</span></div><div class="line"><span class="attribute">cyan</span>=<span class="value">2aa198</span></div><div class="line">[<span class="attribute">Names</span>]</div><div class="line"><span class="attribute">count</span>=<span class="value">1</span></div><div class="line"><span class="attribute">name0</span>=<span class="value">Solarized</span> <span class="attribute">Dark</span></div></pre></td></tr></table></figure>
+
+<p>只需把以上内容拷贝到 SolarizedDark.xcs，并在 Xshell 中导入这个配色文件，就可以享受程序猿专用的温暖的太阳系之光了。</p>
+<p>效果如图<img src="/images/SD.png" alt=""></p>
+<p>以下为更加温暖的亮色系配色文件，同理保存为 SolarizedLight.xcs 并导入 Xshell 即可。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">[<span class="attribute">Solarized</span> <span class="attribute">Light</span>]</span></span></div><div class="line"><span class="attribute">text</span>(<span class="attribute">bold</span>)=<span class="value">657b83</span></div><div class="line"><span class="attribute">magenta</span>(<span class="attribute">bold</span>)=<span class="value">6c71c4</span></div><div class="line"><span class="attribute">text</span>=<span class="value">657b83</span></div><div class="line"><span class="attribute">white</span>(<span class="attribute">bold</span>)=<span class="value">002b36</span></div><div class="line"><span class="attribute">green</span>=<span class="value">859900</span></div><div class="line"><span class="attribute">red</span>(<span class="attribute">bold</span>)=<span class="value">cb4b16</span></div><div class="line"><span class="attribute">green</span>(<span class="attribute">bold</span>)=<span class="value">93a1a1</span></div><div class="line"><span class="attribute">black</span>(<span class="attribute">bold</span>)=<span class="value">eee8d5</span></div><div class="line"><span class="attribute">red</span>=<span class="value">dc322f</span></div><div class="line"><span class="attribute">blue</span>=<span class="value">268bd2</span></div><div class="line"><span class="attribute">black</span>=<span class="value">fdf6e3</span></div><div class="line"><span class="attribute">blue</span>(<span class="attribute">bold</span>)=<span class="value">657b83</span></div><div class="line"><span class="attribute">yellow</span>(<span class="attribute">bold</span>)=<span class="value">839496</span></div><div class="line"><span class="attribute">cyan</span>(<span class="attribute">bold</span>)=<span class="value">586e75</span></div><div class="line"><span class="attribute">yellow</span>=<span class="value">b58900</span></div><div class="line"><span class="attribute">magenta</span>=<span class="value">dd3682</span></div><div class="line"><span class="attribute">background</span>=<span class="value">fdf6e3</span></div><div class="line"><span class="attribute">white</span>=<span class="value">073642</span></div><div class="line"><span class="attribute">cyan</span>=<span class="value">2aa198</span></div><div class="line">[<span class="attribute">Names</span>]</div><div class="line"><span class="attribute">count</span>=<span class="value">1</span></div><div class="line"><span class="attribute">name0</span>=<span class="value">Solarized</span> <span class="attribute">Light</span></div></pre></td></tr></table></figure>
+
+<p>效果如图<img src="/images/SL.png" alt=""></p>
+<p>ps: 后来仔细看了一下，已经有人 fork 了一个 Solarized 的代码库，并提交了 for Xshell 的 pull。参见<br>[这里]（<a href="https://github.com/mayjabber/solarized/tree/master/xshell-colors-solarized" target="_blank" rel="external">https://github.com/mayjabber/solarized/tree/master/xshell-colors-solarized</a>) <a href="https://github.com/mayjabber/solarized/tree/master/xshell-colors-solarized" target="_blank" rel="external">https://github.com/mayjabber/solarized/tree/master/xshell-colors-solarized</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Xshell 是 Windows 里面为数不多的免费且好用的 SSH 客户端，不过默认的配色实在是太难看了，真的是太难看了，如果不改掉实在是不能用。而且和 Sublime Text、TextMate、Emacs、VIM 等编辑神器以及 iTerm2 等深受好评的软件不一样，]]>
+    </summary>
+    
+      <category term="美化" scheme="http://daxiawj.github.io/tags/%E7%BE%8E%E5%8C%96/"/>
+    
+      <category term="Solarized" scheme="http://daxiawj.github.io/tags/Solarized/"/>
+    
+      <category term="Xshell" scheme="http://daxiawj.github.io/tags/Xshell/"/>
+    
+      <category term="系统" scheme="http://daxiawj.github.io/tags/%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="系统" scheme="http://daxiawj.github.io/categories/%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[修改Octopress 列表的indent]]></title>
+    <link href="http://daxiawj.github.io/2014/03-23-%E4%BF%AE%E6%94%B9Octopress-%E5%88%97%E8%A1%A8%E7%9A%84indent.html"/>
+    <id>http://daxiawj.github.io/2014/03-23-修改Octopress-列表的indent.html</id>
+    <published>2014-03-23T06:50:57.000Z</published>
+    <updated>2014-10-26T02:44:26.000Z</updated>
+    <content type="html"><![CDATA[<p>Octopress 默认的列表总是抵着页面第一列，看起来实在不美观。其实修改起来很简单，只要简单的将<br><strong>sass/custom/_layout.scss</strong> 文件中的 : <strong>//$indented-lists: true;</strong> 改为<strong>false</strong> 就行了。改完一看，世界清净了……</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Octopress 默认的列表总是抵着页面第一列，看起来实在不美观。其实修改起来很简单，只要简单的将<br><strong>sass/custom/_layout.scss</strong> 文件中的 : <strong>//$indented-lists: true;</]]>
+    </summary>
+    
+      <category term="Octopress" scheme="http://daxiawj.github.io/tags/Octopress/"/>
+    
+      <category term="自定义" scheme="http://daxiawj.github.io/tags/%E8%87%AA%E5%AE%9A%E4%B9%89/"/>
+    
+      <category term="博客架构" scheme="http://daxiawj.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%9E%B6%E6%9E%84/"/>
+    
+      <category term="博客" scheme="http://daxiawj.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Ubuntu UFW Firewall]]></title>
+    <link href="http://daxiawj.github.io/2014/03-23-Ubuntu-UFW-Firewall.html"/>
+    <id>http://daxiawj.github.io/2014/03-23-Ubuntu-UFW-Firewall.html</id>
+    <published>2014-03-23T06:50:57.000Z</published>
+    <updated>2014-10-26T02:46:34.000Z</updated>
+    <content type="html"><![CDATA[<p>用一下几条命令安装并开启 ufw：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> apt-get install ufw</div><div class="line"><span class="built_in">sudo</span> ufw enable</div><div class="line"><span class="built_in">sudo</span> ufw default reject</div></pre></td></tr></table></figure>
+
+<p>这样就安装开启了 UFW 防火墙，并默认拒绝一切外来连接请求（reject），显示为未连接，为安全起见，最好将 <code>reject</code> 改为<code>deny</code>。</p>
+<p>为开启 SSH 和 WWW 服务，运行：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> ufw allow ssh/tcp</div><div class="line"><span class="built_in">sudo</span> ufw allow www/tcp</div></pre></td></tr></table></figure>
+
+<p>同时使用以下命令查询状态：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> ufw status</div></pre></td></tr></table></figure>
+
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>用一下几条命令安装并开启 ufw：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div]]>
+    </summary>
+    
+      <category term="NetWorking" scheme="http://daxiawj.github.io/tags/NetWorking/"/>
+    
+      <category term="Ubuntu" scheme="http://daxiawj.github.io/tags/Ubuntu/"/>
+    
+      <category term="Firewall" scheme="http://daxiawj.github.io/tags/Firewall/"/>
+    
+      <category term="UFW" scheme="http://daxiawj.github.io/tags/UFW/"/>
+    
+      <category term="技术" scheme="http://daxiawj.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="技术" scheme="http://daxiawj.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[轻松并发执行作业--GNU Parallel]]></title>
+    <link href="http://daxiawj.github.io/2014/03-19-%E8%BD%BB%E6%9D%BE%E5%B9%B6%E5%8F%91%E6%89%A7%E8%A1%8C%E4%BD%9C%E4%B8%9A-GNU-Parallel.html"/>
+    <id>http://daxiawj.github.io/2014/03-19-轻松并发执行作业-GNU-Parallel.html</id>
+    <published>2014-03-19T06:50:57.000Z</published>
+    <updated>2014-10-12T11:56:48.000Z</updated>
+    <content type="html"><![CDATA[<p> 有的时候要执行一些很快但是却很多重复的操作，例如修改所有普通文件的权限，修改一下权限本是很快的操作，但是文件很多的话操作起来就慢了。再比如要下载很多 http 下很小的文件，下载一个文件如果只需要三秒，但是每一个文件从建立连接、进行对话然后开始下载直到下载完成，中间会浪费很多时间，可能浪费的比实际下载所需的时间还多。</p>
+<p> 因此，如果能有一个方法并发进行，那么效率会高得多。以前在 Shell 里面也有一些 tricks 来进行这方面的操作，但是总是因为繁琐而容易出错。</p>
+<p> 现在 FSF 开发的 GNU parallel 一出，问题迎刃而解。例如修改所有子目录下面普通文件的权限：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">find</span> ./ -<span class="built_in">type</span> <span class="keyword">f</span> | parallel -<span class="keyword">m</span> chmod <span class="built_in">mode</span></div></pre></td></tr></table></figure>
+
+<p> 批量修改文件夹权限 </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">find</span> ./ -<span class="built_in">type</span> <span class="keyword">d</span> | parallel -<span class="keyword">m</span> chmod <span class="built_in">mode</span></div></pre></td></tr></table></figure>
+
+<p> 再如有一个顺序任务的脚本 batch.sh</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="title">wget</span> url1</div><div class="line">wget url2</div><div class="line">wget url3</div><div class="line">wget url4</div><div class="line">wget url5</div><div class="line">wget url6</div></pre></td></tr></table></figure>
+
+<p> 那么你就可以并行运行如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">parallel</span> -j+<span class="number">0</span> &lt; batch.txt </div><div class="line">## This runs <span class="keyword">as</span> many instance <span class="keyword">of</span> the commands <span class="keyword">in</span> batch.txt</div><div class="line">## <span class="keyword">in</span> <span class="keyword">parallel</span> <span class="keyword">as</span> you have cores (-j+<span class="number">0</span>) <span class="keyword">and</span> schedules the</div><div class="line">## jobs <span class="keyword">in</span> an efficient manner</div></pre></td></tr></table></figure>
+
+<p> 当然，你也可以直接 使用一个 parallel 脚本（shebang）</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="shebang">#!/usr/bin/parallel </span></div><div class="line">blahblah</div></pre></td></tr></table></figure>
+
+<p> 要安装它很简单，比如:</p>
+<ul>
+<li>Ubuntu: <code>sudo apt-get install parallel</code></li>
+<li>Fedora: <code>yum install parallel</code></li>
+<li>Mac OSX: <code>brew install parallel</code></li>
+<li><p>Others: <code>源码编译（下载, tar xjvf parallel....tar.bz2;  ./configure; make install）</code></p>
+<p>至于详细功能，那就需要： <code>man parallel</code> 了 </p>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p> 有的时候要执行一些很快但是却很多重复的操作，例如修改所有普通文件的权限，修改一下权限本是很快的操作，但是文件很多的话操作起来就慢了。再比如要下载很多 http 下很小的文件，下载一个文件如果只需要三秒，但是每一个文件从建立连接、进行对话然后开始下载直到下载完成，中间会浪费]]>
+    </summary>
+    
+      <category term="GNU" scheme="http://daxiawj.github.io/tags/GNU/"/>
+    
+      <category term="parallel" scheme="http://daxiawj.github.io/tags/parallel/"/>
+    
+      <category term="并发" scheme="http://daxiawj.github.io/tags/%E5%B9%B6%E5%8F%91/"/>
+    
+      <category term="shell" scheme="http://daxiawj.github.io/tags/shell/"/>
+    
+      <category term="技术" scheme="http://daxiawj.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="技术" scheme="http://daxiawj.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Linux 'date' Command usage]]></title>
+    <link href="http://daxiawj.github.io/2014/02-24-Linux-date-Command-usage.html"/>
+    <id>http://daxiawj.github.io/2014/02-24-Linux-date-Command-usage.html</id>
+    <published>2014-02-24T06:50:57.000Z</published>
+    <updated>2014-10-12T11:54:07.000Z</updated>
+    <content type="html"><![CDATA[<p> *nix <code>date</code> is quite powerful tool for date manipulation.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> idate <span class="keyword">in</span> `seq <span class="number">0</span> <span class="number">1461</span>`</div><div class="line"><span class="keyword">do</span></div><div class="line">  thedate=`date +%Y%m%d <span class="operator">-d</span> <span class="string">"20100101 + <span class="variable">$idate</span>"</span>`</div><div class="line">  <span class="built_in">echo</span> <span class="variable">$thedate</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+
+<p>etc.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p> *nix <code>date</code> is quite powerful tool for date manipulation.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><p]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://daxiawj.github.io/tags/Linux/"/>
+    
+      <category term="Server" scheme="http://daxiawj.github.io/tags/Server/"/>
+    
+      <category term="Bash" scheme="http://daxiawj.github.io/tags/Bash/"/>
+    
+      <category term="技术" scheme="http://daxiawj.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="技术" scheme="http://daxiawj.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Restrict sftp-server concurrent connections]]></title>
+    <link href="http://daxiawj.github.io/2014/02-19-Restrict-sftp-server-concurrent-connections.html"/>
+    <id>http://daxiawj.github.io/2014/02-19-Restrict-sftp-server-concurrent-connections.html</id>
+    <published>2014-02-19T06:50:57.000Z</published>
+    <updated>2014-10-12T11:52:47.000Z</updated>
+    <content type="html"><![CDATA[<p><code>man sshd_config</code>:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">MaxStartups</span> <span class="number">2</span></div></pre></td></tr></table></figure>
+
+<p>~用选项 MaxStartups, Default value is 10.~</p>
+<p>补充：这个貌似不是这样的，sigh，sftp 能不能进行限制就真不知道了，哪位高手告诉我一下吧！</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><code>man sshd_config</code>:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td cl]]>
+    </summary>
+    
+      <category term="Server" scheme="http://daxiawj.github.io/tags/Server/"/>
+    
+      <category term="sftp" scheme="http://daxiawj.github.io/tags/sftp/"/>
+    
+      <category term="Linux" scheme="http://daxiawj.github.io/tags/Linux/"/>
+    
+      <category term="技术" scheme="http://daxiawj.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="系统" scheme="http://daxiawj.github.io/categories/%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+</feed>
