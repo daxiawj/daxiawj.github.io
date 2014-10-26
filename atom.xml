@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Wir Müssen Wissen, Wir Werden Wissen.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://daxiawj.github.io/"/>
-  <updated>2014-10-26T03:21:23.011Z</updated>
+  <updated>2014-10-26T03:37:03.644Z</updated>
   <id>http://daxiawj.github.io/</id>
   
   <author>
@@ -277,9 +277,9 @@
     <link href="http://daxiawj.github.io/2014/03-27-testcode.html"/>
     <id>http://daxiawj.github.io/2014/03-27-testcode.html</id>
     <published>2014-03-27T03:08:54.000Z</published>
-    <updated>2014-10-26T03:21:17.000Z</updated>
+    <updated>2014-10-26T03:23:05.000Z</updated>
     <content type="html"><![CDATA[<p>C code rendered by system:</p>
-<figure class="highlight C"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* Hello World program */</span></div><div class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;stdio.h&gt;</span></div><div class="line">main()</div><div class="line">{<span class="built_in">printf</span>(<span class="string">"Hello World"</span>);</div><div class="line">}</div></pre></td></tr></table></figure>
+<figure class="highlight C"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* Hello World program */</span></div><div class="line"><span class="preprocessor">#<span class="keyword">include</span>&lt;stdio.h&gt;</span></div><div class="line">main()</div><div class="line">{</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"Hello World"</span>);</div><div class="line">}</div></pre></td></tr></table></figure>
 
 <p>C code rendered by vim:</p>
 <figure class="highlight"><pre><font face="monospace"><font color="#00ffff">/*</font><font color="#00ffff">&#xA0;Hello World program&#xA0;</font><font color="#00ffff">*/</font>
@@ -304,7 +304,7 @@ main()
     <link href="http://daxiawj.github.io/2014/03-25-Hexo%E5%BB%BA%E7%AB%99%E5%B9%B6%E8%87%AA%E5%AE%9A%E4%B9%89%E6%AD%A5%E9%AA%A4.html"/>
     <id>http://daxiawj.github.io/2014/03-25-Hexo建站并自定义步骤.html</id>
     <published>2014-03-25T08:44:41.000Z</published>
-    <updated>2014-10-26T02:54:41.000Z</updated>
+    <updated>2014-10-26T03:36:44.000Z</updated>
     <content type="html"><![CDATA[<p>前段时间稍微折腾了一下 <a href="http://octopress.org/" target="_blank" rel="external">Octopress</a>，被其自由、强大的功能能所吸引，毅然决然地将博客搬到了 Octopress+Github 上。但随着博客数量的增多，其速度慢的弊端逐渐显现，这时候，基于<a href="nodejs.org">nodejs</a> 的<a href="hexo.io">hexo</a>闪电般地出现了，其速度简直是 blazingly fast。于是，不出所料地，又搬到了 hexo 上。</p>
 <p>搭建 hexo 的博客也很简单，从 Octopress 的内容迁移也只需把当时 post 下面的 <code>.md</code> 文件移到 <code>source/_post</code> 下面即可。但功能上的完善还是需要一定的技巧的。</p>
 <ul>
