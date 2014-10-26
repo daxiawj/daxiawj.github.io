@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Wir Müssen Wissen, Wir Werden Wissen.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://daxiawj.github.io/"/>
-  <updated>2014-10-26T03:37:03.644Z</updated>
+  <updated>2014-10-26T04:01:45.916Z</updated>
   <id>http://daxiawj.github.io/</id>
   
   <author>
@@ -304,7 +304,7 @@ main()
     <link href="http://daxiawj.github.io/2014/03-25-Hexo%E5%BB%BA%E7%AB%99%E5%B9%B6%E8%87%AA%E5%AE%9A%E4%B9%89%E6%AD%A5%E9%AA%A4.html"/>
     <id>http://daxiawj.github.io/2014/03-25-Hexo建站并自定义步骤.html</id>
     <published>2014-03-25T08:44:41.000Z</published>
-    <updated>2014-10-26T03:36:44.000Z</updated>
+    <updated>2014-10-26T04:01:40.000Z</updated>
     <content type="html"><![CDATA[<p>前段时间稍微折腾了一下 <a href="http://octopress.org/" target="_blank" rel="external">Octopress</a>，被其自由、强大的功能能所吸引，毅然决然地将博客搬到了 Octopress+Github 上。但随着博客数量的增多，其速度慢的弊端逐渐显现，这时候，基于<a href="nodejs.org">nodejs</a> 的<a href="hexo.io">hexo</a>闪电般地出现了，其速度简直是 blazingly fast。于是，不出所料地，又搬到了 hexo 上。</p>
 <p>搭建 hexo 的博客也很简单，从 Octopress 的内容迁移也只需把当时 post 下面的 <code>.md</code> 文件移到 <code>source/_post</code> 下面即可。但功能上的完善还是需要一定的技巧的。</p>
 <ul>
@@ -329,7 +329,9 @@ main()
 <p><code>npm install hexo-local-image --save</code>，然后添加到_config.yml。</p>
 </li>
 <li><h2 id="使用_Vim_高亮代码">使用 Vim 高亮代码</h2>
-<p><code>npm install vim-tag-vimhighlight</code>，并添加到_config.yml。然后在代码前后加上前缀{\% vimhl lang \%} 和后缀{\% endvimhl \%}. 效果如下：</p>
+<p><code>npm install vim-tag-vimhighlight</code>，并添加到_config.yml。然后在代码前后加上前缀<code>&lt;hexoescape&gt;0&lt;/hexoescape&gt;</code>. 效果如下：</p>
+</li>
+</ul>
 <figure class="highlight"><pre><font face="monospace"><font color="#00ffff">;*****************************************************</font>
 <font color="#ffff00">load</font>&#xA0;<font color="#ff40ff">&quot;$NCARG_ROOT/lib/ncarg/nclscripts/csm/gsn_code.ncl&quot;</font>
 <font color="#ffff00">load</font>&#xA0;<font color="#ff40ff">&quot;$NCARG_ROOT/lib/ncarg/nclscripts/csm/gsn_csm.ncl&quot;</font>
@@ -354,9 +356,9 @@ main()
 &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; shr =&#xA0;<font color="#00ffff"><b>sprinti</b></font>(<font color="#ff40ff">&quot;%0.2i&quot;</font>,hr)
 &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; filename = date+shr+<font color="#ff40ff">&quot;.nc&quot;</font>
 &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; ... ...
-&#xA0;&#xA0;&#xA0;&#xA0;
 </font></pre></figure>
-</li>
+
+<ul>
 <li><p>支持 RSS<br><code>npm install hexo-generator-feed --save</code><br>_config.yml plugins</p>
 </li>
 <li><p>支持 SiteMap<br><code>npm install hexo-generator-sitemap --save</code><br>_config.yml plugins</p>
@@ -377,19 +379,20 @@ main()
 </li>
 <li><p>安装百度统计</p>
 <ol>
-<li>去 <a href="http://tongji.baidu.com/web/welcome/login" target="_blank" rel="external"> 百度统计 </a> 获取统计代码</li>
-<li>配置</li>
+<li><p>去 <a href="http://tongji.baidu.com/web/welcome/login" target="_blank" rel="external"> 百度统计 </a> 获取统计代码</p>
+</li>
+<li><p>配置.</p>
+</li>
 </ol>
+<script src="https://gist.github.com/5da9e811c554cac962a5.js"></script>
+
+
 </li>
 </ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">vim themes/myls/layout/_partial/baidu_analytics.ejs</div><div class="line">  <span class="vbscript">&lt;% <span class="keyword">if</span> (theme.baidu_analytics){%&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> _bdhmProtocol = ((<span class="string">"https:"</span> == <span class="built_in">document</span>.location.protocol) ? <span class="string">" https://"</span> : <span class="string">" http://"</span>);</div><div class="line">    <span class="built_in">document</span>.write(<span class="built_in">unescape</span>(<span class="string">"%3Cscript src='"</span> + _bdhmProtocol + <span class="string">"hm.baidu.com/h.js%3F05f071cca0ab1e718d2fa8a39d743f89' type='text/javascript'%3E%3C/script%3E"</span>));</div><div class="line">  <span class="tag">&lt;/<span class="title">script</span>&gt;</span></div><div class="line">  <span class="vbscript">&lt;% } %&gt;</span></div></pre></td></tr></table></figure>
-
-
-
-<pre><code><span class="bullet">3.  </span>add configuration:
-</code></pre><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">vim</span> themes/myls/_config.yml</div><div class="line">baidu_analytic<span class="variable">s:</span> true</div></pre></td></tr></table></figure>
-
-]]></content>
+<pre><code><span class="number">3</span>.  <span class="built_in">add</span> configuration. 
+</code></pre><figure class="highlight"><pre><font face="monospace">vim themes/myls/_config.yml
+<font color="#00ffff"><b>baidu_analytics</b></font><font color="#ffd7d7">:</font>&#xA0;<font color="#ff40ff">true</font>
+</font></pre></figure>]]></content>
     <summary type="html">
     <![CDATA[<p>前段时间稍微折腾了一下 <a href="http://octopress.org/" target="_blank" rel="external">Octopress</a>，被其自由、强大的功能能所吸引，毅然决然地将博客搬到了 Octopress+Github 上。但随]]>
     </summary>

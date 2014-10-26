@@ -139,7 +139,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://daxiawj.github.io/2014/05-14-Hexo-一键群发-Hexo-Batch-Deploy.html" data-id="sh1dau33pnjn2u6v" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://daxiawj.github.io/2014/05-14-Hexo-一键群发-Hexo-Batch-Deploy.html" data-id="vfettidk2y566qb2" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -194,7 +194,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://daxiawj.github.io/2014/05-11-OSX-can-t-open-X11-display.html" data-id="omyasqp6urm89vx5" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://daxiawj.github.io/2014/05-11-OSX-can-t-open-X11-display.html" data-id="vegmkj135e2pusgs" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -253,7 +253,7 @@ main()
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://daxiawj.github.io/2014/03-27-testcode.html" data-id="6sfdfxz4ji2vdys6" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://daxiawj.github.io/2014/03-27-testcode.html" data-id="ef1w28l5o5ab4inr" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -318,7 +318,9 @@ main()
 <p><code>npm install hexo-local-image --save</code>，然后添加到_config.yml。</p>
 </li>
 <li><h2 id="使用_Vim_高亮代码">使用 Vim 高亮代码</h2>
-<p><code>npm install vim-tag-vimhighlight</code>，并添加到_config.yml。然后在代码前后加上前缀{\% vimhl lang \%} 和后缀{\% endvimhl \%}. 效果如下：</p>
+<p><code>npm install vim-tag-vimhighlight</code>，并添加到_config.yml。然后在代码前后加上前缀<code>&lt;hexoescape&gt;0&lt;/hexoescape&gt;</code>. 效果如下：</p>
+</li>
+</ul>
 <figure class="highlight"><pre><font face="monospace"><font color="#00ffff">;*****************************************************</font>
 <font color="#ffff00">load</font>&#xA0;<font color="#ff40ff">&quot;$NCARG_ROOT/lib/ncarg/nclscripts/csm/gsn_code.ncl&quot;</font>
 <font color="#ffff00">load</font>&#xA0;<font color="#ff40ff">&quot;$NCARG_ROOT/lib/ncarg/nclscripts/csm/gsn_csm.ncl&quot;</font>
@@ -343,9 +345,9 @@ main()
 &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; shr =&#xA0;<font color="#00ffff"><b>sprinti</b></font>(<font color="#ff40ff">&quot;%0.2i&quot;</font>,hr)
 &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; filename = date+shr+<font color="#ff40ff">&quot;.nc&quot;</font>
 &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; ... ...
-&#xA0;&#xA0;&#xA0;&#xA0;
 </font></pre></figure>
-</li>
+
+<ul>
 <li><p>支持 RSS<br><code>npm install hexo-generator-feed --save</code><br>_config.yml plugins</p>
 </li>
 <li><p>支持 SiteMap<br><code>npm install hexo-generator-sitemap --save</code><br>_config.yml plugins</p>
@@ -366,24 +368,25 @@ main()
 </li>
 <li><p>安装百度统计</p>
 <ol>
-<li>去 <a href="http://tongji.baidu.com/web/welcome/login" target="_blank" rel="external"> 百度统计 </a> 获取统计代码</li>
-<li>配置</li>
+<li><p>去 <a href="http://tongji.baidu.com/web/welcome/login" target="_blank" rel="external"> 百度统计 </a> 获取统计代码</p>
+</li>
+<li><p>配置.</p>
+</li>
 </ol>
+<script src="https://gist.github.com/5da9e811c554cac962a5.js"></script>
+
+
 </li>
 </ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">vim themes/myls/layout/_partial/baidu_analytics.ejs</div><div class="line">  <span class="vbscript">&lt;% <span class="keyword">if</span> (theme.baidu_analytics){%&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> _bdhmProtocol = ((<span class="string">"https:"</span> == <span class="built_in">document</span>.location.protocol) ? <span class="string">" https://"</span> : <span class="string">" http://"</span>);</div><div class="line">    <span class="built_in">document</span>.write(<span class="built_in">unescape</span>(<span class="string">"%3Cscript src='"</span> + _bdhmProtocol + <span class="string">"hm.baidu.com/h.js%3F05f071cca0ab1e718d2fa8a39d743f89' type='text/javascript'%3E%3C/script%3E"</span>));</div><div class="line">  <span class="tag">&lt;/<span class="title">script</span>&gt;</span></div><div class="line">  <span class="vbscript">&lt;% } %&gt;</span></div></pre></td></tr></table></figure>
-
-
-
-<pre><code><span class="bullet">3.  </span>add configuration:
-</code></pre><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">vim</span> themes/myls/_config.yml</div><div class="line">baidu_analytic<span class="variable">s:</span> true</div></pre></td></tr></table></figure>
-
-
+<pre><code><span class="number">3</span>.  <span class="built_in">add</span> configuration. 
+</code></pre><figure class="highlight"><pre><font face="monospace">vim themes/myls/_config.yml
+<font color="#00ffff"><b>baidu_analytics</b></font><font color="#ffd7d7">:</font>&#xA0;<font color="#ff40ff">true</font>
+</font></pre></figure>
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://daxiawj.github.io/2014/03-25-Hexo建站并自定义步骤.html" data-id="zdbny4k8hxogu29w" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://daxiawj.github.io/2014/03-25-Hexo建站并自定义步骤.html" data-id="umjp3837vx4pw2ue" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -432,7 +435,7 @@ main()
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://daxiawj.github.io/2014/03-23-修改Octopress-列表的indent.html" data-id="1b5ytn3ow6e3cpa6" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://daxiawj.github.io/2014/03-23-修改Octopress-列表的indent.html" data-id="a101i31i3qca53oz" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -481,7 +484,7 @@ main()
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://daxiawj.github.io/2013/12-24-修改Octopress-列表的-indent.html" data-id="xwyb5p1bzcobnmdr" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://daxiawj.github.io/2013/12-24-修改Octopress-列表的-indent.html" data-id="or9coyo8gwaw08b4" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -533,7 +536,7 @@ main()
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://daxiawj.github.io/2013/12-20-Octopress-Solarized-Light-替换-Dark.html" data-id="io0xus3ico1eglgj" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://daxiawj.github.io/2013/12-20-Octopress-Solarized-Light-替换-Dark.html" data-id="7sxivasmo252x33w" class="article-share-link" data-share="baidu">Share</a>
       
 
       
@@ -666,7 +669,7 @@ main()
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://daxiawj.github.io/2013/12-16-Hello-Octopress.html" data-id="43mbg0gf2lvh4t9c" class="article-share-link" data-share="baidu">Share</a>
+        <a data-url="http://daxiawj.github.io/2013/12-16-Hello-Octopress.html" data-id="6k0qckj05g4953xm" class="article-share-link" data-share="baidu">Share</a>
       
 
       
