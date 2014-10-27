@@ -103,6 +103,78 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Brew-your-software-in-OS-X" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10-27-Brew-your-software-in-OS-X.html" class="article-date">
+  <time datetime="2014-10-27T01:38:12.000Z" itemprop="datePublished">2014 10 27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/系统/">系统</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10-27-Brew-your-software-in-OS-X.html">Brew your software in OS X</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装_brew">安装 brew</h2>
+<p><code>ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code> </p>
+<h2 id="查找软件">查找软件</h2>
+<p><code>brew search netcdf</code></p>
+<h2 id="查看软件信息">查看软件信息</h2>
+<p><code>brew info netcdf</code></p>
+<h2 id="安装软件">安装软件</h2>
+<p><code>brew install ncview gfortran cdo grads wget axel parallel</code></p>
+<p>值得注意的是，brew会自动解决依赖问题，如ncview依赖netcdf，那么他会自动先安装netcdf，然后再安装ncview</p>
+<p>如果编译一个软件需要参数，那么可以直接加上这些参数，如：</p>
+<p><code>brew install --enable-fortran</code></p>
+<h2 id="安装小众软件">安装小众软件</h2>
+<p>brew 目前将比较小众的一些软件分门别类，cdo 属于science类，同样地 ncview、netcdf等也属于这一类，而grads则分到binary 类，这类小众软件的formula默认是不下载的，需要预先“提取”一下: </p>
+<p><code>brew tap homebrew/science homebrew/binary</code></p>
+<h2 id="自己创建brew安装包">自己创建brew安装包</h2>
+<p>如果需要的软件暂时还没有进入官方维护包内，那么可以创建一个新的 brew formula (以cdo为例, 更新：cdo目前已经正式进入官方的list中，因此不需要再手动创建，而只需要运行 brew install cdo 就好了)</p>
+<p><code>brew create https://code.zmaw.de/attachments/download/2372/cdo-1.5.4.tar.gz</code></p>
+<p>创建好了以后，修改 Formula文件，解决一些依赖问题</p>
+<p><code>brew edit cdo</code></p>
+<p>写入以下内容（依赖 netcdf, hdf5, proj）</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require</span> <span class="string">'formula'</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cdo</span> <span class="inheritance">&lt; <span class="parent">Formula</span></span></span></div><div class="line">  url <span class="string">'https://code.zmaw.de/attachments/download/1690/cdo-1.5.2.tar.gz'</span></div><div class="line">  homepage <span class="string">''</span></div><div class="line">  md5 <span class="string">'a01826b7c2906579f17c6dbc7d619479'</span></div><div class="line"></div><div class="line">  depends_on <span class="string">'netcdf'</span>  <span class="comment"># 这几句是手动添加的，增加依赖关系</span></div><div class="line">  depends_on <span class="string">'hdf5'</span></div><div class="line">  depends_on <span class="string">'proj'</span></div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> </span>install</div><div class="line">  </div><div class="line">    hdf5   = <span class="constant">Formula</span>.factory <span class="string">'hdf5'</span>  <span class="comment"># 这几句是手动添加的，增加依赖关系</span></div><div class="line">    netcdf = <span class="constant">Formula</span>.factory <span class="string">'netcdf'</span></div><div class="line">    proj   = <span class="constant">Formula</span>.factory <span class="string">'proj'</span></div><div class="line">    system <span class="string">"./configure"</span>, <span class="string">"--with-hdf5=<span class="subst">#{hdf5.prefix}</span>"</span>,<span class="string">"--with-proj=<span class="subst">#{proj.prefix}</span>"</span>,<span class="string">"--disable-debug"</span>, <span class="string">"--disable-dependency-tracking"</span>,<span class="string">"--with-netcdf=<span class="subst">#{netcdf.prefix}</span>"</span>, <span class="string">"--prefix=<span class="subst">#{prefix}</span>"</span></div><div class="line">    <span class="comment"># system "cmake . #{std_cmake_parameters}"</span></div><div class="line">    system <span class="string">"make install"</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> </span>test</div><div class="line">    <span class="comment"># This test will fail and we won't accept that! It's enough to just</span></div><div class="line">    <span class="comment"># replace "false" with the main program this formula installs, but</span></div><div class="line">    <span class="comment"># it'd be nice if you were more thorough. Test the test with</span></div><div class="line">    <span class="comment"># `brew test cdo`. Remove this comment before submitting</span></div><div class="line">    <span class="comment"># your pull request!</span></div><div class="line">    system <span class="string">"false"</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+
+<p>然后就可以编译安装啦</p>
+<p><code>brew install cdo</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://daxiawj.github.io/2014/10-27-Brew-your-software-in-OS-X.html" data-id="lko6bkkkhfji1oua" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://daxiawj.github.io/2014/10-27-Brew-your-software-in-OS-X.html#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OSX/">OSX</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Software/">Software</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/brew/">brew</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-关掉Mac-OS-X-spotlight对移动存储设备的索引" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/06-05-关掉Mac-OS-X-spotlight对移动存储设备的索引.html" class="article-date">
@@ -167,7 +239,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/休闲/">休闲</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客/">博客</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/科研/">科研</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统/">系统</a><span class="category-list-count">7</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/休闲/">休闲</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客/">博客</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/科研/">科研</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统/">系统</a><span class="category-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -176,7 +248,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Apache/" style="font-size: 10.00px;">Apache</a><a href="/tags/Bash/" style="font-size: 10.00px;">Bash</a><a href="/tags/Blog/" style="font-size: 12.50px;">Blog</a><a href="/tags/Configuration/" style="font-size: 10.00px;">Configuration</a><a href="/tags/Demo/" style="font-size: 10.00px;">Demo</a><a href="/tags/Editor/" style="font-size: 12.50px;">Editor</a><a href="/tags/Finder/" style="font-size: 10.00px;">Finder</a><a href="/tags/Firewall/" style="font-size: 12.50px;">Firewall</a><a href="/tags/Fortran/" style="font-size: 10.00px;">Fortran</a><a href="/tags/GNU/" style="font-size: 10.00px;">GNU</a><a href="/tags/Git/" style="font-size: 10.00px;">Git</a><a href="/tags/Hexo/" style="font-size: 10.00px;">Hexo</a><a href="/tags/LaTeX/" style="font-size: 12.50px;">LaTeX</a><a href="/tags/Linux/" style="font-size: 15.00px;">Linux</a><a href="/tags/Mac/" style="font-size: 10.00px;">Mac</a><a href="/tags/Mavericks/" style="font-size: 12.50px;">Mavericks</a><a href="/tags/NCL/" style="font-size: 10.00px;">NCL</a><a href="/tags/NetWorking/" style="font-size: 12.50px;">NetWorking</a><a href="/tags/OSX/" style="font-size: 17.50px;">OSX</a><a href="/tags/Octopress/" style="font-size: 15.00px;">Octopress</a><a href="/tags/R/" style="font-size: 10.00px;">R</a><a href="/tags/Server/" style="font-size: 20.00px;">Server</a><a href="/tags/Solarized/" style="font-size: 12.50px;">Solarized</a><a href="/tags/Special-sign/" style="font-size: 10.00px;">Special sign</a><a href="/tags/Sublime-Text/" style="font-size: 10.00px;">Sublime Text</a><a href="/tags/Sweave/" style="font-size: 10.00px;">Sweave</a><a href="/tags/TextMate/" style="font-size: 10.00px;">TextMate</a><a href="/tags/UFW/" style="font-size: 12.50px;">UFW</a><a href="/tags/Ubuntu/" style="font-size: 12.50px;">Ubuntu</a><a href="/tags/VIM/" style="font-size: 10.00px;">VIM</a><a href="/tags/X11/" style="font-size: 10.00px;">X11</a><a href="/tags/Xshell/" style="font-size: 10.00px;">Xshell</a><a href="/tags/bash/" style="font-size: 10.00px;">bash</a><a href="/tags/blog/" style="font-size: 10.00px;">blog</a><a href="/tags/cdto/" style="font-size: 10.00px;">cdto</a><a href="/tags/go2shell/" style="font-size: 10.00px;">go2shell</a><a href="/tags/hexo/" style="font-size: 10.00px;">hexo</a><a href="/tags/iTerm/" style="font-size: 10.00px;">iTerm</a><a href="/tags/input/" style="font-size: 10.00px;">input</a><a href="/tags/parallel/" style="font-size: 10.00px;">parallel</a>
+      <a href="/tags/Apache/" style="font-size: 10.00px;">Apache</a><a href="/tags/Bash/" style="font-size: 10.00px;">Bash</a><a href="/tags/Blog/" style="font-size: 13.33px;">Blog</a><a href="/tags/Configuration/" style="font-size: 10.00px;">Configuration</a><a href="/tags/Demo/" style="font-size: 10.00px;">Demo</a><a href="/tags/Editor/" style="font-size: 13.33px;">Editor</a><a href="/tags/Finder/" style="font-size: 10.00px;">Finder</a><a href="/tags/Firewall/" style="font-size: 13.33px;">Firewall</a><a href="/tags/Fortran/" style="font-size: 10.00px;">Fortran</a><a href="/tags/GNU/" style="font-size: 10.00px;">GNU</a><a href="/tags/Git/" style="font-size: 10.00px;">Git</a><a href="/tags/Hexo/" style="font-size: 10.00px;">Hexo</a><a href="/tags/LaTeX/" style="font-size: 13.33px;">LaTeX</a><a href="/tags/Linux/" style="font-size: 16.67px;">Linux</a><a href="/tags/Mac/" style="font-size: 13.33px;">Mac</a><a href="/tags/Mavericks/" style="font-size: 13.33px;">Mavericks</a><a href="/tags/NCL/" style="font-size: 10.00px;">NCL</a><a href="/tags/NetWorking/" style="font-size: 13.33px;">NetWorking</a><a href="/tags/OSX/" style="font-size: 20.00px;">OSX</a><a href="/tags/Octopress/" style="font-size: 16.67px;">Octopress</a><a href="/tags/R/" style="font-size: 10.00px;">R</a><a href="/tags/Server/" style="font-size: 20.00px;">Server</a><a href="/tags/Software/" style="font-size: 10.00px;">Software</a><a href="/tags/Solarized/" style="font-size: 13.33px;">Solarized</a><a href="/tags/Special-sign/" style="font-size: 10.00px;">Special sign</a><a href="/tags/Sublime-Text/" style="font-size: 10.00px;">Sublime Text</a><a href="/tags/Sweave/" style="font-size: 10.00px;">Sweave</a><a href="/tags/TextMate/" style="font-size: 10.00px;">TextMate</a><a href="/tags/UFW/" style="font-size: 13.33px;">UFW</a><a href="/tags/Ubuntu/" style="font-size: 13.33px;">Ubuntu</a><a href="/tags/VIM/" style="font-size: 10.00px;">VIM</a><a href="/tags/X11/" style="font-size: 10.00px;">X11</a><a href="/tags/Xshell/" style="font-size: 10.00px;">Xshell</a><a href="/tags/bash/" style="font-size: 10.00px;">bash</a><a href="/tags/blog/" style="font-size: 10.00px;">blog</a><a href="/tags/brew/" style="font-size: 10.00px;">brew</a><a href="/tags/cdto/" style="font-size: 10.00px;">cdto</a><a href="/tags/go2shell/" style="font-size: 10.00px;">go2shell</a><a href="/tags/hexo/" style="font-size: 10.00px;">hexo</a><a href="/tags/iTerm/" style="font-size: 10.00px;">iTerm</a>
     </div>
   </div>
 
@@ -185,7 +257,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -195,6 +267,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2014/10-27-Brew-your-software-in-OS-X.html">Brew your software in OS X</a>
+          </li>
         
           <li>
             <a href="/2014/09-16-SublimeTextTextMate-remote-editing-with-rmate.html">SublimeText/TextMate remote editing with rmate</a>
@@ -210,10 +286,6 @@
         
           <li>
             <a href="/2014/05-14-Hexo-一键群发-Hexo-Batch-Deploy.html">Hexo 一键群发_Hexo Batch Deploy</a>
-          </li>
-        
-          <li>
-            <a href="/2014/05-11-OSX-can-t-open-X11-display.html">OSX: can&#39;t open X11 display</a>
           </li>
         
       </ul>
