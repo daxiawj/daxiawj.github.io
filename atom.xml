@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Wir Müssen Wissen, Wir Werden Wissen.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://daxiawj.github.io/"/>
-  <updated>2014-10-31T06:41:21.738Z</updated>
+  <updated>2014-11-06T03:16:54.154Z</updated>
   <id>http://daxiawj.github.io/</id>
   
   <author>
@@ -13,6 +13,47 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Sublime Text 开启对NCL的支持－附Vim NCL]]></title>
+    <link href="http://daxiawj.github.io/2014/11-06-Sublime-Text-%E5%BC%80%E5%90%AF%E5%AF%B9NCL%E7%9A%84%E6%94%AF%E6%8C%81%EF%BC%8D%E9%99%84Vim-NCL.html"/>
+    <id>http://daxiawj.github.io/2014/11-06-Sublime-Text-开启对NCL的支持－附Vim-NCL.html</id>
+    <published>2014-11-06T03:03:33.000Z</published>
+    <updated>2014-11-06T03:16:44.000Z</updated>
+    <content type="html"><![CDATA[<p>NCL是一门小众的语言，Sublime Text 是最近比较火的一款扩展能力非常强的跨平台编辑器，因此即便是小众的NCL 也有人（LASG的Dong Li 啦）为他开发了NCL支持功能，包括语法高亮、自动补全等。 具体使用方法如下：</p>
+<h2 id="安装_Sublime_Text">安装 Sublime Text</h2>
+<p>自不赘言 <a href="http://www.sublimetext.com" target="_blank" rel="external">http://www.sublimetext.com</a></p>
+<h2 id="开启Package_管理包">开启Package 管理包</h2>
+<p>如果是 Sublime 2:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">blabala</div></pre></td></tr></table></figure>
+
+<p>如果是 3:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lalalalalal</div></pre></td></tr></table></figure>
+
+<h2 id="添加_NCL扩展包">添加 NCL扩展包</h2>
+<p>Install Package: NCL</p>
+<h2 id="Vim_NCL">Vim NCL</h2>
+<p><code>git clone https://github.com/xiexinyls/vim ~/.vim</code></p>
+<p>也可以到 <a href="https://github.com/xiexinyls/vim" target="_blank" rel="external">https://github.com/xiexinyls/vim</a> 下载，然后放到 ~/.vim  目录下面，<br>当然注意 ~/.vimrc 文件</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>NCL是一门小众的语言，Sublime Text 是最近比较火的一款扩展能力非常强的跨平台编辑器，因此即便是小众的NCL 也有人（LASG的Dong Li 啦）为他开发了NCL支持功能，包括语法高亮、自动补全等。 具体使用方法如下：</p>
+<h2 id="安装_Subli]]>
+    </summary>
+    
+      <category term="Sublime text" scheme="http://daxiawj.github.io/tags/Sublime-text/"/>
+    
+      <category term="NCL" scheme="http://daxiawj.github.io/tags/NCL/"/>
+    
+      <category term="语法高亮" scheme="http://daxiawj.github.io/tags/%E8%AF%AD%E6%B3%95%E9%AB%98%E4%BA%AE/"/>
+    
+      <category term="编辑器" scheme="http://daxiawj.github.io/tags/%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+    
+      <category term="Vim" scheme="http://daxiawj.github.io/tags/Vim/"/>
+    
+      <category term="技术" scheme="http://daxiawj.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Brew your software in OS X]]></title>
@@ -696,41 +737,6 @@ Now that you have tried Sweave, how does it perform?
   </entry>
   
   <entry>
-    <title><![CDATA[一切为了太阳系的荣耀--Xshell的Solarized配色]]></title>
-    <link href="http://daxiawj.github.io/2014/03-23-%E4%B8%80%E5%88%87%E4%B8%BA%E4%BA%86%E5%A4%AA%E9%98%B3%E7%B3%BB%E7%9A%84%E8%8D%A3%E8%80%80-Xshell%E7%9A%84Solarized%E9%85%8D%E8%89%B2.html"/>
-    <id>http://daxiawj.github.io/2014/03-23-一切为了太阳系的荣耀-Xshell的Solarized配色.html</id>
-    <published>2014-03-23T06:50:57.000Z</published>
-    <updated>2014-10-26T02:43:35.000Z</updated>
-    <content type="html"><![CDATA[<p>Xshell 是 Windows 里面为数不多的免费且好用的 SSH 客户端，不过默认的配色实在是太难看了，真的是太难看了，如果不改掉实在是不能用。而且和 Sublime Text、TextMate、Emacs、VIM 等编辑神器以及 iTerm2 等深受好评的软件不一样，网上现成的 XShell 配色也着实少的可怜。冇办法，只好自己动手了。</p>
-<p>上面提到的编辑器，真的有很多经典的配色，如 Monokai、Dawn、Eiffel、Tommorow、Twilight 等，但是我最爱的，还是那经典的 Solarized。关于 Solarized，已经有很多 <a href="http://www.dblotus.com/?p=1524" target="_blank" rel="external"> 介绍 </a>，其官网在<a href="http://ethanschoonover.com/solarized" target="_blank" rel="external"> 这里 </a>，Github 的主页在<a href="https://github.com/altercation/solarized" target="_blank" rel="external"> 这里</a>，上面有为很多软件如 Emacs、Gedit、iTerm2、Putty、VIM、TextWrangler 等写好的配色文件，可自行采撷。</p>
-<p>最爱的 Solarized Dark 配色，写成 Xshell 能用的形式如下</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">[<span class="attribute">Solarized</span> <span class="attribute">Dark</span>]</span></span></div><div class="line"><span class="attribute">text</span>(<span class="attribute">bold</span>)=<span class="value">839496</span></div><div class="line"><span class="attribute">magenta</span>(<span class="attribute">bold</span>)=<span class="value">6c71c4</span></div><div class="line"><span class="attribute">text</span>=<span class="value">839496</span></div><div class="line"><span class="attribute">white</span>(<span class="attribute">bold</span>)=<span class="value">fdf6e3</span></div><div class="line"><span class="attribute">green</span>=<span class="value">859900</span></div><div class="line"><span class="attribute">red</span>(<span class="attribute">bold</span>)=<span class="value">cb4b16</span></div><div class="line"><span class="attribute">green</span>(<span class="attribute">bold</span>)=<span class="value">586e75</span></div><div class="line"><span class="attribute">black</span>(<span class="attribute">bold</span>)=<span class="value">073642</span></div><div class="line"><span class="attribute">red</span>=<span class="value">dc322f</span></div><div class="line"><span class="attribute">blue</span>=<span class="value">268bd2</span></div><div class="line"><span class="attribute">black</span>=<span class="value">002b36</span></div><div class="line"><span class="attribute">blue</span>(<span class="attribute">bold</span>)=<span class="value">839496</span></div><div class="line"><span class="attribute">yellow</span>(<span class="attribute">bold</span>)=<span class="value">657b83</span></div><div class="line"><span class="attribute">cyan</span>(<span class="attribute">bold</span>)=<span class="value">93a1a1</span></div><div class="line"><span class="attribute">yellow</span>=<span class="value">b58900</span></div><div class="line"><span class="attribute">magenta</span>=<span class="value">dd3682</span></div><div class="line"><span class="attribute">background</span>=<span class="value">042028</span></div><div class="line"><span class="attribute">white</span>=<span class="value">eee8d5</span></div><div class="line"><span class="attribute">cyan</span>=<span class="value">2aa198</span></div><div class="line">[<span class="attribute">Names</span>]</div><div class="line"><span class="attribute">count</span>=<span class="value">1</span></div><div class="line"><span class="attribute">name0</span>=<span class="value">Solarized</span> <span class="attribute">Dark</span></div></pre></td></tr></table></figure>
-
-<p>只需把以上内容拷贝到 SolarizedDark.xcs，并在 Xshell 中导入这个配色文件，就可以享受程序猿专用的温暖的太阳系之光了。</p>
-<p>效果如图<img src="/images/SD.png" alt=""></p>
-<p>以下为更加温暖的亮色系配色文件，同理保存为 SolarizedLight.xcs 并导入 Xshell 即可。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">[<span class="attribute">Solarized</span> <span class="attribute">Light</span>]</span></span></div><div class="line"><span class="attribute">text</span>(<span class="attribute">bold</span>)=<span class="value">657b83</span></div><div class="line"><span class="attribute">magenta</span>(<span class="attribute">bold</span>)=<span class="value">6c71c4</span></div><div class="line"><span class="attribute">text</span>=<span class="value">657b83</span></div><div class="line"><span class="attribute">white</span>(<span class="attribute">bold</span>)=<span class="value">002b36</span></div><div class="line"><span class="attribute">green</span>=<span class="value">859900</span></div><div class="line"><span class="attribute">red</span>(<span class="attribute">bold</span>)=<span class="value">cb4b16</span></div><div class="line"><span class="attribute">green</span>(<span class="attribute">bold</span>)=<span class="value">93a1a1</span></div><div class="line"><span class="attribute">black</span>(<span class="attribute">bold</span>)=<span class="value">eee8d5</span></div><div class="line"><span class="attribute">red</span>=<span class="value">dc322f</span></div><div class="line"><span class="attribute">blue</span>=<span class="value">268bd2</span></div><div class="line"><span class="attribute">black</span>=<span class="value">fdf6e3</span></div><div class="line"><span class="attribute">blue</span>(<span class="attribute">bold</span>)=<span class="value">657b83</span></div><div class="line"><span class="attribute">yellow</span>(<span class="attribute">bold</span>)=<span class="value">839496</span></div><div class="line"><span class="attribute">cyan</span>(<span class="attribute">bold</span>)=<span class="value">586e75</span></div><div class="line"><span class="attribute">yellow</span>=<span class="value">b58900</span></div><div class="line"><span class="attribute">magenta</span>=<span class="value">dd3682</span></div><div class="line"><span class="attribute">background</span>=<span class="value">fdf6e3</span></div><div class="line"><span class="attribute">white</span>=<span class="value">073642</span></div><div class="line"><span class="attribute">cyan</span>=<span class="value">2aa198</span></div><div class="line">[<span class="attribute">Names</span>]</div><div class="line"><span class="attribute">count</span>=<span class="value">1</span></div><div class="line"><span class="attribute">name0</span>=<span class="value">Solarized</span> <span class="attribute">Light</span></div></pre></td></tr></table></figure>
-
-<p>效果如图<img src="/images/SL.png" alt=""></p>
-<p>ps: 后来仔细看了一下，已经有人 fork 了一个 Solarized 的代码库，并提交了 for Xshell 的 pull。参见<br>[这里]（<a href="https://github.com/mayjabber/solarized/tree/master/xshell-colors-solarized" target="_blank" rel="external">https://github.com/mayjabber/solarized/tree/master/xshell-colors-solarized</a>) <a href="https://github.com/mayjabber/solarized/tree/master/xshell-colors-solarized" target="_blank" rel="external">https://github.com/mayjabber/solarized/tree/master/xshell-colors-solarized</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Xshell 是 Windows 里面为数不多的免费且好用的 SSH 客户端，不过默认的配色实在是太难看了，真的是太难看了，如果不改掉实在是不能用。而且和 Sublime Text、TextMate、Emacs、VIM 等编辑神器以及 iTerm2 等深受好评的软件不一样，]]>
-    </summary>
-    
-      <category term="美化" scheme="http://daxiawj.github.io/tags/%E7%BE%8E%E5%8C%96/"/>
-    
-      <category term="Solarized" scheme="http://daxiawj.github.io/tags/Solarized/"/>
-    
-      <category term="Xshell" scheme="http://daxiawj.github.io/tags/Xshell/"/>
-    
-      <category term="系统" scheme="http://daxiawj.github.io/tags/%E7%B3%BB%E7%BB%9F/"/>
-    
-      <category term="系统" scheme="http://daxiawj.github.io/categories/%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[修改Octopress 列表的indent]]></title>
     <link href="http://daxiawj.github.io/2014/03-23-%E4%BF%AE%E6%94%B9Octopress-%E5%88%97%E8%A1%A8%E7%9A%84indent.html"/>
     <id>http://daxiawj.github.io/2014/03-23-修改Octopress-列表的indent.html</id>
@@ -789,6 +795,41 @@ Now that you have tried Sweave, how does it perform?
   </entry>
   
   <entry>
+    <title><![CDATA[一切为了太阳系的荣耀--Xshell的Solarized配色]]></title>
+    <link href="http://daxiawj.github.io/2014/03-23-%E4%B8%80%E5%88%87%E4%B8%BA%E4%BA%86%E5%A4%AA%E9%98%B3%E7%B3%BB%E7%9A%84%E8%8D%A3%E8%80%80-Xshell%E7%9A%84Solarized%E9%85%8D%E8%89%B2.html"/>
+    <id>http://daxiawj.github.io/2014/03-23-一切为了太阳系的荣耀-Xshell的Solarized配色.html</id>
+    <published>2014-03-23T06:50:57.000Z</published>
+    <updated>2014-10-26T02:43:35.000Z</updated>
+    <content type="html"><![CDATA[<p>Xshell 是 Windows 里面为数不多的免费且好用的 SSH 客户端，不过默认的配色实在是太难看了，真的是太难看了，如果不改掉实在是不能用。而且和 Sublime Text、TextMate、Emacs、VIM 等编辑神器以及 iTerm2 等深受好评的软件不一样，网上现成的 XShell 配色也着实少的可怜。冇办法，只好自己动手了。</p>
+<p>上面提到的编辑器，真的有很多经典的配色，如 Monokai、Dawn、Eiffel、Tommorow、Twilight 等，但是我最爱的，还是那经典的 Solarized。关于 Solarized，已经有很多 <a href="http://www.dblotus.com/?p=1524" target="_blank" rel="external"> 介绍 </a>，其官网在<a href="http://ethanschoonover.com/solarized" target="_blank" rel="external"> 这里 </a>，Github 的主页在<a href="https://github.com/altercation/solarized" target="_blank" rel="external"> 这里</a>，上面有为很多软件如 Emacs、Gedit、iTerm2、Putty、VIM、TextWrangler 等写好的配色文件，可自行采撷。</p>
+<p>最爱的 Solarized Dark 配色，写成 Xshell 能用的形式如下</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">[<span class="attribute">Solarized</span> <span class="attribute">Dark</span>]</span></span></div><div class="line"><span class="attribute">text</span>(<span class="attribute">bold</span>)=<span class="value">839496</span></div><div class="line"><span class="attribute">magenta</span>(<span class="attribute">bold</span>)=<span class="value">6c71c4</span></div><div class="line"><span class="attribute">text</span>=<span class="value">839496</span></div><div class="line"><span class="attribute">white</span>(<span class="attribute">bold</span>)=<span class="value">fdf6e3</span></div><div class="line"><span class="attribute">green</span>=<span class="value">859900</span></div><div class="line"><span class="attribute">red</span>(<span class="attribute">bold</span>)=<span class="value">cb4b16</span></div><div class="line"><span class="attribute">green</span>(<span class="attribute">bold</span>)=<span class="value">586e75</span></div><div class="line"><span class="attribute">black</span>(<span class="attribute">bold</span>)=<span class="value">073642</span></div><div class="line"><span class="attribute">red</span>=<span class="value">dc322f</span></div><div class="line"><span class="attribute">blue</span>=<span class="value">268bd2</span></div><div class="line"><span class="attribute">black</span>=<span class="value">002b36</span></div><div class="line"><span class="attribute">blue</span>(<span class="attribute">bold</span>)=<span class="value">839496</span></div><div class="line"><span class="attribute">yellow</span>(<span class="attribute">bold</span>)=<span class="value">657b83</span></div><div class="line"><span class="attribute">cyan</span>(<span class="attribute">bold</span>)=<span class="value">93a1a1</span></div><div class="line"><span class="attribute">yellow</span>=<span class="value">b58900</span></div><div class="line"><span class="attribute">magenta</span>=<span class="value">dd3682</span></div><div class="line"><span class="attribute">background</span>=<span class="value">042028</span></div><div class="line"><span class="attribute">white</span>=<span class="value">eee8d5</span></div><div class="line"><span class="attribute">cyan</span>=<span class="value">2aa198</span></div><div class="line">[<span class="attribute">Names</span>]</div><div class="line"><span class="attribute">count</span>=<span class="value">1</span></div><div class="line"><span class="attribute">name0</span>=<span class="value">Solarized</span> <span class="attribute">Dark</span></div></pre></td></tr></table></figure>
+
+<p>只需把以上内容拷贝到 SolarizedDark.xcs，并在 Xshell 中导入这个配色文件，就可以享受程序猿专用的温暖的太阳系之光了。</p>
+<p>效果如图<img src="/images/SD.png" alt=""></p>
+<p>以下为更加温暖的亮色系配色文件，同理保存为 SolarizedLight.xcs 并导入 Xshell 即可。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">[<span class="attribute">Solarized</span> <span class="attribute">Light</span>]</span></span></div><div class="line"><span class="attribute">text</span>(<span class="attribute">bold</span>)=<span class="value">657b83</span></div><div class="line"><span class="attribute">magenta</span>(<span class="attribute">bold</span>)=<span class="value">6c71c4</span></div><div class="line"><span class="attribute">text</span>=<span class="value">657b83</span></div><div class="line"><span class="attribute">white</span>(<span class="attribute">bold</span>)=<span class="value">002b36</span></div><div class="line"><span class="attribute">green</span>=<span class="value">859900</span></div><div class="line"><span class="attribute">red</span>(<span class="attribute">bold</span>)=<span class="value">cb4b16</span></div><div class="line"><span class="attribute">green</span>(<span class="attribute">bold</span>)=<span class="value">93a1a1</span></div><div class="line"><span class="attribute">black</span>(<span class="attribute">bold</span>)=<span class="value">eee8d5</span></div><div class="line"><span class="attribute">red</span>=<span class="value">dc322f</span></div><div class="line"><span class="attribute">blue</span>=<span class="value">268bd2</span></div><div class="line"><span class="attribute">black</span>=<span class="value">fdf6e3</span></div><div class="line"><span class="attribute">blue</span>(<span class="attribute">bold</span>)=<span class="value">657b83</span></div><div class="line"><span class="attribute">yellow</span>(<span class="attribute">bold</span>)=<span class="value">839496</span></div><div class="line"><span class="attribute">cyan</span>(<span class="attribute">bold</span>)=<span class="value">586e75</span></div><div class="line"><span class="attribute">yellow</span>=<span class="value">b58900</span></div><div class="line"><span class="attribute">magenta</span>=<span class="value">dd3682</span></div><div class="line"><span class="attribute">background</span>=<span class="value">fdf6e3</span></div><div class="line"><span class="attribute">white</span>=<span class="value">073642</span></div><div class="line"><span class="attribute">cyan</span>=<span class="value">2aa198</span></div><div class="line">[<span class="attribute">Names</span>]</div><div class="line"><span class="attribute">count</span>=<span class="value">1</span></div><div class="line"><span class="attribute">name0</span>=<span class="value">Solarized</span> <span class="attribute">Light</span></div></pre></td></tr></table></figure>
+
+<p>效果如图<img src="/images/SL.png" alt=""></p>
+<p>ps: 后来仔细看了一下，已经有人 fork 了一个 Solarized 的代码库，并提交了 for Xshell 的 pull。参见<br>[这里]（<a href="https://github.com/mayjabber/solarized/tree/master/xshell-colors-solarized" target="_blank" rel="external">https://github.com/mayjabber/solarized/tree/master/xshell-colors-solarized</a>) <a href="https://github.com/mayjabber/solarized/tree/master/xshell-colors-solarized" target="_blank" rel="external">https://github.com/mayjabber/solarized/tree/master/xshell-colors-solarized</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Xshell 是 Windows 里面为数不多的免费且好用的 SSH 客户端，不过默认的配色实在是太难看了，真的是太难看了，如果不改掉实在是不能用。而且和 Sublime Text、TextMate、Emacs、VIM 等编辑神器以及 iTerm2 等深受好评的软件不一样，]]>
+    </summary>
+    
+      <category term="美化" scheme="http://daxiawj.github.io/tags/%E7%BE%8E%E5%8C%96/"/>
+    
+      <category term="Solarized" scheme="http://daxiawj.github.io/tags/Solarized/"/>
+    
+      <category term="Xshell" scheme="http://daxiawj.github.io/tags/Xshell/"/>
+    
+      <category term="系统" scheme="http://daxiawj.github.io/tags/%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="系统" scheme="http://daxiawj.github.io/categories/%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[轻松并发执行作业--GNU Parallel]]></title>
     <link href="http://daxiawj.github.io/2014/03-19-%E8%BD%BB%E6%9D%BE%E5%B9%B6%E5%8F%91%E6%89%A7%E8%A1%8C%E4%BD%9C%E4%B8%9A-GNU-Parallel.html"/>
     <id>http://daxiawj.github.io/2014/03-19-轻松并发执行作业-GNU-Parallel.html</id>
@@ -832,34 +873,6 @@ Now that you have tried Sweave, how does it perform?
       <category term="并发" scheme="http://daxiawj.github.io/tags/%E5%B9%B6%E5%8F%91/"/>
     
       <category term="shell" scheme="http://daxiawj.github.io/tags/shell/"/>
-    
-      <category term="技术" scheme="http://daxiawj.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="技术" scheme="http://daxiawj.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Linux 'date' Command usage]]></title>
-    <link href="http://daxiawj.github.io/2014/02-24-Linux-date-Command-usage.html"/>
-    <id>http://daxiawj.github.io/2014/02-24-Linux-date-Command-usage.html</id>
-    <published>2014-02-24T06:50:57.000Z</published>
-    <updated>2014-10-12T11:54:07.000Z</updated>
-    <content type="html"><![CDATA[<p> *nix <code>date</code> is quite powerful tool for date manipulation.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> idate <span class="keyword">in</span> `seq <span class="number">0</span> <span class="number">1461</span>`</div><div class="line"><span class="keyword">do</span></div><div class="line">  thedate=`date +%Y%m%d <span class="operator">-d</span> <span class="string">"20100101 + <span class="variable">$idate</span>"</span>`</div><div class="line">  <span class="built_in">echo</span> <span class="variable">$thedate</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
-
-<p>etc.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p> *nix <code>date</code> is quite powerful tool for date manipulation.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><p]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://daxiawj.github.io/tags/Linux/"/>
-    
-      <category term="Server" scheme="http://daxiawj.github.io/tags/Server/"/>
-    
-      <category term="Bash" scheme="http://daxiawj.github.io/tags/Bash/"/>
     
       <category term="技术" scheme="http://daxiawj.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
     
