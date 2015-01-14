@@ -109,6 +109,62 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-SSH作为Socks代理的简单方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01-14-SSH作为Socks代理的简单方法.html" class="article-date">
+  <time datetime="2015-01-14T05:05:25.000Z" itemprop="datePublished">2015 01 14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01-14-SSH作为Socks代理的简单方法.html">SSH作为Socks代理的简单方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>VPN在实际使用中也不一定方便，如果只是想简单上个网，恰好在国外又有可以ssh远程登录的服务器，那么可以很方便的将ssh作为隧道转化成Socks代理，具体方法如下：</p>
+<h2 id="Windows下操作:">Windows下操作:</h2>
+<p>在 putty 中设置好要登录的服务器 ip，并在“连接-SSH-通道”中设置:<code>源端口6080 动态 自动</code>,然后增加<br>保存后打开,使用账号和密码登录,这样就建立好 socks 5 代理.<br>在相关软件中设置好代理参数 socks5: 127.0.0.1:6080 后便可以使用.</p>
+<p>Xshell 类似，在 SSH Tunnnel 里面设置，选择 Socks5. </p>
+<h2 id="Mac_和_Linux_中操作：">Mac 和 Linux 中操作：</h2>
+<p>在终端中运行 <code>ssh -D 6080 user@theserver</code> ，然后在浏览器或者软件中设置好代理参数  socks5: 127.0.0.1:6080 后便可以使用.</p>
+<h2 id="推荐浏览器设置">推荐浏览器设置</h2>
+<p>推荐使用 Firefox 和 Chrome 等，然后安装相应的proxy一键切换工具，如 Chrome Falcon Proxy; Firefox Proxy Selector 等。 当然，如果自己写一个 pac文件来自动控制哪些网站使用proxy，那就不属于本文的范畴了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://daxiawj.github.io/2015/01-14-SSH作为Socks代理的简单方法.html" data-id="valcticrd2lxyngv" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://daxiawj.github.io/2015/01-14-SSH作为Socks代理的简单方法.html#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OSX/">OSX</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Putty/">Putty</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSH/">SSH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Socks/">Socks</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/">Windows</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/代理/">代理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/隧道/">隧道</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Sublime-Text-开启对NCL的支持－附Vim-NCL" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/11-06-Sublime-Text-开启对NCL的支持－附Vim-NCL.html" class="article-date">
@@ -745,59 +801,6 @@ Now that you have tried Sweave, how does it perform?
 
 
   
-    <article id="post-RSYNC-同步数据" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/02-16-RSYNC-同步数据.html" class="article-date">
-  <time datetime="2014-02-16T06:50:57.000Z" itemprop="datePublished">2014 02 16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/02-16-RSYNC-同步数据.html">RSYNC 同步数据</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>rsync 是同步、备份数据时的强大工具。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rsync -avz --password-file=rsync.ps user<span class="variable">@192</span>.<span class="number">168.0</span>.<span class="number">206</span><span class="symbol">:/backup/dir</span> /home/destdir</div></pre></td></tr></table></figure>
-
-<p>其中注意 -a 意味着 archive，即保留各种权限等，-v 表示 verbose， -z 则是压缩传输。 —password-file 要注意权限，以防被别人窥探，当然如果不是在脚本里面批量使用，就不需要这个选项了，直接交互输入密码更为安全。</p>
-<p>一般在传输文本文件的时候加上 <code>-z</code> 选项，速度会快很多，但如果是二进制数据等，一般还是不要加的好。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://daxiawj.github.io/2014/02-16-RSYNC-同步数据.html" data-id="hrxobwgyr3sspjix" class="article-share-link" data-share="baidu">Share</a>
-      
-
-      
-        <a href="http://daxiawj.github.io/2014/02-16-RSYNC-同步数据.html#ds-thread" class="article-comment-link">Comments</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/同步/">同步</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/备份/">备份</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据/">数据</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/categories/技术/page/2/">2</a><a class="extend next" rel="next" href="/categories/技术/page/2/">Next &raquo;</a>
@@ -811,7 +814,7 @@ Now that you have tried Sweave, how does it perform?
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/休闲/">休闲</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客/">博客</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/科研/">科研</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统/">系统</a><span class="category-list-count">8</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/休闲/">休闲</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客/">博客</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/科研/">科研</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统/">系统</a><span class="category-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -820,7 +823,7 @@ Now that you have tried Sweave, how does it perform?
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Apache/" style="font-size: 10.00px;">Apache</a><a href="/tags/Bash/" style="font-size: 10.00px;">Bash</a><a href="/tags/Blog/" style="font-size: 13.33px;">Blog</a><a href="/tags/Configuration/" style="font-size: 10.00px;">Configuration</a><a href="/tags/Demo/" style="font-size: 10.00px;">Demo</a><a href="/tags/Editor/" style="font-size: 13.33px;">Editor</a><a href="/tags/Finder/" style="font-size: 10.00px;">Finder</a><a href="/tags/Firewall/" style="font-size: 13.33px;">Firewall</a><a href="/tags/Fortran/" style="font-size: 10.00px;">Fortran</a><a href="/tags/GNU/" style="font-size: 10.00px;">GNU</a><a href="/tags/Git/" style="font-size: 10.00px;">Git</a><a href="/tags/Hexo/" style="font-size: 10.00px;">Hexo</a><a href="/tags/LaTeX/" style="font-size: 13.33px;">LaTeX</a><a href="/tags/Linux/" style="font-size: 16.67px;">Linux</a><a href="/tags/Mac/" style="font-size: 13.33px;">Mac</a><a href="/tags/Mavericks/" style="font-size: 13.33px;">Mavericks</a><a href="/tags/NCL/" style="font-size: 13.33px;">NCL</a><a href="/tags/NetWorking/" style="font-size: 13.33px;">NetWorking</a><a href="/tags/OSX/" style="font-size: 20.00px;">OSX</a><a href="/tags/Octopress/" style="font-size: 16.67px;">Octopress</a><a href="/tags/R/" style="font-size: 10.00px;">R</a><a href="/tags/Server/" style="font-size: 20.00px;">Server</a><a href="/tags/Software/" style="font-size: 10.00px;">Software</a><a href="/tags/Solarized/" style="font-size: 13.33px;">Solarized</a><a href="/tags/Special-sign/" style="font-size: 10.00px;">Special sign</a><a href="/tags/Sublime-Text/" style="font-size: 10.00px;">Sublime Text</a><a href="/tags/Sublime-text/" style="font-size: 10.00px;">Sublime text</a><a href="/tags/Sweave/" style="font-size: 10.00px;">Sweave</a><a href="/tags/TextMate/" style="font-size: 10.00px;">TextMate</a><a href="/tags/UFW/" style="font-size: 13.33px;">UFW</a><a href="/tags/Ubuntu/" style="font-size: 13.33px;">Ubuntu</a><a href="/tags/VIM/" style="font-size: 10.00px;">VIM</a><a href="/tags/Vim/" style="font-size: 10.00px;">Vim</a><a href="/tags/X11/" style="font-size: 10.00px;">X11</a><a href="/tags/Xshell/" style="font-size: 10.00px;">Xshell</a><a href="/tags/bash/" style="font-size: 10.00px;">bash</a><a href="/tags/blog/" style="font-size: 10.00px;">blog</a><a href="/tags/brew/" style="font-size: 10.00px;">brew</a><a href="/tags/cdto/" style="font-size: 10.00px;">cdto</a><a href="/tags/go2shell/" style="font-size: 10.00px;">go2shell</a>
+      <a href="/tags/Apache/" style="font-size: 10.00px;">Apache</a><a href="/tags/Bash/" style="font-size: 10.00px;">Bash</a><a href="/tags/Blog/" style="font-size: 12.00px;">Blog</a><a href="/tags/Configuration/" style="font-size: 10.00px;">Configuration</a><a href="/tags/Demo/" style="font-size: 10.00px;">Demo</a><a href="/tags/Editor/" style="font-size: 12.00px;">Editor</a><a href="/tags/Finder/" style="font-size: 10.00px;">Finder</a><a href="/tags/Firewall/" style="font-size: 12.00px;">Firewall</a><a href="/tags/Fortran/" style="font-size: 10.00px;">Fortran</a><a href="/tags/GNU/" style="font-size: 10.00px;">GNU</a><a href="/tags/Git/" style="font-size: 10.00px;">Git</a><a href="/tags/Hexo/" style="font-size: 10.00px;">Hexo</a><a href="/tags/LaTeX/" style="font-size: 12.00px;">LaTeX</a><a href="/tags/Linux/" style="font-size: 16.00px;">Linux</a><a href="/tags/Mac/" style="font-size: 12.00px;">Mac</a><a href="/tags/Mavericks/" style="font-size: 12.00px;">Mavericks</a><a href="/tags/NCL/" style="font-size: 12.00px;">NCL</a><a href="/tags/NetWorking/" style="font-size: 12.00px;">NetWorking</a><a href="/tags/OSX/" style="font-size: 20.00px;">OSX</a><a href="/tags/Octopress/" style="font-size: 14.00px;">Octopress</a><a href="/tags/Putty/" style="font-size: 10.00px;">Putty</a><a href="/tags/R/" style="font-size: 10.00px;">R</a><a href="/tags/SSH/" style="font-size: 10.00px;">SSH</a><a href="/tags/Server/" style="font-size: 18.00px;">Server</a><a href="/tags/Socks/" style="font-size: 10.00px;">Socks</a><a href="/tags/Software/" style="font-size: 10.00px;">Software</a><a href="/tags/Solarized/" style="font-size: 12.00px;">Solarized</a><a href="/tags/Special-sign/" style="font-size: 10.00px;">Special sign</a><a href="/tags/Sublime-Text/" style="font-size: 10.00px;">Sublime Text</a><a href="/tags/Sublime-text/" style="font-size: 10.00px;">Sublime text</a><a href="/tags/Sweave/" style="font-size: 10.00px;">Sweave</a><a href="/tags/TextMate/" style="font-size: 10.00px;">TextMate</a><a href="/tags/UFW/" style="font-size: 12.00px;">UFW</a><a href="/tags/Ubuntu/" style="font-size: 12.00px;">Ubuntu</a><a href="/tags/VIM/" style="font-size: 10.00px;">VIM</a><a href="/tags/Vim/" style="font-size: 10.00px;">Vim</a><a href="/tags/Windows/" style="font-size: 10.00px;">Windows</a><a href="/tags/X11/" style="font-size: 10.00px;">X11</a><a href="/tags/Xshell/" style="font-size: 10.00px;">Xshell</a><a href="/tags/bash/" style="font-size: 10.00px;">bash</a>
     </div>
   </div>
 
@@ -829,7 +832,7 @@ Now that you have tried Sweave, how does it perform?
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -841,6 +844,14 @@ Now that you have tried Sweave, how does it perform?
       <ul>
         
           <li>
+            <a href="/2015/01-14-SSH作为Socks代理的简单方法.html">SSH作为Socks代理的简单方法</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11-24-大气运动方程.html">大气运动方程</a>
+          </li>
+        
+          <li>
             <a href="/2014/11-06-Sublime-Text-开启对NCL的支持－附Vim-NCL.html">Sublime Text 开启对NCL的支持－附Vim NCL</a>
           </li>
         
@@ -850,14 +861,6 @@ Now that you have tried Sweave, how does it perform?
         
           <li>
             <a href="/2014/09-16-SublimeTextTextMate-remote-editing-with-rmate.html">SublimeText/TextMate remote editing with rmate</a>
-          </li>
-        
-          <li>
-            <a href="/2014/06-18-140618听音日志-Carl-Orff-《布兰诗歌》.html">140618听音日志-Carl Orff 《布兰诗歌》</a>
-          </li>
-        
-          <li>
-            <a href="/2014/06-05-关掉Mac-OS-X-spotlight对移动存储设备的索引.html">关掉Mac OS X spotlight对移动存储设备的索引</a>
           </li>
         
       </ul>
@@ -887,7 +890,7 @@ Now that you have tried Sweave, how does it perform?
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2014 daxiawj<br>
+      &copy; 2015 daxiawj<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
       .
       Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>

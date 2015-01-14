@@ -109,6 +109,115 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-su-出现-This-account-is-currently-not-available" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/04-23-su-出现-This-account-is-currently-not-available.html" class="article-date">
+  <time datetime="2014-04-23T13:34:55.000Z" itemprop="datePublished">2014 04 23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/04-23-su-出现-This-account-is-currently-not-available.html">su 出现 This account is currently not available</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>su</code> 切换用户的时候出现 “This account is currently not available” 的提示，尤其是在 <code>/etc/init.d/</code> 的文件里面，运行一些服务需要切换到特定的用户，如启动 tomcat 的脚本，需要切换到 www 用户，但是 www 用户在 /etc/passwd 里面的 shell 是 /sbin/nologin，那么在启动的脚本里面:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">su  www -<span class="keyword">c</span> /<span class="keyword">opt</span>/tomcat7/bin/startup.<span class="keyword">sh</span></div></pre></td></tr></table></figure>
+
+<p>这一句就会导致上述的报错。</p>
+<p>解决的办法有几种，第一，运行 <code>vipw</code> 修改 passwd 文件，将其 shell 项改为 /bin/bash。第二种方法则是修改这条命令，改为：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">su -s <span class="regexp">/bin/</span>bash www -c <span class="regexp">/opt/</span>tomcat7<span class="regexp">/bin/</span>startup.sh</div></pre></td></tr></table></figure>
+
+<p>个人更喜欢第二种方案。第一种要修改系统的安全设置，不太建议。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://daxiawj.github.io/2014/04-23-su-出现-This-account-is-currently-not-available.html" data-id="z14x1467rcfadqc6" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://daxiawj.github.io/2014/04-23-su-出现-This-account-is-currently-not-available.html#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Server/">Server</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/su/">su</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Mavericks-apache2-issue-after-Server-3-removed" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03-28-Mavericks-apache2-issue-after-Server-3-removed.html" class="article-date">
+  <time datetime="2014-03-28T03:26:15.000Z" itemprop="datePublished">2014 03 28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/系统/">系统</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03-28-Mavericks-apache2-issue-after-Server-3-removed.html">Mavericks apache2 issue after Server 3 removed</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>After remove Server.app, my apache2 on Mac OS X 10.9.2 Mavericks couldn’t start normally while everything looks OK. After carefully studied the log file through Console.app and looked into the content of /usr/sbin/apachectl, I realized that the starting process of apache in OS X is quite different than that in Linux: it uses launchctl! </p>
+<p>So, I searched the apache launchctl config file:<code>/System/Library/LaunchDaemons/org.apache.httpd.plist</code>. Aha! it said: </p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">    <span class="tag">&lt;<span class="title">key</span>&gt;</span>SERVER_INSTALL_PATH_PREFIX<span class="tag">&lt;/<span class="title">key</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">string</span>&gt;</span>/Applications/Server.app/Contents/ServerRoot<span class="tag">&lt;/<span class="title">string</span>&gt;</span></div><div class="line">    ......</div><div class="line">    and</div><div class="line"><span class="tag">&lt;<span class="title">key</span>&gt;</span>ProgramArguments<span class="tag">&lt;/<span class="title">key</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">array</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">string</span>&gt;</span>/usr/sbin/httpd<span class="tag">&lt;/<span class="title">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">string</span>&gt;</span>-D<span class="tag">&lt;/<span class="title">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">string</span>&gt;</span>FOREGROUND<span class="tag">&lt;/<span class="title">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">string</span>&gt;</span>-f<span class="tag">&lt;/<span class="title">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">string</span>&gt;</span>/Library/Server/Web/Config/apache2/httpd_server_app.conf<span class="tag">&lt;/<span class="title">string</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">array</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<p>The key <code>SERVER_INSTALL_PATH_PREFIX</code> and <code>ProgramArguments</code> were modified by Server.app aparently. Just recover them to <code>/usr</code> and <code>/etc/apache2/http.conf</code>, there, it works again!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://daxiawj.github.io/2014/03-28-Mavericks-apache2-issue-after-Server-3-removed.html" data-id="3ec1omq9nhj4aq3l" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://daxiawj.github.io/2014/03-28-Mavericks-apache2-issue-after-Server-3-removed.html#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Apache/">Apache</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OSX/">OSX</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Server/">Server</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/系统/">系统</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-testcode" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/03-27-testcode.html" class="article-date">
@@ -741,143 +850,9 @@ Now that you have tried Sweave, how does it perform?
 
 
   
-    <article id="post-一切为了太阳系的荣耀-Xshell的Solarized配色" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/03-23-一切为了太阳系的荣耀-Xshell的Solarized配色.html" class="article-date">
-  <time datetime="2014-03-23T06:50:57.000Z" itemprop="datePublished">2014 03 23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/系统/">系统</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/03-23-一切为了太阳系的荣耀-Xshell的Solarized配色.html">一切为了太阳系的荣耀--Xshell的Solarized配色</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Xshell 是 Windows 里面为数不多的免费且好用的 SSH 客户端，不过默认的配色实在是太难看了，真的是太难看了，如果不改掉实在是不能用。而且和 Sublime Text、TextMate、Emacs、VIM 等编辑神器以及 iTerm2 等深受好评的软件不一样，网上现成的 XShell 配色也着实少的可怜。冇办法，只好自己动手了。</p>
-<p>上面提到的编辑器，真的有很多经典的配色，如 Monokai、Dawn、Eiffel、Tommorow、Twilight 等，但是我最爱的，还是那经典的 Solarized。关于 Solarized，已经有很多 <a href="http://www.dblotus.com/?p=1524" target="_blank" rel="external"> 介绍 </a>，其官网在<a href="http://ethanschoonover.com/solarized" target="_blank" rel="external"> 这里 </a>，Github 的主页在<a href="https://github.com/altercation/solarized" target="_blank" rel="external"> 这里</a>，上面有为很多软件如 Emacs、Gedit、iTerm2、Putty、VIM、TextWrangler 等写好的配色文件，可自行采撷。</p>
-<p>最爱的 Solarized Dark 配色，写成 Xshell 能用的形式如下</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">[<span class="attribute">Solarized</span> <span class="attribute">Dark</span>]</span></span></div><div class="line"><span class="attribute">text</span>(<span class="attribute">bold</span>)=<span class="value">839496</span></div><div class="line"><span class="attribute">magenta</span>(<span class="attribute">bold</span>)=<span class="value">6c71c4</span></div><div class="line"><span class="attribute">text</span>=<span class="value">839496</span></div><div class="line"><span class="attribute">white</span>(<span class="attribute">bold</span>)=<span class="value">fdf6e3</span></div><div class="line"><span class="attribute">green</span>=<span class="value">859900</span></div><div class="line"><span class="attribute">red</span>(<span class="attribute">bold</span>)=<span class="value">cb4b16</span></div><div class="line"><span class="attribute">green</span>(<span class="attribute">bold</span>)=<span class="value">586e75</span></div><div class="line"><span class="attribute">black</span>(<span class="attribute">bold</span>)=<span class="value">073642</span></div><div class="line"><span class="attribute">red</span>=<span class="value">dc322f</span></div><div class="line"><span class="attribute">blue</span>=<span class="value">268bd2</span></div><div class="line"><span class="attribute">black</span>=<span class="value">002b36</span></div><div class="line"><span class="attribute">blue</span>(<span class="attribute">bold</span>)=<span class="value">839496</span></div><div class="line"><span class="attribute">yellow</span>(<span class="attribute">bold</span>)=<span class="value">657b83</span></div><div class="line"><span class="attribute">cyan</span>(<span class="attribute">bold</span>)=<span class="value">93a1a1</span></div><div class="line"><span class="attribute">yellow</span>=<span class="value">b58900</span></div><div class="line"><span class="attribute">magenta</span>=<span class="value">dd3682</span></div><div class="line"><span class="attribute">background</span>=<span class="value">042028</span></div><div class="line"><span class="attribute">white</span>=<span class="value">eee8d5</span></div><div class="line"><span class="attribute">cyan</span>=<span class="value">2aa198</span></div><div class="line">[<span class="attribute">Names</span>]</div><div class="line"><span class="attribute">count</span>=<span class="value">1</span></div><div class="line"><span class="attribute">name0</span>=<span class="value">Solarized</span> <span class="attribute">Dark</span></div></pre></td></tr></table></figure>
-
-<p>只需把以上内容拷贝到 SolarizedDark.xcs，并在 Xshell 中导入这个配色文件，就可以享受程序猿专用的温暖的太阳系之光了。</p>
-<p>效果如图<img src="/images/SD.png" alt=""></p>
-<p>以下为更加温暖的亮色系配色文件，同理保存为 SolarizedLight.xcs 并导入 Xshell 即可。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">[<span class="attribute">Solarized</span> <span class="attribute">Light</span>]</span></span></div><div class="line"><span class="attribute">text</span>(<span class="attribute">bold</span>)=<span class="value">657b83</span></div><div class="line"><span class="attribute">magenta</span>(<span class="attribute">bold</span>)=<span class="value">6c71c4</span></div><div class="line"><span class="attribute">text</span>=<span class="value">657b83</span></div><div class="line"><span class="attribute">white</span>(<span class="attribute">bold</span>)=<span class="value">002b36</span></div><div class="line"><span class="attribute">green</span>=<span class="value">859900</span></div><div class="line"><span class="attribute">red</span>(<span class="attribute">bold</span>)=<span class="value">cb4b16</span></div><div class="line"><span class="attribute">green</span>(<span class="attribute">bold</span>)=<span class="value">93a1a1</span></div><div class="line"><span class="attribute">black</span>(<span class="attribute">bold</span>)=<span class="value">eee8d5</span></div><div class="line"><span class="attribute">red</span>=<span class="value">dc322f</span></div><div class="line"><span class="attribute">blue</span>=<span class="value">268bd2</span></div><div class="line"><span class="attribute">black</span>=<span class="value">fdf6e3</span></div><div class="line"><span class="attribute">blue</span>(<span class="attribute">bold</span>)=<span class="value">657b83</span></div><div class="line"><span class="attribute">yellow</span>(<span class="attribute">bold</span>)=<span class="value">839496</span></div><div class="line"><span class="attribute">cyan</span>(<span class="attribute">bold</span>)=<span class="value">586e75</span></div><div class="line"><span class="attribute">yellow</span>=<span class="value">b58900</span></div><div class="line"><span class="attribute">magenta</span>=<span class="value">dd3682</span></div><div class="line"><span class="attribute">background</span>=<span class="value">fdf6e3</span></div><div class="line"><span class="attribute">white</span>=<span class="value">073642</span></div><div class="line"><span class="attribute">cyan</span>=<span class="value">2aa198</span></div><div class="line">[<span class="attribute">Names</span>]</div><div class="line"><span class="attribute">count</span>=<span class="value">1</span></div><div class="line"><span class="attribute">name0</span>=<span class="value">Solarized</span> <span class="attribute">Light</span></div></pre></td></tr></table></figure>
-
-<p>效果如图<img src="/images/SL.png" alt=""></p>
-<p>ps: 后来仔细看了一下，已经有人 fork 了一个 Solarized 的代码库，并提交了 for Xshell 的 pull。参见<br>[这里]（<a href="https://github.com/mayjabber/solarized/tree/master/xshell-colors-solarized" target="_blank" rel="external">https://github.com/mayjabber/solarized/tree/master/xshell-colors-solarized</a>) <a href="https://github.com/mayjabber/solarized/tree/master/xshell-colors-solarized" target="_blank" rel="external">https://github.com/mayjabber/solarized/tree/master/xshell-colors-solarized</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://daxiawj.github.io/2014/03-23-一切为了太阳系的荣耀-Xshell的Solarized配色.html" data-id="n9c01w8wb54poxl5" class="article-share-link" data-share="baidu">Share</a>
-      
-
-      
-        <a href="http://daxiawj.github.io/2014/03-23-一切为了太阳系的荣耀-Xshell的Solarized配色.html#ds-thread" class="article-comment-link">Comments</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Solarized/">Solarized</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Xshell/">Xshell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/系统/">系统</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/美化/">美化</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-轻松并发执行作业-GNU-Parallel" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/03-19-轻松并发执行作业-GNU-Parallel.html" class="article-date">
-  <time datetime="2014-03-19T06:50:57.000Z" itemprop="datePublished">2014 03 19</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/03-19-轻松并发执行作业-GNU-Parallel.html">轻松并发执行作业--GNU Parallel</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p> 有的时候要执行一些很快但是却很多重复的操作，例如修改所有普通文件的权限，修改一下权限本是很快的操作，但是文件很多的话操作起来就慢了。再比如要下载很多 http 下很小的文件，下载一个文件如果只需要三秒，但是每一个文件从建立连接、进行对话然后开始下载直到下载完成，中间会浪费很多时间，可能浪费的比实际下载所需的时间还多。</p>
-<p> 因此，如果能有一个方法并发进行，那么效率会高得多。以前在 Shell 里面也有一些 tricks 来进行这方面的操作，但是总是因为繁琐而容易出错。</p>
-<p> 现在 FSF 开发的 GNU parallel 一出，问题迎刃而解。例如修改所有子目录下面普通文件的权限：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">find</span> ./ -<span class="built_in">type</span> <span class="keyword">f</span> | parallel -<span class="keyword">m</span> chmod <span class="built_in">mode</span></div></pre></td></tr></table></figure>
-
-<p> 批量修改文件夹权限 </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">find</span> ./ -<span class="built_in">type</span> <span class="keyword">d</span> | parallel -<span class="keyword">m</span> chmod <span class="built_in">mode</span></div></pre></td></tr></table></figure>
-
-<p> 再如有一个顺序任务的脚本 batch.sh</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="title">wget</span> url1</div><div class="line">wget url2</div><div class="line">wget url3</div><div class="line">wget url4</div><div class="line">wget url5</div><div class="line">wget url6</div></pre></td></tr></table></figure>
-
-<p> 那么你就可以并行运行如下：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">parallel</span> -j+<span class="number">0</span> &lt; batch.txt </div><div class="line">## This runs <span class="keyword">as</span> many instance <span class="keyword">of</span> the commands <span class="keyword">in</span> batch.txt</div><div class="line">## <span class="keyword">in</span> <span class="keyword">parallel</span> <span class="keyword">as</span> you have cores (-j+<span class="number">0</span>) <span class="keyword">and</span> schedules the</div><div class="line">## jobs <span class="keyword">in</span> an efficient manner</div></pre></td></tr></table></figure>
-
-<p> 当然，你也可以直接 使用一个 parallel 脚本（shebang）</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="shebang">#!/usr/bin/parallel </span></div><div class="line">blahblah</div></pre></td></tr></table></figure>
-
-<p> 要安装它很简单，比如:</p>
-<ul>
-<li>Ubuntu: <code>sudo apt-get install parallel</code></li>
-<li>Fedora: <code>yum install parallel</code></li>
-<li>Mac OSX: <code>brew install parallel</code></li>
-<li><p>Others: <code>源码编译（下载, tar xjvf parallel....tar.bz2;  ./configure; make install）</code></p>
-<p>至于详细功能，那就需要： <code>man parallel</code> 了 </p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://daxiawj.github.io/2014/03-19-轻松并发执行作业-GNU-Parallel.html" data-id="pk8uyd28qalnxai3" class="article-share-link" data-share="baidu">Share</a>
-      
-
-      
-        <a href="http://daxiawj.github.io/2014/03-19-轻松并发执行作业-GNU-Parallel.html#ds-thread" class="article-comment-link">Comments</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GNU/">GNU</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/parallel/">parallel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/并发/">并发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/3/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -888,7 +863,7 @@ Now that you have tried Sweave, how does it perform?
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/休闲/">休闲</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客/">博客</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/科研/">科研</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统/">系统</a><span class="category-list-count">8</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/休闲/">休闲</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客/">博客</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/科研/">科研</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统/">系统</a><span class="category-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -897,7 +872,7 @@ Now that you have tried Sweave, how does it perform?
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Apache/" style="font-size: 10.00px;">Apache</a><a href="/tags/Bash/" style="font-size: 10.00px;">Bash</a><a href="/tags/Blog/" style="font-size: 13.33px;">Blog</a><a href="/tags/Configuration/" style="font-size: 10.00px;">Configuration</a><a href="/tags/Demo/" style="font-size: 10.00px;">Demo</a><a href="/tags/Editor/" style="font-size: 13.33px;">Editor</a><a href="/tags/Finder/" style="font-size: 10.00px;">Finder</a><a href="/tags/Firewall/" style="font-size: 13.33px;">Firewall</a><a href="/tags/Fortran/" style="font-size: 10.00px;">Fortran</a><a href="/tags/GNU/" style="font-size: 10.00px;">GNU</a><a href="/tags/Git/" style="font-size: 10.00px;">Git</a><a href="/tags/Hexo/" style="font-size: 10.00px;">Hexo</a><a href="/tags/LaTeX/" style="font-size: 13.33px;">LaTeX</a><a href="/tags/Linux/" style="font-size: 16.67px;">Linux</a><a href="/tags/Mac/" style="font-size: 13.33px;">Mac</a><a href="/tags/Mavericks/" style="font-size: 13.33px;">Mavericks</a><a href="/tags/NCL/" style="font-size: 13.33px;">NCL</a><a href="/tags/NetWorking/" style="font-size: 13.33px;">NetWorking</a><a href="/tags/OSX/" style="font-size: 20.00px;">OSX</a><a href="/tags/Octopress/" style="font-size: 16.67px;">Octopress</a><a href="/tags/R/" style="font-size: 10.00px;">R</a><a href="/tags/Server/" style="font-size: 20.00px;">Server</a><a href="/tags/Software/" style="font-size: 10.00px;">Software</a><a href="/tags/Solarized/" style="font-size: 13.33px;">Solarized</a><a href="/tags/Special-sign/" style="font-size: 10.00px;">Special sign</a><a href="/tags/Sublime-Text/" style="font-size: 10.00px;">Sublime Text</a><a href="/tags/Sublime-text/" style="font-size: 10.00px;">Sublime text</a><a href="/tags/Sweave/" style="font-size: 10.00px;">Sweave</a><a href="/tags/TextMate/" style="font-size: 10.00px;">TextMate</a><a href="/tags/UFW/" style="font-size: 13.33px;">UFW</a><a href="/tags/Ubuntu/" style="font-size: 13.33px;">Ubuntu</a><a href="/tags/VIM/" style="font-size: 10.00px;">VIM</a><a href="/tags/Vim/" style="font-size: 10.00px;">Vim</a><a href="/tags/X11/" style="font-size: 10.00px;">X11</a><a href="/tags/Xshell/" style="font-size: 10.00px;">Xshell</a><a href="/tags/bash/" style="font-size: 10.00px;">bash</a><a href="/tags/blog/" style="font-size: 10.00px;">blog</a><a href="/tags/brew/" style="font-size: 10.00px;">brew</a><a href="/tags/cdto/" style="font-size: 10.00px;">cdto</a><a href="/tags/go2shell/" style="font-size: 10.00px;">go2shell</a>
+      <a href="/tags/Apache/" style="font-size: 10.00px;">Apache</a><a href="/tags/Bash/" style="font-size: 10.00px;">Bash</a><a href="/tags/Blog/" style="font-size: 12.00px;">Blog</a><a href="/tags/Configuration/" style="font-size: 10.00px;">Configuration</a><a href="/tags/Demo/" style="font-size: 10.00px;">Demo</a><a href="/tags/Editor/" style="font-size: 12.00px;">Editor</a><a href="/tags/Finder/" style="font-size: 10.00px;">Finder</a><a href="/tags/Firewall/" style="font-size: 12.00px;">Firewall</a><a href="/tags/Fortran/" style="font-size: 10.00px;">Fortran</a><a href="/tags/GNU/" style="font-size: 10.00px;">GNU</a><a href="/tags/Git/" style="font-size: 10.00px;">Git</a><a href="/tags/Hexo/" style="font-size: 10.00px;">Hexo</a><a href="/tags/LaTeX/" style="font-size: 12.00px;">LaTeX</a><a href="/tags/Linux/" style="font-size: 16.00px;">Linux</a><a href="/tags/Mac/" style="font-size: 12.00px;">Mac</a><a href="/tags/Mavericks/" style="font-size: 12.00px;">Mavericks</a><a href="/tags/NCL/" style="font-size: 12.00px;">NCL</a><a href="/tags/NetWorking/" style="font-size: 12.00px;">NetWorking</a><a href="/tags/OSX/" style="font-size: 20.00px;">OSX</a><a href="/tags/Octopress/" style="font-size: 14.00px;">Octopress</a><a href="/tags/Putty/" style="font-size: 10.00px;">Putty</a><a href="/tags/R/" style="font-size: 10.00px;">R</a><a href="/tags/SSH/" style="font-size: 10.00px;">SSH</a><a href="/tags/Server/" style="font-size: 18.00px;">Server</a><a href="/tags/Socks/" style="font-size: 10.00px;">Socks</a><a href="/tags/Software/" style="font-size: 10.00px;">Software</a><a href="/tags/Solarized/" style="font-size: 12.00px;">Solarized</a><a href="/tags/Special-sign/" style="font-size: 10.00px;">Special sign</a><a href="/tags/Sublime-Text/" style="font-size: 10.00px;">Sublime Text</a><a href="/tags/Sublime-text/" style="font-size: 10.00px;">Sublime text</a><a href="/tags/Sweave/" style="font-size: 10.00px;">Sweave</a><a href="/tags/TextMate/" style="font-size: 10.00px;">TextMate</a><a href="/tags/UFW/" style="font-size: 12.00px;">UFW</a><a href="/tags/Ubuntu/" style="font-size: 12.00px;">Ubuntu</a><a href="/tags/VIM/" style="font-size: 10.00px;">VIM</a><a href="/tags/Vim/" style="font-size: 10.00px;">Vim</a><a href="/tags/Windows/" style="font-size: 10.00px;">Windows</a><a href="/tags/X11/" style="font-size: 10.00px;">X11</a><a href="/tags/Xshell/" style="font-size: 10.00px;">Xshell</a><a href="/tags/bash/" style="font-size: 10.00px;">bash</a>
     </div>
   </div>
 
@@ -906,7 +881,7 @@ Now that you have tried Sweave, how does it perform?
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -918,6 +893,14 @@ Now that you have tried Sweave, how does it perform?
       <ul>
         
           <li>
+            <a href="/2015/01-14-SSH作为Socks代理的简单方法.html">SSH作为Socks代理的简单方法</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11-24-大气运动方程.html">大气运动方程</a>
+          </li>
+        
+          <li>
             <a href="/2014/11-06-Sublime-Text-开启对NCL的支持－附Vim-NCL.html">Sublime Text 开启对NCL的支持－附Vim NCL</a>
           </li>
         
@@ -927,14 +910,6 @@ Now that you have tried Sweave, how does it perform?
         
           <li>
             <a href="/2014/09-16-SublimeTextTextMate-remote-editing-with-rmate.html">SublimeText/TextMate remote editing with rmate</a>
-          </li>
-        
-          <li>
-            <a href="/2014/06-18-140618听音日志-Carl-Orff-《布兰诗歌》.html">140618听音日志-Carl Orff 《布兰诗歌》</a>
-          </li>
-        
-          <li>
-            <a href="/2014/06-05-关掉Mac-OS-X-spotlight对移动存储设备的索引.html">关掉Mac OS X spotlight对移动存储设备的索引</a>
           </li>
         
       </ul>
@@ -964,7 +939,7 @@ Now that you have tried Sweave, how does it perform?
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2014 daxiawj<br>
+      &copy; 2015 daxiawj<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
       .
       Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
